@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'contact links.dart';
+import 'contactlinks.dart';
 import 'project_section.dart';
 
 void main() {
@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
             ProjectSection(
               title: 'Baterista en Rosario',
               images: [
-                'assets/rosario1.jpg',
+                'assets/images/rosario1.jpg',
                 'assets/rosario2.jpg',
                 'assets/rosario3.jpg'
               ],
