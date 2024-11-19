@@ -30,7 +30,7 @@ class ProjectSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
       child: GestureDetector(
         onTap: () => navigateToProjectDetail(context),
         child: Column(
@@ -41,12 +41,12 @@ class ProjectSection extends StatelessWidget {
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontFamily: 'DMSerifText', // Cambiado a DM Serif Text
-                fontSize: 24,
+                fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: Colors.black87,
               ),
             ),
-            const SizedBox(height: 8.0),
+            const SizedBox(height: 20.0),
             Text(
               description,
               textAlign: TextAlign.center,
@@ -66,7 +66,7 @@ class ProjectSection extends StatelessWidget {
                       ))
                   .toList(),
               options: CarouselOptions(
-                height: 200,
+                height: 500,
                 enableInfiniteScroll: true,
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 4),

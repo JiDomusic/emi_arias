@@ -19,7 +19,7 @@ class EmilianaAriasApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         fontFamily:
             'DMSerifText', // Aplica la fuente personalizada a toda la aplicación
-        scaffoldBackgroundColor: Colors.grey,
+        scaffoldBackgroundColor: Colors.white,
         textTheme: const TextTheme(
           titleLarge: TextStyle(
               fontFamily: 'DMSerifText',
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
         title: const Text(
           'Emiliana Arias',
           style: TextStyle(
-            fontSize: 32,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
@@ -63,18 +63,18 @@ class HomePage extends StatelessWidget {
             ProjectSection(
               title: 'Yunque Instrumentos',
               images: [
-                'assets/yunque1.jpg',
-                'assets/yunque2.jpg',
-                'assets/yunque3.jpg'
+                'assets/images/yunque1.jpg',
+                'assets/images/yunque2.jpg',
+                'assets/images/yunque3.jpg'
               ],
               description: 'Descripción del proyecto Yunque Instrumentos...',
             ),
             ProjectSection(
               title: 'Libro (sin nombre aún)',
               images: [
-                'assets/libro1.jpg',
-                'assets/libro2.jpg',
-                'assets/libro3.jpg'
+                'assets/images/libro1.jpg',
+                'assets/images/libro2.jpg',
+                'assets/images/libro3.jpg'
               ],
               description: 'Descripción del libro de Emiliana...',
             ),
@@ -82,11 +82,10 @@ class HomePage extends StatelessWidget {
               title: 'Baterista en Rosario',
               images: [
                 'assets/images/rosario1.jpg',
-                'assets/rosario2.jpg',
-                'assets/rosario3.jpg'
+                'assets/images/rosario2.jpg',
+                'assets/images/rosario3.jpg'
               ],
-              description:
-                  'Emiliana fue baterista de muchas formaciones en Rosario...',
+              description: 'Percucionista de muchas formaciones en Rosario...',
             ),
             ContactLinks(),
           ],

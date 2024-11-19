@@ -18,7 +18,7 @@ class ProjectDetailPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -38,7 +38,7 @@ class ProjectDetailPage extends StatelessWidget {
             const SizedBox(height: 16.0),
             Text(
               description,
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.end,
               style: const TextStyle(
                 fontFamily: 'DancingScript',
                 fontSize: 18,
