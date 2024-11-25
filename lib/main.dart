@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
         title: const Text(
           'Emiliana Arias',
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
@@ -62,30 +62,20 @@ class HomePage extends StatelessWidget {
           children: [
             ProjectSection(
               title: 'Yunque Instrumentos',
-              images: [
-                'assets/images/yunque1.jpg',
-                'assets/images/yunque2.jpg',
-                'assets/images/yunque3.jpg'
-              ],
+              image: 'assets/images/yunque1.jpg', // Imagen fija
               description: 'Descripción del proyecto Yunque Instrumentos...',
+              images: [],
             ),
             ProjectSection(
               title: 'Libro (sin nombre aún)',
-              images: [
-                'assets/images/libro1.jpg',
-                'assets/images/libro2.jpg',
-                'assets/images/libro3.jpg'
-              ],
-              description: 'Descripción del libro de Emiliana...',
+              image: 'assets/images/libro1.jpg', // Imagen fija
+              description: 'Descripción del libro de Emiliana...', images: [],
             ),
             ProjectSection(
-              title: 'Baterista en Rosario',
-              images: [
-                'assets/images/rosario1.jpg',
-                'assets/images/rosario2.jpg',
-                'assets/images/rosario3.jpg'
-              ],
+              title: 'Percucionista',
+              image: 'assets/images/rosario1.jpg', // Imagen fija
               description: 'Percucionista de muchas formaciones en Rosario...',
+              images: [],
             ),
             ContactLinks(),
           ],

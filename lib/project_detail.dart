@@ -1,12 +1,12 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class ProjectDetailPage extends StatelessWidget {
+class ProjectDetail extends StatelessWidget {
   final String title;
   final List<String> images;
   final String description;
 
-  const ProjectDetailPage({
+  const ProjectDetail({
     super.key,
     required this.title,
     required this.images,
@@ -17,8 +17,17 @@ class ProjectDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(
+          title,
+          style: const TextStyle(
+            fontSize: 20,
+            color: Colors.black,
+          ),
+        ),
         backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(
+            color: Colors.black), // Cambia el color del icono de retroceso
+        elevation: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -29,18 +38,18 @@ class ProjectDetailPage extends StatelessWidget {
               title,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontFamily: 'DancingScript',
-                fontSize: 28,
+                fontFamily: 'DMSerifText',
+                fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: Colors.black87,
               ),
             ),
-            const SizedBox(height: 16.0),
+            const SizedBox(height: 8.0),
             Text(
               description,
-              textAlign: TextAlign.end,
+              textAlign: TextAlign.center,
               style: const TextStyle(
-                fontFamily: 'DancingScript',
+                fontFamily: 'DMSerifText',
                 fontSize: 18,
                 color: Colors.black54,
               ),
@@ -55,7 +64,7 @@ class ProjectDetailPage extends StatelessWidget {
                       ))
                   .toList(),
               options: CarouselOptions(
-                height: 200,
+                height: 300,
                 enableInfiniteScroll: true,
                 autoPlay: true,
                 autoPlayInterval: const Duration(seconds: 3),

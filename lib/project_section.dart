@@ -1,15 +1,16 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:emi_arias/projetdetailpage.dart';
+import 'package:emi_arias/project_detail.dart';
 import 'package:flutter/material.dart';
 
 class ProjectSection extends StatelessWidget {
   final String title;
-  final List<String> images;
+  final String image; // Imagen fija
+  final List<String> images; // Lista de imágenes para el carrusel
   final String description;
 
   const ProjectSection({
     super.key,
     required this.title,
+    required this.image,
     required this.images,
     required this.description,
   });
@@ -18,7 +19,7 @@ class ProjectSection extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => ProjectDetailPage(
+        builder: (context) => ProjectDetail(
           title: title,
           images: images,
           description: description,
@@ -40,37 +41,27 @@ class ProjectSection extends StatelessWidget {
               title,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontFamily: 'DMSerifText', // Cambiado a DM Serif Text
+                fontFamily: 'DMSerifText',
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: Colors.black87,
               ),
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 16.0),
+            Image.asset(
+              image,
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: 200,
+            ),
+            const SizedBox(height: 16.0),
             Text(
               description,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontFamily: 'DMSerifText', // Cambiado a DM Serif Text
+                fontFamily: 'DMSerifText',
                 fontSize: 18,
                 color: Colors.black54,
-              ),
-            ),
-            const SizedBox(height: 16.0),
-            CarouselSlider(
-              items: images
-                  .map((image) => Image.asset(
-                        image,
-                        fit: BoxFit.cover,
-                        width: double.infinity,
-                      ))
-                  .toList(),
-              options: CarouselOptions(
-                height: 500,
-                enableInfiniteScroll: true,
-                autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 4),
-                enlargeCenterPage: true,
               ),
             ),
           ],
