@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.white,
-        elevation: 0,
+        elevation: 3,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -60,31 +60,40 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ProjectSection(
-              title: 'Yunque Instrumentos',
+              title: 'La Ruta de las Campanas',
               image: 'assets/images/yunque1.jpg',
-              description: 'Descripción del proyecto Yunque Instrumentos...',
               images: [
                 'assets/images/yunque1.jpg',
                 'assets/images/yunque2.jpg',
               ],
+              description: '',
             ),
             ProjectSection(
-              title: 'Libro (sin nombre aún)',
+              title: 'Lutheria',
               image: 'assets/images/libro1.jpg',
-              description: 'Descripción del libro de Emiliana...',
               images: [
                 'assets/images/libro1.jpg',
                 'assets/images/libro2.jpg',
               ],
+              description: '',
             ),
             ProjectSection(
-              title: 'Percusionista',
+              title: 'Percusión',
               image: 'assets/images/rosario1.jpg',
-              description: 'Percusionista de muchas formaciones en Rosario...',
               images: [
                 'assets/images/rosario1.jpg',
                 'assets/images/rosario2.jpg',
               ],
+              description: '',
+            ),
+            ProjectSection(
+              title: 'Performances',
+              image: 'assets/images/rosario1.jpg',
+              images: [
+                'assets/images/rosario1.jpg',
+                'assets/images/rosario2.jpg',
+              ],
+              description: '',
             ),
             const ContactLinks(),
           ],

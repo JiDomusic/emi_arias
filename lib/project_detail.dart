@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 class ProjectDetail extends StatelessWidget {
   final String title;
   final List<String> images; // Lista de imágenes para el carrusel
-  final String description;
+  //final String description;
 
   const ProjectDetail({
     super.key,
     required this.title,
     required this.images,
-    required this.description,
+    //required this.description,
   });
 
   @override
@@ -43,16 +43,16 @@ class ProjectDetail extends StatelessWidget {
                 color: Colors.black87,
               ),
             ),
-            const SizedBox(height: 8.0),
-            Text(
-              description,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontFamily: 'DMSerifText',
-                fontSize: 18,
-                color: Colors.black54,
-              ),
-            ),
+            // const SizedBox(height: 8.0),
+            //Text(
+            //description,
+            //textAlign: TextAlign.center,
+            //style: const TextStyle(
+            //fontFamily: 'DMSerifText',
+            // fontSize: 18,
+            //  color: Colors.black54,
+            //),
+
             const SizedBox(height: 16.0),
             CarouselSlider(
               items: images

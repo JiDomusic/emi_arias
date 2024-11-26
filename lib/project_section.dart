@@ -32,7 +32,7 @@ class ProjectSection extends StatelessWidget {
         builder: (context) => ProjectDetail(
           title: title,
           images: images, // Se pasa la lista de imágenes
-          description: description,
+          // description: description,
         ),
       ),
     );
@@ -62,7 +62,7 @@ class ProjectSection extends StatelessWidget {
               image,
               fit: BoxFit.cover,
               width: double.infinity,
-              height: 600,
+              height: 0,
             ),
             const SizedBox(height: 16.0),
             Text(
