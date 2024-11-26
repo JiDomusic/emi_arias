@@ -13,12 +13,11 @@ class EmilianaAriasApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'EMILIANA  ARIAS',
+      title: 'Emiliana Arias',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.grey,
-        fontFamily:
-            'DMSerifText', // Aplica la fuente personalizada a toda la aplicación
+        fontFamily: 'DMSerifText',
         scaffoldBackgroundColor: Colors.white,
         textTheme: const TextTheme(
           titleLarge: TextStyle(
@@ -56,28 +55,38 @@ class HomePage extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ProjectSection(
               title: 'Yunque Instrumentos',
-              image: 'assets/images/yunque1.jpg', // Imagen fija
+              image: 'assets/images/yunque1.jpg',
               description: 'Descripción del proyecto Yunque Instrumentos...',
-              images: [],
+              images: [
+                'assets/images/yunque1.jpg',
+                'assets/images/yunque2.jpg',
+              ],
             ),
             ProjectSection(
               title: 'Libro (sin nombre aún)',
-              image: 'assets/images/libro1.jpg', // Imagen fija
-              description: 'Descripción del libro de Emiliana...', images: [],
+              image: 'assets/images/libro1.jpg',
+              description: 'Descripción del libro de Emiliana...',
+              images: [
+                'assets/images/libro1.jpg',
+                'assets/images/libro2.jpg',
+              ],
             ),
             ProjectSection(
-              title: 'Percucionista',
-              image: 'assets/images/rosario1.jpg', // Imagen fija
-              description: 'Percucionista de muchas formaciones en Rosario...',
-              images: [],
+              title: 'Percusionista',
+              image: 'assets/images/rosario1.jpg',
+              description: 'Percusionista de muchas formaciones en Rosario...',
+              images: [
+                'assets/images/rosario1.jpg',
+                'assets/images/rosario2.jpg',
+              ],
             ),
-            ContactLinks(),
+            const ContactLinks(),
           ],
         ),
       ),

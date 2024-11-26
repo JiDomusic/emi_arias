@@ -4,15 +4,25 @@ import 'package:flutter/material.dart';
 class ProjectSection extends StatelessWidget {
   final String title;
   final String image; // Imagen fija
-  final List<String> images; // Lista de imágenes para el carrusel
   final String description;
 
-  const ProjectSection({
+  // Aquí tienes la lista de todas las imágenes dentro de la carpeta assets/images
+  List<String> images = [
+    'assets/images/libro2.jpg',
+    'assets/images/yunque1.jpg',
+    'assets/images.libro.jpg', // Puedes agregar más imágenes aquí
+    'assets/images.rosario1.jpg',
+    'assets/images.yunque2.jpg',
+
+    // Agrega más imágenes según lo necesario
+  ];
+
+  ProjectSection({
     super.key,
     required this.title,
     required this.image,
-    required this.images,
     required this.description,
+    required List<String> images,
   });
 
   void navigateToProjectDetail(BuildContext context) {
@@ -21,7 +31,7 @@ class ProjectSection extends StatelessWidget {
       MaterialPageRoute(
         builder: (context) => ProjectDetail(
           title: title,
-          images: images,
+          images: images, // Se pasa la lista de imágenes
           description: description,
         ),
       ),
@@ -52,7 +62,7 @@ class ProjectSection extends StatelessWidget {
               image,
               fit: BoxFit.cover,
               width: double.infinity,
-              height: 200,
+              height: 600,
             ),
             const SizedBox(height: 16.0),
             Text(

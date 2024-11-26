@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class ProjectDetail extends StatelessWidget {
   final String title;
-  final List<String> images;
+  final List<String> images; // Lista de imágenes para el carrusel
   final String description;
 
   const ProjectDetail({
@@ -25,8 +25,7 @@ class ProjectDetail extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(
-            color: Colors.black), // Cambia el color del icono de retroceso
+        iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
       ),
       body: Padding(
