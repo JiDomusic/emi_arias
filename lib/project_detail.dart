@@ -63,10 +63,10 @@ class ProjectDetail extends StatelessWidget {
                       ))
                   .toList(),
               options: CarouselOptions(
-                height: 300,
+                height: 500,
                 enableInfiniteScroll: true,
                 autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 3),
+                autoPlayInterval: const Duration(seconds: 6),
                 enlargeCenterPage: true,
               ),
             ),
