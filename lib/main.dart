@@ -27,19 +27,22 @@ class EmilianaAriasApp extends StatelessWidget {
         textTheme: const TextTheme(
           titleLarge: TextStyle(
             fontFamily: 'Roboto-Regular',
-            fontSize: 52,
+            fontSize: 24, // Tamaño de fuente ajustado
             fontWeight: FontWeight.bold,
             color: Colors.black,
+            letterSpacing: 2.0, // Espaciado entre letras
           ),
           bodyLarge: TextStyle(
             fontFamily: 'Roboto-Light',
             fontSize: 18,
             color: Colors.black,
+            letterSpacing: 1.5, // Espaciado entre letras
           ),
           bodyMedium: TextStyle(
             fontFamily: 'Roboto-Light',
             fontSize: 16,
             color: Colors.black,
+            letterSpacing: 1.2, // Espaciado entre letras
           ),
         ),
       ),
@@ -58,9 +61,10 @@ class HomePage extends StatelessWidget {
         title: const Text(
           'Emiliana Arias',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 20, // Ajustado para que no sea tan grande
             fontWeight: FontWeight.w900,
             color: Colors.black,
+            letterSpacing: 2.5, // Espaciado entre letras
           ),
         ),
         centerTitle: true,
@@ -69,7 +73,7 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               _WhiteBackgroundSection(
                 child: ProjectSection(
@@ -85,7 +89,7 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 80),
               _WhiteBackgroundSection(
                 child: ProjectSection(
-                  title: 'Percución',
+                  title: 'Percusión',
                 ),
               ),
               SizedBox(height: 80),
@@ -109,7 +113,7 @@ class HomePage extends StatelessWidget {
 class _WhiteBackgroundSection extends StatelessWidget {
   final Widget child;
 
-  const _WhiteBackgroundSection({required this.child, super.key});
+  const _WhiteBackgroundSection({required this.child});
 
   @override
   Widget build(BuildContext context) {

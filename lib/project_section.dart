@@ -1,6 +1,5 @@
+import 'package:emi_arias/project_detail.dart';
 import 'package:flutter/material.dart';
-
-import 'project_detail.dart';
 
 class ProjectSection extends StatelessWidget {
   final String title;
@@ -34,15 +33,14 @@ class ProjectSection extends StatelessWidget {
           children: [
             Expanded(
               child: FittedBox(
-                fit: BoxFit
-                    .fill, // Estira el texto para ocupar el ancho disponible
+                fit: BoxFit.fitWidth, // Ajuste automático al contenedor
                 child: Text(
                   title,
                   textAlign: TextAlign.center,
                   style: const TextStyle(
-                    fontFamily: 'Roboto-Light',
+                    fontFamily: 'Roboto-light',
                     fontSize:
-                        20, // Tamaño base del texto (puede ajustarse automáticamente)
+                        24, // Usamos el mismo tamaño de fuente que en main.dart
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                   ),
