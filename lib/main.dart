@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Emiliana Arias',
+          'EMILIANA ARIAS',
           style: TextStyle(
             fontSize: 30, // Ajustado para que no sea tan grande
             fontWeight: FontWeight.w900,
@@ -77,33 +77,33 @@ class HomePage extends StatelessWidget {
             children: [
               _WhiteBackgroundSection(
                 child: ProjectSection(
-                  title: 'La Ruta de las Campanas',
+                  title: 'LA RUTA DE LAS CAMPANAS',
                   textStyle: TextStyle(
-                    fontSize: 32, // Tamaño reducido
+                    fontSize: 34, // Tamaño reducido
                     fontWeight: FontWeight.w600,
                     color: Colors.black,
-                    letterSpacing: 2.0, // Espaciado entre letras
+                    letterSpacing: 1.1, // Espaciado entre letras
                   ),
                 ),
               ),
               SizedBox(height: 50),
               _WhiteBackgroundSection(
                 child: ProjectSection(
-                  title: 'Lutheria',
+                  title: 'LUTHERIA',
                   textStyle: TextStyle(
-                    fontSize: 50, // Tamaño reducido
+                    fontSize: 58, // Tamaño reducido
                     fontWeight: FontWeight.w600,
                     color: Colors.black,
-                    letterSpacing: 25.0, // Espaciado entre letras
+                    letterSpacing: 28.0, // Espaciado entre letras
                   ),
                 ),
               ),
               SizedBox(height: 50),
               _WhiteBackgroundSection(
                 child: ProjectSection(
-                  title: 'Percusión',
+                  title: 'PERCUCIÓN',
                   textStyle: TextStyle(
-                    fontSize: 40, // Tamaño reducido
+                    fontSize: 49, // Tamaño reducido
                     fontWeight: FontWeight.w600,
                     color: Colors.black,
                     letterSpacing: 23.0, // Espaciado entre letras
@@ -113,9 +113,9 @@ class HomePage extends StatelessWidget {
               SizedBox(height: 50),
               _WhiteBackgroundSection(
                 child: ProjectSection(
-                  title: 'Performances',
+                  title: 'PERFORMANCES',
                   textStyle: TextStyle(
-                    fontSize: 33, // Tamaño reducido
+                    fontSize: 39, // Tamaño reducido
                     fontWeight: FontWeight.w600,
                     color: Colors.black,
                     letterSpacing: 14.0, // Espaciado entre letras
