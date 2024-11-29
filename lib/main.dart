@@ -20,29 +20,29 @@ class EmilianaAriasApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
-          elevation: 25, // Sombra ligera
+          elevation: 50, // Sombra ligera
           iconTheme: IconThemeData(color: Colors.black),
         ),
         fontFamily: 'Roboto-Light',
         textTheme: const TextTheme(
           titleLarge: TextStyle(
             fontFamily: 'Roboto-Regular',
-            fontSize: 24, // Tamaño de fuente ajustado
+            fontSize: 30, // Tamaño reducido
             fontWeight: FontWeight.bold,
             color: Colors.black,
-            letterSpacing: 2.0, // Espaciado entre letras
+            letterSpacing: 2.5, // Espaciado entre letras
           ),
           bodyLarge: TextStyle(
             fontFamily: 'Roboto-Light',
-            fontSize: 18,
+            fontSize: 35, // Tamaño ajustado
             color: Colors.black,
-            letterSpacing: 1.5, // Espaciado entre letras
+            letterSpacing: 1.5,
           ),
           bodyMedium: TextStyle(
             fontFamily: 'Roboto-Light',
-            fontSize: 16,
+            fontSize: 12, // Tamaño ajustado
             color: Colors.black,
-            letterSpacing: 1.2, // Espaciado entre letras
+            letterSpacing: 1.2,
           ),
         ),
       ),
@@ -61,10 +61,10 @@ class HomePage extends StatelessWidget {
         title: const Text(
           'Emiliana Arias',
           style: TextStyle(
-            fontSize: 20, // Ajustado para que no sea tan grande
+            fontSize: 30, // Ajustado para que no sea tan grande
             fontWeight: FontWeight.w900,
             color: Colors.black,
-            letterSpacing: 2.5, // Espaciado entre letras
+            letterSpacing: 5.5, // Espaciado entre letras
           ),
         ),
         centerTitle: true,
@@ -78,27 +78,51 @@ class HomePage extends StatelessWidget {
               _WhiteBackgroundSection(
                 child: ProjectSection(
                   title: 'La Ruta de las Campanas',
+                  textStyle: TextStyle(
+                    fontSize: 32, // Tamaño reducido
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                    letterSpacing: 2.0, // Espaciado entre letras
+                  ),
                 ),
               ),
-              SizedBox(height: 80),
+              SizedBox(height: 50),
               _WhiteBackgroundSection(
                 child: ProjectSection(
                   title: 'Lutheria',
+                  textStyle: TextStyle(
+                    fontSize: 50, // Tamaño reducido
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                    letterSpacing: 25.0, // Espaciado entre letras
+                  ),
                 ),
               ),
-              SizedBox(height: 80),
+              SizedBox(height: 50),
               _WhiteBackgroundSection(
                 child: ProjectSection(
                   title: 'Percusión',
+                  textStyle: TextStyle(
+                    fontSize: 40, // Tamaño reducido
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                    letterSpacing: 23.0, // Espaciado entre letras
+                  ),
                 ),
               ),
-              SizedBox(height: 80),
+              SizedBox(height: 50),
               _WhiteBackgroundSection(
                 child: ProjectSection(
                   title: 'Performances',
+                  textStyle: TextStyle(
+                    fontSize: 33, // Tamaño reducido
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                    letterSpacing: 14.0, // Espaciado entre letras
+                  ),
                 ),
               ),
-              SizedBox(height: 80),
+              SizedBox(height: 50),
               _WhiteBackgroundSection(
                 child: ContactLinks(),
               ),

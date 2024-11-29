@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 class ProjectSection extends StatelessWidget {
   final String title;
+  final TextStyle? textStyle;
 
   const ProjectSection({
     super.key,
     required this.title,
+    this.textStyle, // Permite pasar un estilo desde el constructor
   });
 
   void navigateToProjectDetail(BuildContext context) {
@@ -20,6 +22,9 @@ class ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Usamos el estilo global si no se pasa un estilo específico
+    final defaultStyle = Theme.of(context).textTheme.displaySmall;
+
     return GestureDetector(
       onTap: () => navigateToProjectDetail(context),
       child: Container(
@@ -33,17 +38,11 @@ class ProjectSection extends StatelessWidget {
           children: [
             Expanded(
               child: FittedBox(
-                fit: BoxFit.fitWidth, // Ajuste automático al contenedor
+                fit: BoxFit.scaleDown, // Ajuste automático al contenedor
                 child: Text(
                   title,
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
-                    fontFamily: 'Roboto-light',
-                    fontSize:
-                        24, // Usamos el mismo tamaño de fuente que en main.dart
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
-                  ),
+                  style: textStyle ?? defaultStyle, // Estilo aplicado
                 ),
               ),
             ),
