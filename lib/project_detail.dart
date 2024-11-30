@@ -20,7 +20,7 @@ class ProjectDetail extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
         actions: [

@@ -30,7 +30,7 @@ class ProjectSection extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.transparent,
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Row(
