@@ -20,14 +20,14 @@ class EmilianaAriasApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.transparent,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
-          elevation: 50, // Sombra ligera
+          elevation: 4, // Eliminar sombra para el fondo con imagen
           iconTheme: IconThemeData(color: Colors.black),
         ),
-        fontFamily: 'Roboto-Light',
+        fontFamily: 'Roboto-bold',
         textTheme: const TextTheme(
           titleLarge: TextStyle(
-            fontFamily: 'Roboto-Regular',
-            fontSize: 30,
+            fontFamily: 'Roboto-bold',
+            fontSize: 50,
             fontWeight: FontWeight.bold,
             color: Colors.black,
             letterSpacing: 2.5,
@@ -68,6 +68,12 @@ class HomePage extends StatelessWidget {
           ),
         ),
         centerTitle: true,
+        flexibleSpace: Positioned.fill(
+          child: Image.asset(
+            'assets/images/fondovintage.jpg',
+            fit: BoxFit.cover, // La imagen cubre todo el espacio
+          ),
+        ),
       ),
       body: Stack(
         children: [
@@ -75,7 +81,8 @@ class HomePage extends StatelessWidget {
           Positioned.fill(
             child: Image.asset(
               'assets/images/fondovintage.jpg',
-              fit: BoxFit.none, // Ajusta la imagen para cubrir toda la pantalla
+              fit:
+                  BoxFit.cover, // Ajusta la imagen para cubrir toda la pantalla
             ),
           ),
           // Contenido principal
