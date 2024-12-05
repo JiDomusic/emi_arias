@@ -34,13 +34,13 @@ class EmilianaAriasApp extends StatelessWidget {
           ),
           bodyLarge: TextStyle(
             fontFamily: 'Roboto-Light',
-            fontSize: 35,
+            fontSize: 56,
             color: Colors.black,
             letterSpacing: 1.5,
           ),
           bodyMedium: TextStyle(
             fontFamily: 'Roboto-Light',
-            fontSize: 12,
+            fontSize: 50,
             color: Colors.black,
             letterSpacing: 1.2,
           ),
