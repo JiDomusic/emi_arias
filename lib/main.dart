@@ -1,7 +1,6 @@
+import 'package:emi_arias/contactlinks.dart';
 import 'package:emi_arias/project_section.dart';
 import 'package:flutter/material.dart';
-
-import 'contactlinks.dart';
 
 void main() {
   runApp(const EmilianaAriasApp());
@@ -101,6 +100,15 @@ class HomePage extends StatelessWidget {
                         color: Colors.black,
                         letterSpacing: 1.1,
                       ),
+                      description: 'LA RUTA DE LAS CAMPANAS...',
+                      images: [
+                        'assets/images/libro1.jpg',
+                        'assets/images/libro2.jpg'
+                      ],
+                      instagramUrl:
+                          'https://www.instagram.com/larutadelascampanas/?hl=es',
+                      moreInfoUrl:
+                          'https://www.instagram.com/larutadelascampanas/?hl=es',
                     ),
                   ),
                   SizedBox(height: 50),
@@ -113,6 +121,11 @@ class HomePage extends StatelessWidget {
                         color: Colors.black,
                         letterSpacing: 28.0,
                       ),
+                      description: 'Instrumentos...',
+                      images: ['assets/images/yunque1.jpg'],
+                      instagramUrl:
+                          'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
+                      moreInfoUrl: '',
                     ),
                   ),
                   SizedBox(height: 50),
@@ -125,6 +138,10 @@ class HomePage extends StatelessWidget {
                         color: Colors.black,
                         letterSpacing: 23.0,
                       ),
+                      description: 'Percusión...',
+                      images: ['assets/images/rosario1.jpg'],
+                      instagramUrl: '',
+                      moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
                     ),
                   ),
                   SizedBox(height: 50),
@@ -137,6 +154,11 @@ class HomePage extends StatelessWidget {
                         color: Colors.black,
                         letterSpacing: 14.0,
                       ),
+                      description: 'Performances...',
+                      images: [],
+                      instagramUrl: '',
+                      moreInfoUrl:
+                          'https://lalulula.tv/documental-2/sueltos-documental-2/guo-cheng-crater/',
                     ),
                   ),
                   SizedBox(height: 50),

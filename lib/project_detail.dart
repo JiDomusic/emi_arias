@@ -3,7 +3,20 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectDetail extends StatelessWidget {
-  const ProjectDetail({super.key, required String title});
+  final String title;
+  final String description;
+  final List<String> images;
+  final String instagramUrl;
+  final String moreInfoUrl;
+
+  const ProjectDetail({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.images,
+    required this.instagramUrl,
+    required this.moreInfoUrl,
+  });
 
   // Método para abrir un enlace
   void _openUrl(String url) async {
@@ -19,9 +32,9 @@ class ProjectDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "La Ruta de las Campanas",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
             fontSize: 20,
             fontFamily: 'Roboto-Light',
             color: Colors.black,
@@ -49,31 +62,26 @@ class ProjectDetail extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Row(
               children: [
-                // Contenedores de fotos a la izquierda
                 Expanded(
                   flex: 2,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: List.generate(8, (index) {
+                    children: images.map((image) {
                       return Container(
                         margin: const EdgeInsets.only(bottom: 10.0),
                         height: 80,
                         decoration: BoxDecoration(
-                          color: Colors.grey.shade300,
+                          image: DecorationImage(
+                            image: AssetImage(image),
+                            fit: BoxFit.cover,
+                          ),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Center(
-                          child: Text(
-                            'Imagen ${index + 1}',
-                            style: const TextStyle(color: Colors.black45),
-                          ),
-                        ),
                       );
-                    }),
+                    }).toList(),
                   ),
                 ),
                 const SizedBox(width: 20),
-                // Texto a la derecha
                 Expanded(
                   flex: 3,
                   child: Container(
@@ -82,9 +90,9 @@ class ProjectDetail extends StatelessWidget {
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: const Text(
-                      "Este proyecto busca destacar la historia y recorrido cultural de las campanas. Aquí puedes explorar más información sobre su legado.",
-                      style: TextStyle(
+                    child: Text(
+                      description,
+                      style: const TextStyle(
                         fontFamily: 'Roboto-Medium',
                         fontSize: 18,
                         color: Colors.black87,
@@ -96,7 +104,6 @@ class ProjectDetail extends StatelessWidget {
               ],
             ),
           ),
-          // Iconos en la parte inferior
           Positioned(
             bottom: 20.0,
             left: 0,
@@ -104,8 +111,7 @@ class ProjectDetail extends StatelessWidget {
             child: Column(
               children: [
                 GestureDetector(
-                  onTap: () => _openUrl(
-                      'https://www.instagram.com/larutadelascampanas/?hl=es'),
+                  onTap: () => _openUrl(instagramUrl),
                   child: const Icon(
                     FontAwesomeIcons.instagram,
                     size: 40,
@@ -114,9 +120,7 @@ class ProjectDetail extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
-                  onPressed: () => _openUrl(
-                      'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas'),
-                  child: const Text('Más Info'),
+                  onPressed: () => _openUrl(moreInfoUrl),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
                     backgroundColor: Colors.black,
@@ -124,6 +128,7 @@ class ProjectDetail extends StatelessWidget {
                         horizontal: 30, vertical: 10),
                     textStyle: const TextStyle(fontSize: 18),
                   ),
+                  child: const Text('Más Info'),
                 ),
               ],
             ),

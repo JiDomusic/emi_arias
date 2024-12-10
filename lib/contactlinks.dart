@@ -21,15 +21,6 @@ class ContactLinks extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Botón de Facebook
-          IconButton(
-            icon: const Icon(FontAwesomeIcons.facebook),
-            onPressed: () {
-              _launchURL('https://www.facebook.com/emiliana.arias.1');
-            },
-            iconSize: 30,
-            color: Colors.black,
-          ),
           const SizedBox(width: 20),
           // Botón de Instagram
           IconButton(
@@ -40,26 +31,8 @@ class ContactLinks extends StatelessWidget {
             iconSize: 30,
             color: Colors.black,
           ),
+
           const SizedBox(width: 20),
-          // Botón de Bandcamp
-          IconButton(
-            icon: const Icon(FontAwesomeIcons.bandcamp),
-            onPressed: () {
-              _launchURL('https://emilianaarias.bandcamp.com/');
-            },
-            iconSize: 30,
-            color: Colors.black,
-          ),
-          const SizedBox(width: 20),
-          // Botón de SoundCloud
-          IconButton(
-            icon: const Icon(FontAwesomeIcons.soundcloud),
-            onPressed: () {
-              _launchURL('https://soundcloud.com/emiliana-arias');
-            },
-            iconSize: 30,
-            color: Colors.black,
-          ),
         ],
       ),
     );
