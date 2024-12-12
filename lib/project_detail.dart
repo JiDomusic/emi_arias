@@ -131,7 +131,7 @@ class ProjectDetail extends StatelessWidget {
                     child: Text(
                       description,
                       style: const TextStyle(
-                        fontFamily: 'Roboto-Medium',
+                        fontFamily: 'SquadaOne-Regular',
                         fontSize: 22,
                         color: Colors.black87,
                       ),

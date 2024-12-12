@@ -20,26 +20,26 @@ class EmilianaAriasApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.transparent,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
-          elevation: 4,
+          elevation: 40,
           iconTheme: IconThemeData(color: Colors.black),
         ),
-        fontFamily: 'BigShouldersInlineText-Regular',
+        fontFamily: 'SquadaOne-Regular',
         textTheme: const TextTheme(
           titleLarge: TextStyle(
-            fontFamily: 'BigShouldersInlineText-Regular',
+            fontFamily: 'SquadaOne-Regular',
             fontSize: 50,
             fontWeight: FontWeight.bold,
             color: Colors.black,
-            letterSpacing: 2.5,
+            letterSpacing: 2,
           ),
           bodyLarge: TextStyle(
-            fontFamily: 'BigShouldersInlineText-Regular',
-            fontSize: 60,
+            fontFamily: 'SquadaOne-Regular',
+            fontSize: 30,
             color: Colors.black,
-            letterSpacing: 1.5,
+            letterSpacing: 2,
           ),
           bodyMedium: TextStyle(
-            fontFamily: 'BigShouldersInlineText-Regular',
+            fontFamily: 'SquadaOne-Regular',
             fontSize: 50,
             color: Colors.black,
             letterSpacing: 1.2,
@@ -89,12 +89,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'EMILIANA ARIAS',
+          'emiliana arias',
           style: TextStyle(
             fontSize: 30,
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w400,
             color: Colors.black,
-            letterSpacing: 5.8,
+            letterSpacing: 3.8,
           ),
         ),
         centerTitle: true,
@@ -105,17 +105,11 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Stack(
+      body: const Stack(
         children: [
           // Fondo de imagen
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/fondovintage2.jpg',
-              fit: BoxFit.cover,
-            ),
-          ),
-          // Contenido principal
-          const SingleChildScrollView(
+
+          SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 125.0, horizontal: 60.0),
               child: Column(
@@ -123,12 +117,12 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   _WhiteBackgroundSection(
                     child: ProjectSection(
-                      title: 'LA RUTA DE LAS CAMPANAS',
+                      title: 'La Ruta de Las Campanas',
                       textStyle: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
                         color: Colors.black,
-                        letterSpacing: 2,
+                        letterSpacing: 0,
                       ),
                       description:
                           'La Ruta de Las Campanas nació en el año 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 presenté el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al año siguente publiqué el libro "La Ruta de Las Campanas".',
@@ -148,12 +142,12 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 50),
                   _WhiteBackgroundSection(
                     child: ProjectSection(
-                      title: 'LUTHERIA',
+                      title: 'Lutheria',
                       textStyle: TextStyle(
-                        fontSize: 33,
+                        fontSize: 28,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
-                        letterSpacing: 27.0,
+                        letterSpacing: 0,
                       ),
                       description:
                           'Yunque es un proyecto de luthería experimental, un laboratorio de objetos sonoros donde errores y aciertos marcan el ritmo.',
@@ -173,12 +167,12 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 50),
                   _WhiteBackgroundSection(
                     child: ProjectSection(
-                      title: 'PERCUSIÓN',
+                      title: 'Percusión',
                       textStyle: TextStyle(
-                        fontSize: 33,
+                        fontSize: 28,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
-                        letterSpacing: 20.0,
+                        letterSpacing: 0,
                       ),
                       description:
                           'Toco batería de manera autodidacta desde los 14 años. Con el tiempo mi curiosidad por los sonidos me llevó a experimentar con todo tipo de elementos dando como resultado sets percusivos de investigación experimental. El ritmo me resulta un lenguaje natural y muchas veces se representa en mi con la imagen de un engranaje.',
@@ -197,12 +191,12 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 50),
                   _WhiteBackgroundSection(
                     child: ProjectSection(
-                      title: 'PERFORMANCES',
+                      title: 'Performances',
                       textStyle: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
-                        letterSpacing: 12.0,
+                        letterSpacing: 0,
                       ),
                       description: 'Performances. Cine. Teatro',
                       images: [

@@ -69,7 +69,7 @@ class ProjectSection extends StatelessWidget {
       onTap: () => navigateToProjectDetail(
           context), // Navega al detalle al tocar el widget.
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 35.0, horizontal: 35.0),
+        padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 12.0),
         decoration: BoxDecoration(
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(40.0),
