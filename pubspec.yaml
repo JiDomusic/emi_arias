@@ -74,10 +74,9 @@ flutter:
 
 
   fonts:
-    - family: DMSerifText
+    - family: SquadaOne-Regular
       fonts:
-        - asset: fonts/DMSerifText-Regular.ttf
-
+        - asset: fonts/SquadaOne-Regular.ttf
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/

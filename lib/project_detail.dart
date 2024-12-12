@@ -43,7 +43,7 @@ class ProjectDetail extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
                     image: AssetImage(image),
-                    fit: BoxFit.contain,
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
@@ -81,7 +81,7 @@ class ProjectDetail extends StatelessWidget {
         flexibleSpace: Positioned.fill(
           child: Image.asset(
             'assets/images/fondovintage2.jpg',
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
           ),
         ),
       ),
@@ -90,23 +90,23 @@ class ProjectDetail extends StatelessWidget {
           Positioned.fill(
             child: Image.asset(
               'assets/images/fondovintage2.jpg',
-              fit: BoxFit.cover,
+              fit: BoxFit.fill,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(10.0),
             child: Row(
               children: [
                 Expanded(
                   flex: 4,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: images.map((image) {
                       return GestureDetector(
                         onTap: () => _showImageDialog(context, image),
                         child: Container(
                           margin: const EdgeInsets.only(bottom: 10.0),
-                          height: 80,
+                          height: 130,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               image: AssetImage(image),

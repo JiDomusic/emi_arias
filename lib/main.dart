@@ -23,23 +23,23 @@ class EmilianaAriasApp extends StatelessWidget {
           elevation: 4,
           iconTheme: IconThemeData(color: Colors.black),
         ),
-        fontFamily: 'Roboto-bold',
+        fontFamily: 'BigShouldersInlineText-Regular',
         textTheme: const TextTheme(
           titleLarge: TextStyle(
-            fontFamily: 'Roboto-bold',
+            fontFamily: 'BigShouldersInlineText-Regular',
             fontSize: 50,
             fontWeight: FontWeight.bold,
             color: Colors.black,
             letterSpacing: 2.5,
           ),
           bodyLarge: TextStyle(
-            fontFamily: 'Roboto-Light',
+            fontFamily: 'BigShouldersInlineText-Regular',
             fontSize: 60,
             color: Colors.black,
             letterSpacing: 1.5,
           ),
           bodyMedium: TextStyle(
-            fontFamily: 'Roboto-Light',
+            fontFamily: 'BigShouldersInlineText-Regular',
             fontSize: 50,
             color: Colors.black,
             letterSpacing: 1.2,
@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
           // Contenido principal
           const SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 125.0, horizontal: 60.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -131,14 +131,7 @@ class _HomePageState extends State<HomePage> {
                         letterSpacing: 2,
                       ),
                       description:
-                          'LA RUTA DE LAS CAMPANASKDFJBDKJFBDFKJGBFDKJG'
-                          'DLFHDSÑKFHDSÑKJADFÑKJGDFÑKJGDÑKJGHDFÑJGHDFJLÑ'
-                          'dkfjhdlgahdfñkghdfñkjghjdsfhladhfdalfh   dkfjhadsafhdlskf'
-                          'dkfadhlafkjadfhldsj'
-                          ' djfahdlfha'
-                          'dkfhadlkfhdlfhldjdfñkjghdfñgjdfhñgldfhgj'
-                          'lfgakfdñlghñdghroighdfjgñdfljghfñjghdfkgjdfñgjdnfñgjdfñjagbdfkjgbdñfkjg'
-                          'dfgkjadflghdfkghkdfghdfkg..',
+                          'La Ruta de Las Campanas nació en el año 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 presenté el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al año siguente publiqué el libro "La Ruta de Las Campanas".',
                       images: [
                         'assets/images/libro1.jpg',
                         'assets/images/libro2.jpg',
@@ -149,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                       instagramUrl:
                           'https://www.instagram.com/larutadelascampanas/?hl=es',
                       moreInfoUrl:
-                          'https://www.instagram.com/larutadelascampanas/?hl=es',
+                          'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas',
                     ),
                   ),
                   SizedBox(height: 50),
@@ -162,12 +155,8 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.black,
                         letterSpacing: 27.0,
                       ),
-                      description: 'Instrumentos.fj<sfhklgjhlkfjgfhlkgjfhgkdj'
-                          'jfdgshldkfjgdfhlk'
-                          'flghñfghñakjfghdfkñjgfdñkjghñfkjghdfkñjgñdfkjghñfkdghñdfkjghñdfkjghdfñkgjdsfhkgjd'
-                          'gfdljghñsfhgfuhgfgnhñshñsnñhñhoñjfñsohfñofñof'
-                          'dkfg   dkfjsghlkfj  fdghsflghdf  fdsghdfuhf jsdhfglghsflghldfu '
-                          'fdlgshdlfkgjhfklhgdkjfg dsfkghldfkjg gjdsfhgldsfjkgdfs jfdhluhgfl..',
+                      description:
+                          'Yunque es un proyecto de luthería experimental, un laboratorio de objetos sonoros donde errores y aciertos marcan el ritmo.',
                       images: [
                         'assets/images/yunque2.jpg',
                         'assets/images/libro1.jpg',
@@ -192,14 +181,7 @@ class _HomePageState extends State<HomePage> {
                         letterSpacing: 20.0,
                       ),
                       description:
-                          'Percusión dhflghsdfklghl dkfjghdfkjg dfkghdflkgjshdflkjg dhfsgldfkjg'
-                          'dfjsflughdfkhgldfhg jughdfhgldfkghfdj jfdlgh jdfghdkg jdhfgldjg gskdgjfhgofusoeuth'
-                          'fghsflughjdñfkdfngjnjnviurnñkgnjrgnjvngbgbnfñgdfnñghñ'
-                          'glsdfuhgfuhglhfg'
-                          'sgithri'
-                          'zdkgndfhgdjl'
-                          'sghrosrgho'
-                          'fhghldfhgldfhglfghfnovnktfgikt',
+                          'Toco batería de manera autodidacta desde los 14 años. Con el tiempo mi curiosidad por los sonidos me llevó a experimentar con todo tipo de elementos dando como resultado sets percusivos de investigación experimental. El ritmo me resulta un lenguaje natural y muchas veces se representa en mi con la imagen de un engranaje.',
                       images: [
                         'assets/images/rosario1.jpg',
                         'assets/images/libro1.jpg',
@@ -222,13 +204,7 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.black,
                         letterSpacing: 12.0,
                       ),
-                      description: 'Performances lkgrherkgjfdkjgs'
-                          'fdgshdflghdfghfgkhdfgkdfghlkdfjgkdfjgñsldfghdfñljghdf'
-                          'fdghldsfuhgldfuhgñdfghñdfghdfjkghñfkjghdfkñjghdñfjdf'
-                          'fdgskjdfhlgjvnnlfkjglfkghsflkjsghkljdfhlgkdfjhgfkj'
-                          'sfdkgjdfhlghdflkjghdflkjgdflkjglfkgbdfkljgblfkdgdf'
-                          'fdsgkjfdglkdfjgdfkljgbdfkljgbdfskljgbd'
-                          'fdsgkdfhgkldfhglkdfjghkdfjdskjskjlgkdfjgkldjhldfkjghdflñghd   fsdlkjhñghsf gsldfkjghdflkghdf',
+                      description: 'Performances. Cine. Teatro',
                       images: [
                         'assets/images/yunque1.jpg',
                         'assets/images/libro1.jpg',
