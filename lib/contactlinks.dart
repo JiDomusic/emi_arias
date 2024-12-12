@@ -21,7 +21,7 @@ class ContactLinks extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(width: 20),
+          const SizedBox(width: 30),
           // Botón de Instagram
           IconButton(
             icon: const Icon(FontAwesomeIcons.instagram),

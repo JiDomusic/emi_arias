@@ -28,10 +28,37 @@ class ProjectDetail extends StatelessWidget {
     }
   }
 
+  // Método para mostrar imagen ampliada
+  void _showImageDialog(BuildContext context, String image) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          backgroundColor: Colors.transparent,
+          child: GestureDetector(
+            onTap: () => Navigator.of(context).pop(),
+            child: InteractiveViewer(
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: AssetImage(image),
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           title,
           style: const TextStyle(
@@ -43,9 +70,17 @@ class ProjectDetail extends StatelessWidget {
         backgroundColor: Colors.transparent,
         iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.home, color: Colors.black),
+            onPressed: () {
+              Navigator.of(context).popUntil((route) => route.isFirst);
+            },
+          ),
+        ],
         flexibleSpace: Positioned.fill(
           child: Image.asset(
-            'assets/images/fondovintage.jpg',
+            'assets/images/fondovintage2.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -54,38 +89,41 @@ class ProjectDetail extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/fondovintage.jpg',
+              'assets/images/fondovintage2.jpg',
               fit: BoxFit.cover,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(20.0),
             child: Row(
               children: [
                 Expanded(
-                  flex: 2,
+                  flex: 4,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: images.map((image) {
-                      return Container(
-                        margin: const EdgeInsets.only(bottom: 10.0),
-                        height: 80,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(image),
-                            fit: BoxFit.cover,
+                      return GestureDetector(
+                        onTap: () => _showImageDialog(context, image),
+                        child: Container(
+                          margin: const EdgeInsets.only(bottom: 10.0),
+                          height: 80,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(image),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          borderRadius: BorderRadius.circular(10),
                         ),
                       );
                     }).toList(),
                   ),
                 ),
-                const SizedBox(width: 20),
+                const SizedBox(width: 70),
                 Expanded(
                   flex: 3,
                   child: Container(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(35.0),
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(10),
@@ -94,7 +132,7 @@ class ProjectDetail extends StatelessWidget {
                       description,
                       style: const TextStyle(
                         fontFamily: 'Roboto-Medium',
-                        fontSize: 18,
+                        fontSize: 22,
                         color: Colors.black87,
                       ),
                       textAlign: TextAlign.justify,
@@ -114,7 +152,7 @@ class ProjectDetail extends StatelessWidget {
                   onTap: () => _openUrl(instagramUrl),
                   child: const Icon(
                     FontAwesomeIcons.instagram,
-                    size: 40,
+                    size: 55,
                     color: Colors.black,
                   ),
                 ),

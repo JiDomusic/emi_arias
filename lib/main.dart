@@ -1,6 +1,7 @@
 import 'package:emi_arias/contactlinks.dart';
 import 'package:emi_arias/project_section.dart';
 import 'package:flutter/material.dart';
+import 'package:just_audio/just_audio.dart'; // Importamos just_audio
 
 void main() {
   runApp(const EmilianaAriasApp());
@@ -19,7 +20,7 @@ class EmilianaAriasApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.transparent,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
-          elevation: 4, // Eliminar sombra para el fondo con imagen
+          elevation: 4,
           iconTheme: IconThemeData(color: Colors.black),
         ),
         fontFamily: 'Roboto-bold',
@@ -33,7 +34,7 @@ class EmilianaAriasApp extends StatelessWidget {
           ),
           bodyLarge: TextStyle(
             fontFamily: 'Roboto-Light',
-            fontSize: 56,
+            fontSize: 60,
             color: Colors.black,
             letterSpacing: 1.5,
           ),
@@ -50,8 +51,38 @@ class EmilianaAriasApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late AudioPlayer _audioPlayer; // Instancia de AudioPlayer
+
+  @override
+  void initState() {
+    super.initState();
+    _initializeAudio(); // Inicializamos el reproductor
+  }
+
+  Future<void> _initializeAudio() async {
+    _audioPlayer = AudioPlayer();
+    try {
+      await _audioPlayer
+          .setAsset('assets/audio/audiocampana.mp3'); // Ruta del audio
+      await _audioPlayer.play(); // Reproducir automáticamente
+    } catch (e) {
+      debugPrint('Error reproduciendo audio: $e');
+    }
+  }
+
+  @override
+  void dispose() {
+    _audioPlayer.dispose(); // Liberar recursos al cerrar
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,17 +91,17 @@ class HomePage extends StatelessWidget {
         title: const Text(
           'EMILIANA ARIAS',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 30,
             fontWeight: FontWeight.w900,
             color: Colors.black,
-            letterSpacing: 5.5,
+            letterSpacing: 5.8,
           ),
         ),
         centerTitle: true,
         flexibleSpace: Positioned.fill(
           child: Image.asset(
-            'assets/images/fondovintage.jpg',
-            fit: BoxFit.cover, // La imagen cubre todo el espacio
+            'assets/images/fondovintage2.jpg',
+            fit: BoxFit.cover,
           ),
         ),
       ),
@@ -79,9 +110,8 @@ class HomePage extends StatelessWidget {
           // Fondo de imagen
           Positioned.fill(
             child: Image.asset(
-              'assets/images/fondovintage.jpg',
-              fit:
-                  BoxFit.cover, // Ajusta la imagen para cubrir toda la pantalla
+              'assets/images/fondovintage2.jpg',
+              fit: BoxFit.cover,
             ),
           ),
           // Contenido principal
@@ -95,15 +125,26 @@ class HomePage extends StatelessWidget {
                     child: ProjectSection(
                       title: 'LA RUTA DE LAS CAMPANAS',
                       textStyle: TextStyle(
-                        fontSize: 34,
+                        fontSize: 25,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
-                        letterSpacing: 1.1,
+                        letterSpacing: 2,
                       ),
-                      description: 'LA RUTA DE LAS CAMPANAS...',
+                      description:
+                          'LA RUTA DE LAS CAMPANASKDFJBDKJFBDFKJGBFDKJG'
+                          'DLFHDSÑKFHDSÑKJADFÑKJGDFÑKJGDÑKJGHDFÑJGHDFJLÑ'
+                          'dkfjhdlgahdfñkghdfñkjghjdsfhladhfdalfh   dkfjhadsafhdlskf'
+                          'dkfadhlafkjadfhldsj'
+                          ' djfahdlfha'
+                          'dkfhadlkfhdlfhldjdfñkjghdfñgjdfhñgldfhgj'
+                          'lfgakfdñlghñdghroighdfjgñdfljghfñjghdfkgjdfñgjdnfñgjdfñjagbdfkjgbdñfkjg'
+                          'dfgkjadflghdfkghkdfghdfkg..',
                       images: [
                         'assets/images/libro1.jpg',
-                        'assets/images/libro2.jpg'
+                        'assets/images/libro2.jpg',
+                        'assets/images/libro2.jpg',
+                        'assets/images/libro2.jpg',
+                        'assets/images/libro2.jpg',
                       ],
                       instagramUrl:
                           'https://www.instagram.com/larutadelascampanas/?hl=es',
@@ -116,13 +157,25 @@ class HomePage extends StatelessWidget {
                     child: ProjectSection(
                       title: 'LUTHERIA',
                       textStyle: TextStyle(
-                        fontSize: 58,
+                        fontSize: 33,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
-                        letterSpacing: 28.0,
+                        letterSpacing: 27.0,
                       ),
-                      description: 'Instrumentos...',
-                      images: ['assets/images/yunque1.jpg'],
+                      description: 'Instrumentos.fj<sfhklgjhlkfjgfhlkgjfhgkdj'
+                          'jfdgshldkfjgdfhlk'
+                          'flghñfghñakjfghdfkñjgfdñkjghñfkjghdfkñjgñdfkjghñfkdghñdfkjghñdfkjghdfñkgjdsfhkgjd'
+                          'gfdljghñsfhgfuhgfgnhñshñsnñhñhoñjfñsohfñofñof'
+                          'dkfg   dkfjsghlkfj  fdghsflghdf  fdsghdfuhf jsdhfglghsflghldfu '
+                          'fdlgshdlfkgjhfklhgdkjfg dsfkghldfkjg gjdsfhgldsfjkgdfs jfdhluhgfl..',
+                      images: [
+                        'assets/images/yunque2.jpg',
+                        'assets/images/libro1.jpg',
+                        'assets/images/libro2.jpg',
+                        'assets/images/yunque1.jpg',
+                        'assets/images/libro1.jpg',
+                        'assets/images/libro2.jpg'
+                      ],
                       instagramUrl:
                           'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
                       moreInfoUrl: '',
@@ -131,15 +184,30 @@ class HomePage extends StatelessWidget {
                   SizedBox(height: 50),
                   _WhiteBackgroundSection(
                     child: ProjectSection(
-                      title: 'PERCUCIÓN',
+                      title: 'PERCUSIÓN',
                       textStyle: TextStyle(
-                        fontSize: 49,
+                        fontSize: 33,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
-                        letterSpacing: 23.0,
+                        letterSpacing: 20.0,
                       ),
-                      description: 'Percusión...',
-                      images: ['assets/images/rosario1.jpg'],
+                      description:
+                          'Percusión dhflghsdfklghl dkfjghdfkjg dfkghdflkgjshdflkjg dhfsgldfkjg'
+                          'dfjsflughdfkhgldfhg jughdfhgldfkghfdj jfdlgh jdfghdkg jdhfgldjg gskdgjfhgofusoeuth'
+                          'fghsflughjdñfkdfngjnjnviurnñkgnjrgnjvngbgbnfñgdfnñghñ'
+                          'glsdfuhgfuhglhfg'
+                          'sgithri'
+                          'zdkgndfhgdjl'
+                          'sghrosrgho'
+                          'fhghldfhgldfhglfghfnovnktfgikt',
+                      images: [
+                        'assets/images/rosario1.jpg',
+                        'assets/images/libro1.jpg',
+                        'assets/images/libro2.jpg',
+                        'assets/images/rosario1.jpg',
+                        'assets/images/libro1.jpg',
+                        'assets/images/libro2.jpg',
+                      ],
                       instagramUrl: '',
                       moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
                     ),
@@ -149,19 +217,31 @@ class HomePage extends StatelessWidget {
                     child: ProjectSection(
                       title: 'PERFORMANCES',
                       textStyle: TextStyle(
-                        fontSize: 39,
+                        fontSize: 28,
                         fontWeight: FontWeight.w600,
                         color: Colors.black,
-                        letterSpacing: 14.0,
+                        letterSpacing: 12.0,
                       ),
-                      description: 'Performances...',
-                      images: [],
+                      description: 'Performances lkgrherkgjfdkjgs'
+                          'fdgshdflghdfghfgkhdfgkdfghlkdfjgkdfjgñsldfghdfñljghdf'
+                          'fdghldsfuhgldfuhgñdfghñdfghdfjkghñfkjghdfkñjghdñfjdf'
+                          'fdgskjdfhlgjvnnlfkjglfkghsflkjsghkljdfhlgkdfjhgfkj'
+                          'sfdkgjdfhlghdflkjghdflkjgdflkjglfkgbdfkljgblfkdgdf'
+                          'fdsgkjfdglkdfjgdfkljgbdfkljgbdfskljgbd'
+                          'fdsgkdfhgkldfhglkdfjghkdfjdskjskjlgkdfjgkldjhldfkjghdflñghd   fsdlkjhñghsf gsldfkjghdflkghdf',
+                      images: [
+                        'assets/images/yunque1.jpg',
+                        'assets/images/libro1.jpg',
+                        'assets/images/libro2.jpg',
+                        'assets/images/libro1.jpg',
+                        'assets/images/libro2.jpg',
+                      ],
                       instagramUrl: '',
                       moreInfoUrl:
                           'https://lalulula.tv/documental-2/sueltos-documental-2/guo-cheng-crater/',
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 60),
                   _WhiteBackgroundSection(
                     child: ContactLinks(),
                   ),

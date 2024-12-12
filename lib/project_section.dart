@@ -26,14 +26,14 @@ class ProjectSection extends StatelessWidget {
   /// Constructor de la clase `ProjectSection`. Todos los parámetros son requeridos,
   /// excepto el estilo de texto, que es opcional.
   const ProjectSection({
-    Key? key,
+    super.key,
     required this.title,
     required this.description,
     required this.images,
     required this.instagramUrl,
     required this.moreInfoUrl,
     this.textStyle, // Permite pasar un estilo desde el constructor
-  }) : super(key: key);
+  });
 
   /// Método para navegar a la pantalla de detalles del proyecto.
   /// Esta pantalla muestra información detallada sobre el proyecto, incluidas
@@ -62,17 +62,17 @@ class ProjectSection extends StatelessWidget {
             .textTheme
             .headlineSmall
             ?.copyWith(fontWeight: FontWeight.bold) ??
-        const TextStyle(fontSize: 20, fontWeight: FontWeight.bold);
+        const TextStyle(fontSize: 26, fontWeight: FontWeight.bold);
 
     // Construye el widget que representa la sección del proyecto.
     return GestureDetector(
       onTap: () => navigateToProjectDetail(
           context), // Navega al detalle al tocar el widget.
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+        padding: const EdgeInsets.symmetric(vertical: 22.0, horizontal: 35.0),
         decoration: BoxDecoration(
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(40.0),
         ),
         child: Center(
           child: Text(

@@ -30,7 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  audioplayers: ^6.1.0
   font_awesome_flutter: ^10.2.1
   carousel_slider: ^5.0.0
   google_fonts: ^4.0.4
@@ -39,6 +38,8 @@ dependencies:
   cloud_firestore: ^5.4.1
   firebase_storage: ^12.2.0
   video_player: ^2.4.5
+  just_audio: ^0.9.32
+
 
 
 
@@ -81,6 +82,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/audio/
+
 
   #   - images/a_dot_ham.jpeg
 
