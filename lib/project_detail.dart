@@ -63,7 +63,7 @@ class ProjectDetail extends StatelessWidget {
           title,
           style: const TextStyle(
             fontSize: 20,
-            fontFamily: 'Roboto-Light',
+            fontFamily: 'SquadaOne-Regular',
             color: Colors.black,
           ),
         ),

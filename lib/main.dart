@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
             fontSize: 30,
             fontWeight: FontWeight.w400,
             color: Colors.black,
-            letterSpacing: 3.8,
+            letterSpacing: 6,
           ),
         ),
         centerTitle: true,
@@ -111,16 +111,16 @@ class _HomePageState extends State<HomePage> {
 
           SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 125.0, horizontal: 60.0),
+              padding: EdgeInsets.symmetric(vertical: 235.0, horizontal: 60.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   _WhiteBackgroundSection(
                     child: ProjectSection(
-                      title: 'La Ruta de Las Campanas',
+                      title: 'la ruta de las campanas',
                       textStyle: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w500,
                         color: Colors.black,
                         letterSpacing: 0,
                       ),
@@ -139,13 +139,13 @@ class _HomePageState extends State<HomePage> {
                           'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas',
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 35),
                   _WhiteBackgroundSection(
                     child: ProjectSection(
-                      title: 'Lutheria',
+                      title: 'lutheria',
                       textStyle: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w500,
                         color: Colors.black,
                         letterSpacing: 0,
                       ),
@@ -164,13 +164,13 @@ class _HomePageState extends State<HomePage> {
                       moreInfoUrl: '',
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 35),
                   _WhiteBackgroundSection(
                     child: ProjectSection(
-                      title: 'Percusión',
+                      title: 'percusión',
                       textStyle: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w500,
                         color: Colors.black,
                         letterSpacing: 0,
                       ),
@@ -188,13 +188,13 @@ class _HomePageState extends State<HomePage> {
                       moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
                     ),
                   ),
-                  SizedBox(height: 50),
+                  SizedBox(height: 35),
                   _WhiteBackgroundSection(
                     child: ProjectSection(
-                      title: 'Performances',
+                      title: 'performances',
                       textStyle: TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 36,
+                        fontWeight: FontWeight.w500,
                         color: Colors.black,
                         letterSpacing: 0,
                       ),
@@ -211,7 +211,7 @@ class _HomePageState extends State<HomePage> {
                           'https://lalulula.tv/documental-2/sueltos-documental-2/guo-cheng-crater/',
                     ),
                   ),
-                  SizedBox(height: 60),
+                  SizedBox(height: 200),
                   _WhiteBackgroundSection(
                     child: ContactLinks(),
                   ),
