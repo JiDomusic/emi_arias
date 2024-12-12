@@ -62,7 +62,7 @@ class ProjectSection extends StatelessWidget {
             .textTheme
             .headlineSmall
             ?.copyWith(fontWeight: FontWeight.bold) ??
-        const TextStyle(fontSize: 26, fontWeight: FontWeight.bold);
+        const TextStyle(fontSize: 26, fontWeight: FontWeight.w500);
 
     // Construye el widget que representa la sección del proyecto.
     return GestureDetector(

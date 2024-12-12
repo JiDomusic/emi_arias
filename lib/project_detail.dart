@@ -28,32 +28,6 @@ class ProjectDetail extends StatelessWidget {
     }
   }
 
-  // Método para mostrar imagen ampliada
-  void _showImageDialog(BuildContext context, String image) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Dialog(
-          backgroundColor: Colors.transparent,
-          child: GestureDetector(
-            onTap: () => Navigator.of(context).pop(),
-            child: InteractiveViewer(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
-                    image: AssetImage(image),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,7 +41,7 @@ class ProjectDetail extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.black),
         elevation: 0,
         actions: [
@@ -78,100 +52,76 @@ class ProjectDetail extends StatelessWidget {
             },
           ),
         ],
-        flexibleSpace: Positioned.fill(
-          child: Image.asset(
-            'assets/images/fondovintage2.jpg',
-            fit: BoxFit.fill,
-          ),
-        ),
       ),
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: Image.asset(
-              'assets/images/fondovintage2.jpg',
-              fit: BoxFit.fill,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 4,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: images.map((image) {
-                      return GestureDetector(
-                        onTap: () => _showImageDialog(context, image),
-                        child: Container(
-                          margin: const EdgeInsets.only(bottom: 10.0),
-                          height: 130,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: AssetImage(image),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ),
-                const SizedBox(width: 70),
-                Expanded(
-                  flex: 3,
-                  child: Container(
-                    padding: const EdgeInsets.all(35.0),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Row(
+          children: [
+            Expanded(
+              flex: 4,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: images.map((image) {
+                  return Container(
+                    margin: const EdgeInsets.only(bottom: 10.0),
+                    height: 130,
                     decoration: BoxDecoration(
-                      color: Colors.transparent,
+                      image: DecorationImage(
+                        image: AssetImage(image),
+                        fit: BoxFit.cover,
+                      ),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Text(
-                      description,
-                      style: const TextStyle(
-                        fontFamily: 'SquadaOne-Regular',
-                        fontSize: 22,
-                        color: Colors.black87,
-                      ),
-                      textAlign: TextAlign.justify,
-                    ),
-                  ),
-                ),
-              ],
+                  );
+                }).toList(),
+              ),
             ),
-          ),
-          Positioned(
-            bottom: 20.0,
-            left: 0,
-            right: 0,
-            child: Column(
-              children: [
-                GestureDetector(
-                  onTap: () => _openUrl(instagramUrl),
-                  child: const Icon(
-                    FontAwesomeIcons.instagram,
-                    size: 55,
-                    color: Colors.black,
-                  ),
+            const SizedBox(width: 70),
+            Expanded(
+              flex: 3,
+              child: Container(
+                padding: const EdgeInsets.all(35.0),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () => _openUrl(moreInfoUrl),
-                  style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.black,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 30, vertical: 10),
-                    textStyle: const TextStyle(fontSize: 18),
+                child: Text(
+                  description,
+                  style: const TextStyle(
+                    fontFamily: 'SquadaOne-Regular',
+                    fontSize: 22,
+                    color: Colors.black87,
                   ),
-                  child: const Text('Más Info'),
+                  textAlign: TextAlign.justify,
                 ),
-              ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
+      ),
+      backgroundColor: Colors.white,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            GestureDetector(
+              onTap: () => _openUrl(instagramUrl),
+              child: const Icon(
+                FontAwesomeIcons.instagram,
+                size: 55,
+                color: Colors.black,
+              ),
+            ),
+            GestureDetector(
+              onTap: () => _openUrl(moreInfoUrl),
+              child: Image.asset(
+                'assets/icons/book.png',
+                height: 10,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
