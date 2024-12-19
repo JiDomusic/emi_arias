@@ -20,6 +20,10 @@ class ProjectSection extends StatelessWidget {
   /// URL de más información sobre el proyecto (puede ser un sitio web, un artículo, etc.)
   final String moreInfoUrl;
 
+  /// Lista de enlaces de video relacionados con el proyecto.
+  /// Valor predeterminado: lista vacía.
+  final List<String> videoLinks;
+
   /// Estilo de texto opcional para personalizar el título.
   final TextStyle? textStyle;
 
@@ -32,7 +36,8 @@ class ProjectSection extends StatelessWidget {
     required this.images,
     required this.instagramUrl,
     required this.moreInfoUrl,
-    this.textStyle, // Permite pasar un estilo desde el constructor
+    this.videoLinks = const [], // Valor predeterminado: lista vacía.
+    this.textStyle,
   });
 
   /// Método para navegar a la pantalla de detalles del proyecto.
@@ -48,6 +53,7 @@ class ProjectSection extends StatelessWidget {
           images: images,
           instagramUrl: instagramUrl,
           moreInfoUrl: moreInfoUrl,
+          videoLinks: videoLinks, // Pasamos los enlaces de video.
         ),
       ),
     );

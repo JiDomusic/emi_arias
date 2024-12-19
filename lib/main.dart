@@ -59,20 +59,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late AudioPlayer _audioPlayer; // Instancia de AudioPlayer
+  late AudioPlayer _audioPlayer;
 
   @override
   void initState() {
     super.initState();
-    _initializeAudio(); // Inicializamos el reproductor
+    _initializeAudio();
   }
 
   Future<void> _initializeAudio() async {
     _audioPlayer = AudioPlayer();
     try {
-      await _audioPlayer
-          .setAsset('assets/audio/audiocampana.mp3'); // Ruta del audio
-      await _audioPlayer.play(); // Reproducir automáticamente
+      await _audioPlayer.setAsset('assets/audio/audiocampana.mp3');
+      await _audioPlayer.play();
     } catch (e) {
       debugPrint('Error reproduciendo audio: $e');
     }
@@ -80,7 +79,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    _audioPlayer.dispose(); // Liberar recursos al cerrar
+    _audioPlayer.dispose();
     super.dispose();
   }
 
@@ -99,112 +98,105 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
       ),
-      body: const Center(
+      body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 180.0, horizontal: 60.0),
+          padding: const EdgeInsets.symmetric(vertical: 120, horizontal: 10.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              _WhiteBackgroundSection(
-                child: ProjectSection(
-                  title: 'la ruta de las campanas',
-                  textStyle: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                    letterSpacing: 0,
+              Expanded(
+                child: _WhiteBackgroundSection(
+                  child: ProjectSection(
+                    title: 'la ruta de las campanas',
+                    textStyle: const TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
+                    description:
+                        'La Ruta de Las Campanas nació en el año 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 presenté el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al año siguente publiqué el libro "La Ruta de Las Campanas"',
+                    images: [
+                      'assets/images/libro1.jpg',
+                      'assets/images/libro2.jpg',
+                    ],
+                    instagramUrl:
+                        'https://www.instagram.com/larutadelascampanas/?hl=es',
+                    moreInfoUrl:
+                        'https://emr-rosario.gob.ar/page/libros/id/41444',
                   ),
-                  description:
-                      'La Ruta de Las Campanas nació en el año 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 presenté el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al año siguente publiqué el libro "La Ruta de Las Campanas".',
-                  images: [
-                    'assets/images/libro1.jpg',
-                    'assets/images/libro2.jpg',
-                    'assets/images/libro2.jpg',
-                    'assets/images/libro2.jpg',
-                    'assets/images/libro2.jpg',
-                  ],
-                  instagramUrl:
-                      'https://www.instagram.com/larutadelascampanas/?hl=es',
-                  moreInfoUrl:
-                      'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas',
                 ),
               ),
-              SizedBox(height: 35),
-              _WhiteBackgroundSection(
-                child: ProjectSection(
-                  title: 'lutheria',
-                  textStyle: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                    letterSpacing: 0,
+              const SizedBox(height: 5),
+              Expanded(
+                child: _WhiteBackgroundSection(
+                  child: ProjectSection(
+                    title: 'lutheria',
+                    textStyle: const TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
+                    description:
+                        'Yunque es un proyecto de luthería experimental, un laboratorio de objetos sonoros donde errores y aciertos marcan el ritmo.',
+                    images: [
+                      'assets/images/yunque2.jpg',
+                      'assets/images/libro1.jpg',
+                    ],
+                    instagramUrl:
+                        'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
+                    moreInfoUrl: '',
                   ),
-                  description:
-                      'Yunque es un proyecto de luthería experimental, un laboratorio de objetos sonoros donde errores y aciertos marcan el ritmo.',
-                  images: [
-                    'assets/images/yunque2.jpg',
-                    'assets/images/libro1.jpg',
-                    'assets/images/libro2.jpg',
-                    'assets/images/yunque1.jpg',
-                    'assets/images/libro1.jpg',
-                    'assets/images/libro2.jpg'
-                  ],
-                  instagramUrl:
-                      'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
-                  moreInfoUrl: '',
                 ),
               ),
-              SizedBox(height: 35),
-              _WhiteBackgroundSection(
-                child: ProjectSection(
-                  title: 'percusión',
-                  textStyle: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                    letterSpacing: 0,
+              const SizedBox(height: 5),
+              Expanded(
+                child: _WhiteBackgroundSection(
+                  child: ProjectSection(
+                    title: 'percusión',
+                    textStyle: const TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
+                    description:
+                        'Toco batería de manera autodidacta desde los 14 años. Con el tiempo mi curiosidad por los sonidos me llevó a experimentar con todo tipo de elementos dando como resultado sets percusivos de investigación experimental. El ritmo me resulta un lenguaje natural y muchas veces se representa en mi con la imagen de un engranaje.',
+                    images: [
+                      'assets/images/rosario1.jpg',
+                      'assets/images/libro1.jpg',
+                    ],
+                    moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
+                    instagramUrl: '',
                   ),
-                  description:
-                      'Toco batería de manera autodidacta desde los 14 años. Con el tiempo mi curiosidad por los sonidos me llevó a experimentar con todo tipo de elementos dando como resultado sets percusivos de investigación experimental. El ritmo me resulta un lenguaje natural y muchas veces se representa en mi con la imagen de un engranaje.',
-                  images: [
-                    'assets/images/rosario1.jpg',
-                    'assets/images/libro1.jpg',
-                    'assets/images/libro2.jpg',
-                    'assets/images/rosario1.jpg',
-                    'assets/images/libro1.jpg',
-                    'assets/images/libro2.jpg',
-                  ],
-                  instagramUrl: '',
-                  moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
                 ),
               ),
-              SizedBox(height: 35),
-              _WhiteBackgroundSection(
-                child: ProjectSection(
-                  title: 'performances',
-                  textStyle: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                    letterSpacing: 0,
+              const SizedBox(height: 5),
+              Expanded(
+                child: _WhiteBackgroundSection(
+                  child: ProjectSection(
+                    title: 'performances',
+                    textStyle: const TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
+                    ),
+                    description: 'Performances. Cine. Teatro',
+                    images: [
+                      'assets/images/yunque1.jpg',
+                      'assets/images/libro1.jpg',
+                    ],
+                    videoLinks: [
+                      'https://www.youtube.com/watch?v=pHp21XGGwDQ',
+                      'https://www.youtube.com/watch?v=aDqcvvFo3lk',
+                      'https://www.youtube.com/watch?v=3nhdI1zKXvQ',
+                    ],
+                    instagramUrl: '',
+                    moreInfoUrl: '',
                   ),
-                  description: 'Performances. Cine. Teatro',
-                  images: [
-                    'assets/images/yunque1.jpg',
-                    'assets/images/libro1.jpg',
-                    'assets/images/libro2.jpg',
-                    'assets/images/libro1.jpg',
-                    'assets/images/libro2.jpg',
-                  ],
-                  instagramUrl: '',
-                  moreInfoUrl:
-                      'https://lalulula.tv/documental-2/sueltos-documental-2/guo-cheng-crater/',
                 ),
               ),
-              SizedBox(height: 100),
-              _WhiteBackgroundSection(
-                child: ContactLinks(),
-              ),
+              const SizedBox(height: 5),
+              const _WhiteBackgroundSection(child: ContactLinks()),
             ],
           ),
         ),

@@ -8,6 +8,7 @@ class ProjectDetail extends StatelessWidget {
   final List<String> images;
   final String instagramUrl;
   final String moreInfoUrl;
+  final List<String> videoLinks;
 
   const ProjectDetail({
     super.key,
@@ -16,6 +17,7 @@ class ProjectDetail extends StatelessWidget {
     required this.images,
     required this.instagramUrl,
     required this.moreInfoUrl,
+    this.videoLinks = const [],
   });
 
   // Método para abrir un enlace
@@ -54,17 +56,17 @@ class ProjectDetail extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(50.0),
         child: Row(
           children: [
             Expanded(
               flex: 4,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: images.map((image) {
                   return Container(
                     margin: const EdgeInsets.only(bottom: 10.0),
-                    height: 130,
+                    height: 80,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(image),
@@ -80,19 +82,97 @@ class ProjectDetail extends StatelessWidget {
             Expanded(
               flex: 3,
               child: Container(
-                padding: const EdgeInsets.all(35.0),
+                padding: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Text(
-                  description,
-                  style: const TextStyle(
-                    fontFamily: 'SquadaOne-Regular',
-                    fontSize: 22,
-                    color: Colors.black87,
-                  ),
-                  textAlign: TextAlign.justify,
+                child: Column(
+                  children: [
+                    // Descripción del proyecto
+                    Text(
+                      description,
+                      style: const TextStyle(
+                        fontFamily: 'SquadaOne-Regular',
+                        fontSize: 22,
+                        color: Colors.black87,
+                      ),
+                      textAlign: TextAlign.justify,
+                    ),
+                    const SizedBox(height: 30),
+                    // Mostrar los íconos solo si es "La Ruta de las Campanas"
+                    if (title.trim().toLowerCase() ==
+                        'la ruta de las campanas'.toLowerCase())
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: () => _openUrl(
+                                'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas'),
+                            child: ColorFiltered(
+                              colorFilter: const ColorFilter.mode(
+                                  Colors.black, BlendMode.srcIn),
+                              child: Image.asset(
+                                'assets/icons/book.png',
+                                height: 45,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          GestureDetector(
+                            onTap: () => _openUrl(moreInfoUrl),
+                            child: const Icon(
+                              FontAwesomeIcons.filePdf,
+                              size: 40,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
+                    const SizedBox(height: 30),
+                    // Aquí agregamos el ícono de Bandcamp solo si el título es "Percusión"
+                    if (title.trim().toLowerCase() == 'percusión' &&
+                        moreInfoUrl.isNotEmpty)
+                      GestureDetector(
+                        onTap: () =>
+                            _openUrl(moreInfoUrl), // Abrimos moreInfoUrl
+                        child: const Icon(
+                          FontAwesomeIcons.bandcamp,
+                          size: 40,
+                          color: Colors.black,
+                        ),
+                      ),
+                    const SizedBox(height: 30),
+                    // Aquí agregamos los tres enlaces de YouTube (si es necesario)
+                    if (videoLinks.isNotEmpty) ...[
+                      const Text(
+                        '',
+                        style: TextStyle(
+                          fontFamily: 'SquadaOne-Regular',
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 25),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: videoLinks.map((url) {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10.0), // Separar los íconos
+                            child: GestureDetector(
+                              onTap: () => _openUrl(url),
+                              child: const Icon(
+                                FontAwesomeIcons.youtube,
+                                size: 40,
+                                color: Colors.red,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ],
+                  ],
                 ),
               ),
             ),
@@ -101,7 +181,7 @@ class ProjectDetail extends StatelessWidget {
       ),
       backgroundColor: Colors.white,
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20.0),
+        padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -109,15 +189,8 @@ class ProjectDetail extends StatelessWidget {
               onTap: () => _openUrl(instagramUrl),
               child: const Icon(
                 FontAwesomeIcons.instagram,
-                size: 55,
+                size: 45,
                 color: Colors.black,
-              ),
-            ),
-            GestureDetector(
-              onTap: () => _openUrl(moreInfoUrl),
-              child: Image.asset(
-                'assets/icons/book.png',
-                height: 10,
               ),
             ),
           ],
