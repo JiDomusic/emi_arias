@@ -23,23 +23,23 @@ class EmilianaAriasApp extends StatelessWidget {
           elevation: 40,
           iconTheme: IconThemeData(color: Colors.black),
         ),
-        fontFamily: 'BigShouldersInlineText-ExtraBold.ttf',
+        fontFamily: 'BigShouldersInlineText-Medium.ttf',
         textTheme: const TextTheme(
           titleLarge: TextStyle(
-            fontFamily: 'BigShouldersInlineText-ExtraBold.ttf',
+            fontFamily: 'BigShouldersInlineText-Medium.ttf',
             fontSize: 50,
             fontWeight: FontWeight.bold,
             color: Colors.black,
             letterSpacing: 2,
           ),
           bodyLarge: TextStyle(
-            fontFamily: 'BigShouldersInlineText-ExtraBold.ttf',
+            fontFamily: 'BigShouldersInlineText-Medium.ttf',
             fontSize: 30,
             color: Colors.black,
             letterSpacing: 2,
           ),
           bodyMedium: TextStyle(
-            fontFamily: 'BigShouldersInlineText-ExtraBold.ttf',
+            fontFamily: 'BigShouldersInlineText-Medium.ttf',
             fontSize: 50,
             color: Colors.black,
             letterSpacing: 1.2,
