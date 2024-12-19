@@ -39,7 +39,7 @@ class ProjectDetail extends StatelessWidget {
           title,
           style: const TextStyle(
             fontSize: 20,
-            fontFamily: 'SquadaOne-Regular',
+            fontFamily: 'BigShouldersInlineText-ExtraBold.ttf',
             color: Colors.black,
           ),
         ),
@@ -93,7 +93,7 @@ class ProjectDetail extends StatelessWidget {
                     Text(
                       description,
                       style: const TextStyle(
-                        fontFamily: 'SquadaOne-Regular',
+                        fontFamily: 'BigShouldersInlineText-ExtraBold',
                         fontSize: 22,
                         color: Colors.black87,
                       ),
@@ -148,7 +148,7 @@ class ProjectDetail extends StatelessWidget {
                       const Text(
                         '',
                         style: TextStyle(
-                          fontFamily: 'SquadaOne-Regular',
+                          fontFamily: 'BigShouldersInlineText-ExtraBold',
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
