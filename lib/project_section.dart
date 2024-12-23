@@ -38,6 +38,7 @@ class ProjectSection extends StatelessWidget {
     required this.moreInfoUrl,
     this.videoLinks = const [], // Valor predeterminado: lista vacía.
     this.textStyle,
+    required String image,
   });
 
   /// Método para navegar a la pantalla de detalles del proyecto.
@@ -53,7 +54,7 @@ class ProjectSection extends StatelessWidget {
           images: images,
           instagramUrl: instagramUrl,
           moreInfoUrl: moreInfoUrl,
-          videoLinks: videoLinks, // Pasamos los enlaces de video.
+          videoLinks: videoLinks, image: '', // Pasamos los enlaces de video.
         ),
       ),
     );

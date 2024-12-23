@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 class ProjectDetail extends StatelessWidget {
   final String title;
   final String description;
-  final List<String> images;
+  final String image; // Cambiado a una sola imagen
   final String instagramUrl;
   final String moreInfoUrl;
   final List<String> videoLinks;
@@ -14,13 +14,13 @@ class ProjectDetail extends StatelessWidget {
     super.key,
     required this.title,
     required this.description,
-    required this.images,
+    required this.image,
     required this.instagramUrl,
     required this.moreInfoUrl,
     this.videoLinks = const [],
+    required List<String> images,
   });
 
-  // Método para abrir un enlace
   void _openUrl(String url) async {
     final Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
@@ -61,21 +61,15 @@ class ProjectDetail extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: images.map((image) {
-                  return Container(
-                    margin: const EdgeInsets.only(bottom: 10.0),
-                    height: 400,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(image),
-                        fit: BoxFit.none,
-                      ),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  );
-                }).toList(),
+              child: Container(
+                height: 100,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(image), // Mostrar una sola imagen
+                    fit: BoxFit.cover,
+                  ),
+                  borderRadius: BorderRadius.circular(10),
+                ),
               ),
             ),
             const SizedBox(width: 100),
@@ -89,7 +83,6 @@ class ProjectDetail extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    // Descripción del proyecto
                     Text(
                       description,
                       style: const TextStyle(
@@ -100,59 +93,45 @@ class ProjectDetail extends StatelessWidget {
                       textAlign: TextAlign.end,
                     ),
                     const SizedBox(height: 50),
-                    // Mostrar los enlaces solo si es "La Ruta de las Campanas"
+                    // Enlaces para "La Ruta de Las Campanas"
                     if (title.trim().toLowerCase() ==
-                        'la ruta de las campanas'.toLowerCase())
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          GestureDetector(
-                            onTap: () => _openUrl(
-                                'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas'),
-                            child: Text(
-                              'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 10),
-                          GestureDetector(
-                            onTap: () => _openUrl(moreInfoUrl),
-                            child: Text(
-                              moreInfoUrl,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    const SizedBox(height: 30),
-                    // Aquí agregamos el enlace de Bandcamp solo si el título es "Percusión"
-                    if (title.trim().toLowerCase() == 'percusión' &&
-                        moreInfoUrl.isNotEmpty)
+                        'la ruta de las campanas'.toLowerCase()) ...[
                       GestureDetector(
-                        onTap: () =>
-                            _openUrl(moreInfoUrl), // Abrimos moreInfoUrl
-                        child: Text(
-                          'Más información sobre Percusión',
+                        onTap: () => _openUrl(
+                            'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas'),
+                        child: const Text(
+                          'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas',
                           style: TextStyle(
-                            color: Colors.black,
+                            color: Colors.blue,
                             fontSize: 18,
                             decoration: TextDecoration.underline,
                           ),
                         ),
                       ),
+                      const SizedBox(height: 30),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: videoLinks.map((url) {
+                          return GestureDetector(
+                            onTap: () => _openUrl(url),
+                            child: Text(
+                              url,
+                              style: const TextStyle(
+                                color: Colors.blue,
+                                fontSize: 18,
+                                decoration: TextDecoration.underline,
+                              ),
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                    ],
                     const SizedBox(height: 30),
-                    // Aquí agregamos los tres enlaces de YouTube (si es necesario)
-                    if (videoLinks.isNotEmpty) ...[
+                    // Enlaces para "Performances"
+                    if (title.trim().toLowerCase() == 'performances' &&
+                        videoLinks.isNotEmpty) ...[
                       const Text(
-                        'Enlaces a YouTube:',
+                        '',
                         style: TextStyle(
                           fontFamily: 'BigShouldersInlineText-ExtraBold',
                           fontSize: 24,
@@ -161,13 +140,13 @@ class ProjectDetail extends StatelessWidget {
                       ),
                       const SizedBox(height: 25),
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: videoLinks.map((url) {
                           return GestureDetector(
                             onTap: () => _openUrl(url),
                             child: Text(
                               url,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.blue,
                                 fontSize: 18,
                                 decoration: TextDecoration.underline,
