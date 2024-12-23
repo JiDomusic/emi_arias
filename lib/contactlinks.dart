@@ -28,7 +28,7 @@ class ContactLinks extends StatelessWidget {
             onPressed: () {
               _launchURL('https://www.instagram.com/___emi___a_');
             },
-            iconSize: 30,
+            iconSize: 20,
             color: Colors.black,
           ),
 

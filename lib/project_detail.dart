@@ -60,17 +60,17 @@ class ProjectDetail extends StatelessWidget {
         child: Row(
           children: [
             Expanded(
-              flex: 4,
+              flex: 1,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: images.map((image) {
                   return Container(
                     margin: const EdgeInsets.only(bottom: 10.0),
-                    height: 80,
+                    height: 200,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(image),
-                        fit: BoxFit.cover,
+                        fit: BoxFit.none,
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -80,7 +80,7 @@ class ProjectDetail extends StatelessWidget {
             ),
             const SizedBox(width: 100),
             Expanded(
-              flex: 3,
+              flex: 1,
               child: Container(
                 padding: const EdgeInsets.all(30.0),
                 decoration: BoxDecoration(
@@ -97,7 +97,7 @@ class ProjectDetail extends StatelessWidget {
                         fontSize: 18,
                         color: Colors.black87,
                       ),
-                      textAlign: TextAlign.justify,
+                      textAlign: TextAlign.end,
                     ),
                     const SizedBox(height: 50),
                     // Mostrar los íconos solo si es "La Ruta de las Campanas"

@@ -118,7 +118,6 @@ class _HomePageState extends State<HomePage> {
                         'La Ruta de Las Campanas nació en el año 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 presenté el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al año siguente publiqué el libro "La Ruta de Las Campanas"',
                     images: [
                       'assets/images/libro1.jpg',
-                      'assets/images/libro2.jpg',
                     ],
                     instagramUrl:
                         'https://www.instagram.com/larutadelascampanas/?hl=es',
