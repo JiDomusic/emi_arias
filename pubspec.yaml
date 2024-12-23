@@ -75,12 +75,11 @@ flutter:
 
 
   fonts:
-    - family: SquadaOne-Regular
+    - family: BigShouldersInlineText-ExtraBold
       fonts:
-        - asset: fonts/SquadaOne-Regular.ttf
         - asset: fonts/BigShouldersInlineText-ExtraBold.ttf
         - asset: fonts/BigShouldersInlineText-Medium.ttf
-        - asset: fonts/Exo2-SemiBold.ttf
+
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/

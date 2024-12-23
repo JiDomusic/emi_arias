@@ -39,7 +39,7 @@ class ProjectDetail extends StatelessWidget {
           title,
           style: const TextStyle(
             fontSize: 20,
-            fontFamily: 'Exo2-SemiBold.ttf',
+            fontFamily: 'BigShouldersInlineText-ExtraBold',
             color: Colors.black,
           ),
         ),
@@ -78,14 +78,14 @@ class ProjectDetail extends StatelessWidget {
                 }).toList(),
               ),
             ),
-            const SizedBox(width: 70),
+            const SizedBox(width: 100),
             Expanded(
               flex: 3,
               child: Container(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(30.0),
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(0),
                 ),
                 child: Column(
                   children: [
@@ -93,38 +93,46 @@ class ProjectDetail extends StatelessWidget {
                     Text(
                       description,
                       style: const TextStyle(
-                        fontFamily: 'Exo2-SemiBold.ttf',
-                        fontSize: 22,
+                        fontFamily: 'BigShouldersInlineText-ExtraBold',
+                        fontSize: 18,
                         color: Colors.black87,
                       ),
                       textAlign: TextAlign.justify,
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 50),
                     // Mostrar los íconos solo si es "La Ruta de las Campanas"
                     if (title.trim().toLowerCase() ==
                         'la ruta de las campanas'.toLowerCase())
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          GestureDetector(
-                            onTap: () => _openUrl(
-                                'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas'),
-                            child: ColorFiltered(
-                              colorFilter: const ColorFilter.mode(
-                                  Colors.black, BlendMode.srcIn),
-                              child: Image.asset(
-                                'assets/icons/book.png',
-                                height: 45,
+                          MouseRegion(
+                            onEnter: (_) => _hoverEffect(true),
+                            onExit: (_) => _hoverEffect(false),
+                            child: GestureDetector(
+                              onTap: () => _openUrl(
+                                  'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas'),
+                              child: ColorFiltered(
+                                colorFilter: const ColorFilter.mode(
+                                    Colors.black, BlendMode.srcIn),
+                                child: Image.asset(
+                                  'assets/icons/book.png',
+                                  height: 45,
+                                ),
                               ),
                             ),
                           ),
                           const SizedBox(width: 20),
-                          GestureDetector(
-                            onTap: () => _openUrl(moreInfoUrl),
-                            child: const Icon(
-                              FontAwesomeIcons.filePdf,
-                              size: 40,
-                              color: Colors.black,
+                          MouseRegion(
+                            onEnter: (_) => _hoverEffect(true),
+                            onExit: (_) => _hoverEffect(false),
+                            child: GestureDetector(
+                              onTap: () => _openUrl(moreInfoUrl),
+                              child: const Icon(
+                                FontAwesomeIcons.filePdf,
+                                size: 40,
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                         ],
@@ -148,7 +156,7 @@ class ProjectDetail extends StatelessWidget {
                       const Text(
                         '',
                         style: TextStyle(
-                          fontFamily: 'Exo2-SemiBold.ttf',
+                          fontFamily: 'BigShouldersInlineText-ExtraBold',
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
@@ -160,12 +168,16 @@ class ProjectDetail extends StatelessWidget {
                           return Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 10.0), // Separar los íconos
-                            child: GestureDetector(
-                              onTap: () => _openUrl(url),
-                              child: const Icon(
-                                FontAwesomeIcons.youtube,
-                                size: 40,
-                                color: Colors.red,
+                            child: MouseRegion(
+                              onEnter: (_) => _hoverEffect(true),
+                              onExit: (_) => _hoverEffect(false),
+                              child: GestureDetector(
+                                onTap: () => _openUrl(url),
+                                child: const Icon(
+                                  FontAwesomeIcons.youtube,
+                                  size: 40,
+                                  color: Colors.red,
+                                ),
                               ),
                             ),
                           );
@@ -185,17 +197,27 @@ class ProjectDetail extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            GestureDetector(
-              onTap: () => _openUrl(instagramUrl),
-              child: const Icon(
-                FontAwesomeIcons.instagram,
-                size: 45,
-                color: Colors.black,
+            MouseRegion(
+              onEnter: (_) => _hoverEffect(true),
+              onExit: (_) => _hoverEffect(false),
+              child: GestureDetector(
+                onTap: () => _openUrl(instagramUrl),
+                child: const Icon(
+                  FontAwesomeIcons.instagram,
+                  size: 45,
+                  color: Colors.black,
+                ),
               ),
             ),
           ],
         ),
       ),
     );
+  }
+
+  // Método para simular un efecto de hover (puedes cambiar el estilo de la animación o el color)
+  void _hoverEffect(bool isHovered) {
+    // Aquí puedes cambiar el color o el tamaño del ícono cuando el mouse pasa sobre él.
+    // Ejemplo: cambiar el color o el tamaño de los íconos, puedes agregar algo más.
   }
 }
