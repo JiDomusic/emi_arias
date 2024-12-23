@@ -98,9 +98,9 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
       ),
-      body: Center(
+      body: const Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 120, horizontal: 10.0),
+          padding: EdgeInsets.symmetric(vertical: 120, horizontal: 10.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -109,7 +109,7 @@ class _HomePageState extends State<HomePage> {
                 child: _WhiteBackgroundSection(
                   child: ProjectSection(
                     title: 'la ruta de las campanas',
-                    textStyle: const TextStyle(
+                    textStyle: TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
@@ -126,12 +126,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 5),
+              SizedBox(height: 2),
               Expanded(
                 child: _WhiteBackgroundSection(
                   child: ProjectSection(
                     title: 'lutheria',
-                    textStyle: const TextStyle(
+                    textStyle: TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
@@ -139,7 +139,7 @@ class _HomePageState extends State<HomePage> {
                     description:
                         'Yunque es un proyecto de luthería experimental, un laboratorio de objetos sonoros donde errores y aciertos marcan el ritmo.',
                     images: [
-                      'aseets/images/cuadriculaluteria.jpg',
+                      'assets/images/cuadriculaluteria.jpg', // Corregido el nombre de la ruta
                     ],
                     instagramUrl:
                         'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
@@ -147,12 +147,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 5),
+              SizedBox(height: 5),
               Expanded(
                 child: _WhiteBackgroundSection(
                   child: ProjectSection(
                     title: 'percusión',
-                    textStyle: const TextStyle(
+                    textStyle: TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
@@ -168,12 +168,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 5),
+              SizedBox(height: 5),
               Expanded(
                 child: _WhiteBackgroundSection(
                   child: ProjectSection(
                     title: 'performances',
-                    textStyle: const TextStyle(
+                    textStyle: TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
@@ -193,8 +193,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              const SizedBox(height: 5),
-              const _WhiteBackgroundSection(child: ContactLinks()),
+              SizedBox(height: 5),
+              _WhiteBackgroundSection(child: ContactLinks()),
             ],
           ),
         ),

@@ -66,7 +66,7 @@ class ProjectDetail extends StatelessWidget {
                 children: images.map((image) {
                   return Container(
                     margin: const EdgeInsets.only(bottom: 10.0),
-                    height: 200,
+                    height: 400,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(image),
