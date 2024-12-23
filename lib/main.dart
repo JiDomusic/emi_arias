@@ -139,8 +139,7 @@ class _HomePageState extends State<HomePage> {
                     description:
                         'Yunque es un proyecto de luthería experimental, un laboratorio de objetos sonoros donde errores y aciertos marcan el ritmo.',
                     images: [
-                      'assets/images/yunque2.jpg',
-                      'assets/images/libro1.jpg',
+                      'aseets/images/cuadriculaluteria.jpg',
                     ],
                     instagramUrl:
                         'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
