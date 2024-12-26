@@ -197,34 +197,34 @@ class _HomePageState extends State<HomePage> {
           ),
           // Imágenes decorativas
           Positioned(
-            top: 2,
-            left: 20,
+            top: 115,
+            left: 200,
             child: _DecorativeImage(
-              imagePath: 'assets/images/decor1.png',
+              imagePath: 'assets/images/campanas.jpg',
               audioPlayer: _audioPlayer,
             ),
           ),
           Positioned(
-            top: 2,
-            right: 20,
+            top: 215,
+            right: 185,
             child: _DecorativeImage(
-              imagePath: 'assets/images/decor2.png',
+              imagePath: 'assets/images/lutheria.jpg',
               audioPlayer: _audioPlayer,
             ),
           ),
           Positioned(
-            bottom: 15,
-            left: 20,
+            bottom: 300,
+            left: 320,
             child: _DecorativeImage(
-              imagePath: 'assets/images/decor3.png',
+              imagePath: 'assets/images/perusio.jpg',
               audioPlayer: _audioPlayer,
             ),
           ),
           Positioned(
-            bottom: 50,
-            right: 20,
+            bottom: 180,
+            right: 330,
             child: _DecorativeImage(
-              imagePath: 'assets/images/decor4.png',
+              imagePath: 'assets/images/zoomorfopreformance.jpg',
               audioPlayer: _audioPlayer,
             ),
           ),
@@ -258,7 +258,7 @@ class _DecorativeImageState extends State<_DecorativeImage>
       duration: const Duration(milliseconds: 300),
       vsync: this,
       lowerBound: 1.0,
-      upperBound: 1.2,
+      upperBound: 1.5,
     );
   }
 
@@ -280,8 +280,8 @@ class _DecorativeImageState extends State<_DecorativeImage>
           scale: _controller,
           child: Image.asset(
             widget.imagePath,
-            width: 10,
-            height: 10,
+            width: 80,
+            height: 80,
           ),
         ),
       ),
