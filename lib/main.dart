@@ -118,12 +118,14 @@ class _HomePageState extends State<HomePage> {
                         ),
                         description:
                             'La Ruta de Las Campanas nació en el año 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 presenté el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al año siguente publiqué el libro "La Ruta de Las Campanas".',
-                        image: 'assets/images/libro1.jpg',
+                        image: 'assets/images/campanas.jpg',
                         instagramUrl:
                             'https://www.instagram.com/larutadelascampanas/?hl=es',
                         moreInfoUrl:
                             'https://emr-rosario.gob.ar/page/libros/id/41444',
-                        images: [], // Ahora una sola imagen
+                        images: [
+                          'assets/images/cuadriculacampanas.webp'
+                        ], // Ahora una sola imagen
                       ),
                     ),
                   ),
@@ -139,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         description:
                             'Yunque es un proyecto de luthería experimental, un laboratorio de objetos sonoros donde errores y aciertos marcan el ritmo.',
-                        image: 'assets/images/cuadriculaluteria.jpg',
+                        image: 'assets/images/lutheria.jpg',
                         instagramUrl:
                             'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
                         moreInfoUrl: '',
@@ -161,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                         description:
                             'Toco batería de manera autodidacta desde los 14 años. Con el tiempo mi curiosidad por los sonidos me llevó a experimentar con todo tipo de elementos dando como resultado sets percusivos de investigación experimental. El ritmo me resulta un lenguaje natural y muchas veces se representa en mí con la imagen de un engranaje.',
-                        image: 'assets/images/rosario1.jpg',
+                        image: 'assets/images/perusio',
                         instagramUrl: '',
                         moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
                         images: [], // Solo una imagen
@@ -179,7 +181,7 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.black,
                         ),
                         description: 'Performances. Cine. Teatro.',
-                        image: 'assets/images/percusio.jpg',
+                        image: 'assets/images/cuadriculaperformances.jpg',
                         videoLinks: [
                           'https://www.youtube.com/watch?v=pHp21XGGwDQ',
                           'https://www.youtube.com/watch?v=aDqcvvFo3lk',
@@ -199,15 +201,16 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          // Imágenes decorativas flotantes que permanecen en la misma posición
+          // Aquí se coloca una imagen fija en la sección "La Ruta de Las Campanas"
           Positioned(
             top: 115,
             left: 200,
             child: _DecorativeImage(
-              imagePath: 'assets/images/campanas.jpg',
+              imagePath: 'assets/images/campanas.jpg', // Imagen fija
               audioPlayer: _audioPlayer,
             ),
           ),
+          // Las imágenes decorativas flotantes
           Positioned(
             top: 215,
             right: 185,

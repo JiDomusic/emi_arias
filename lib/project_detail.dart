@@ -5,7 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 class ProjectDetail extends StatelessWidget {
   final String title;
   final String description;
-  final String image; // Cambiado a una sola imagen
   final String instagramUrl;
   final String moreInfoUrl;
   final List<String> videoLinks;
@@ -14,11 +13,11 @@ class ProjectDetail extends StatelessWidget {
     super.key,
     required this.title,
     required this.description,
-    required this.image,
     required this.instagramUrl,
     required this.moreInfoUrl,
     this.videoLinks = const [],
     required List<String> images,
+    required String image,
   });
 
   void _openUrl(String url) async {
@@ -30,8 +29,27 @@ class ProjectDetail extends StatelessWidget {
     }
   }
 
+  // Método para obtener la imagen según el título
+  String getImageForTitle() {
+    switch (title.toLowerCase()) {
+      case 'la ruta de las campanas':
+        return 'assets/images/cuadriculacampanas.jpg';
+      case 'lutheria':
+        return 'assets/images/cuadriculaluteria.jpg';
+      case 'percusion':
+        return 'assets/images/cuadriculapercusion.jpg';
+      case 'performances':
+        return 'assets/images/cuadriculaperformances.jpg';
+      default:
+        return 'assets/images/default.png'; // Imagen por defecto
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    String imagePath =
+        getImageForTitle(); // Obtiene la imagen correspondiente al título
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -62,10 +80,11 @@ class ProjectDetail extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Container(
-                height: 100,
+                height: 500,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(image), // Mostrar una sola imagen
+                    image: AssetImage(
+                        imagePath), // Mostrar la imagen correspondiente
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(10),
@@ -76,7 +95,9 @@ class ProjectDetail extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Container(
-                padding: const EdgeInsets.all(30.0),
+                padding: const EdgeInsets.all(
+                  20,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(0),
@@ -165,7 +186,7 @@ class ProjectDetail extends StatelessWidget {
       ),
       backgroundColor: Colors.white,
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10.0),
+        padding: const EdgeInsets.symmetric(vertical: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -173,7 +194,7 @@ class ProjectDetail extends StatelessWidget {
               onTap: () => _openUrl(instagramUrl),
               child: const Icon(
                 FontAwesomeIcons.instagram,
-                size: 45,
+                size: 20,
                 color: Colors.black,
               ),
             ),

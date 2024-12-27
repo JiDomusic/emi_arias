@@ -1,44 +1,27 @@
 import 'package:emi_arias/project_detail.dart';
 import 'package:flutter/material.dart';
 
-/// Widget que representa una sección de proyecto. Esta sección puede ser utilizada
-/// para mostrar proyectos en una lista, con un título que, al hacerle clic,
-/// navega a una pantalla de detalle con más información sobre el proyecto.
 class ProjectSection extends StatelessWidget {
   /// El título del proyecto que se mostrará en la sección.
   final String title;
-
-  /// Descripción detallada del proyecto que será mostrada en la pantalla de detalles.
   final String description;
-
-  /// Lista de URLs de las imágenes relacionadas con el proyecto.
   final List<String> images;
-
-  /// URL del perfil de Instagram del proyecto/artista.
+  final String image;
   final String instagramUrl;
-
-  /// URL de más información sobre el proyecto (puede ser un sitio web, un artículo, etc.)
   final String moreInfoUrl;
-
-  /// Lista de enlaces de video relacionados con el proyecto.
-  /// Valor predeterminado: lista vacía.
   final List<String> videoLinks;
-
-  /// Estilo de texto opcional para personalizar el título.
   final TextStyle? textStyle;
 
-  /// Constructor de la clase `ProjectSection`. Todos los parámetros son requeridos,
-  /// excepto el estilo de texto, que es opcional.
   const ProjectSection({
     super.key,
     required this.title,
     required this.description,
     required this.images,
+    required this.image,
     required this.instagramUrl,
     required this.moreInfoUrl,
     this.videoLinks = const [], // Valor predeterminado: lista vacía.
     this.textStyle,
-    required String image,
   });
 
   /// Método para navegar a la pantalla de detalles del proyecto.
