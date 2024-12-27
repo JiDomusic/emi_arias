@@ -168,7 +168,7 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.black,
                         ),
                         description: 'Albumes de estudio en colaboración',
-                        image: 'assets/images/perusio.jpg',
+                        image: 'assets/images/perusio3.jpg',
                         instagramUrl: '',
                         moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
                         videoLinks: ['https://emilianaarias.bandcamp.com/'],
@@ -234,7 +234,7 @@ class _HomePageState extends State<HomePage> {
             bottom: 295,
             left: 310,
             child: _DecorativeImage(
-              imagePath: 'assets/images/perusio2.jpg',
+              imagePath: 'assets/images/perusio3.jpg',
               audioPath: 'assets/audio/percusion.wav',
               audioPlayer: _audioPlayer,
             ),
