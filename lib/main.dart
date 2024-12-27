@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Expanded(
+                  Flexible(
                     child: _WhiteBackgroundSection(
                       child: ProjectSection(
                         title: 'la ruta de las campanas',
@@ -125,7 +125,8 @@ class _HomePageState extends State<HomePage> {
                             'https://emr-rosario.gob.ar/page/libros/id/41444',
                         videoLinks: [
                           'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas',
-                          'https://www.elciudadanoweb.com/patrimonio-sonoro-inmaterial-de-rosario-proponen-la-ruta-de-las-campanas/'
+                          'https://docs.google.com/document/d/18hlsSTpLyC0vUf_ZH7hD4WTWk1FuJpto/edit?usp=sharing&ouid=105108450464616346072&rtpof=true&sd=true',
+                          'https://www.elciudadanoweb.com/patrimonio-sonoro-inmaterial-de-rosario-proponen-la-ruta-de-las-campanas/',
                         ],
                         images: [
                           'assets/images/cuadriculacampanas.webp'
@@ -134,10 +135,10 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(height: 1),
-                  Expanded(
+                  Flexible(
                     child: _WhiteBackgroundSection(
                       child: ProjectSection(
-                        title: 'lutheria',
+                        title: 'luthería',
                         textStyle: TextStyle(
                           fontSize: 36,
                           fontWeight: FontWeight.w500,
@@ -149,14 +150,15 @@ class _HomePageState extends State<HomePage> {
                         instagramUrl:
                             'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
                         moreInfoUrl: '',
-                        images: [
-                          'assets/images/cuadriculaluteria.jpg'
+                        images: ['assets/images/cuadriculaluteria.jpg'],
+                        videoLinks: [
+                          'https://www.instagram.com/yunque_instrumentos/?hl=es-la'
                         ], // Solo una imagen
                       ),
                     ),
                   ),
                   SizedBox(height: 1),
-                  Expanded(
+                  Flexible(
                     child: _WhiteBackgroundSection(
                       child: ProjectSection(
                         title: 'percusión',
@@ -165,21 +167,17 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
-                        description:
-                            'Toco batería de manera autodidacta desde los 14 años. Con el tiempo mi curiosidad por los sonidos me llevó a experimentar con todo tipo de elementos dando como resultado sets percusivos de investigación experimental. El ritmo me resulta un lenguaje natural y muchas veces se representa en mí con la imagen de un engranaje.',
-                        image: 'assets/images/perusio',
+                        description: 'Albumes de estudio en colaboración',
+                        image: 'assets/images/perusio.jpg',
                         instagramUrl: '',
                         moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
-                        videoLinks: [
-                          'https://www.youtube.com/watch?v=jZIoxw0ca9E',
-                          'https://emilianaarias.bandcamp.com/'
-                        ],
+                        videoLinks: ['https://emilianaarias.bandcamp.com/'],
                         images: [], // Solo una imagen
                       ),
                     ),
                   ),
                   SizedBox(height: 1),
-                  Expanded(
+                  Flexible(
                     child: _WhiteBackgroundSection(
                       child: ProjectSection(
                         title: 'performances',
@@ -191,9 +189,12 @@ class _HomePageState extends State<HomePage> {
                         description: 'Performances. Cine. Teatro.',
                         image: 'assets/images/cuadriculaperformances.jpg',
                         videoLinks: [
-                          'https://www.youtube.com/watch?v=pHp21XGGwDQ',
-                          'https://www.youtube.com/watch?v=aDqcvvFo3lk',
-                          'https://www.youtube.com/watch?v=3nhdI1zKXvQ',
+                          'https://www.youtube.com/watch?v=Xl0KKn8DRcY',
+                          'https://ladistanciaanimal-blog.tumblr.com/post/126622302700/una-obra-de-danza-de-virginia-tuttolomondo-y-diego',
+                          'https://www.facebook.com/profile.php?id=100065022993837',
+                          'https://www.youtube.com/watch?v=WXxp-qm5RTE',
+                          'https://perfoping.blogspot.com/',
+                          'https://www.facebook.com/watch/?v=1041454055879071',
                         ],
                         instagramUrl: '',
                         moreInfoUrl: '',
@@ -215,6 +216,7 @@ class _HomePageState extends State<HomePage> {
             left: 200,
             child: _DecorativeImage(
               imagePath: 'assets/images/campanas.jpg', // Imagen fija
+              audioPath: 'assets/audio/campana.wav', // Ruta del audio
               audioPlayer: _audioPlayer,
             ),
           ),
@@ -224,22 +226,25 @@ class _HomePageState extends State<HomePage> {
             right: 185,
             child: _DecorativeImage(
               imagePath: 'assets/images/lutheria.jpg',
+              audioPath: 'assets/audio/lutheria.wav',
               audioPlayer: _audioPlayer,
             ),
           ),
           Positioned(
-            bottom: 300,
-            left: 320,
+            bottom: 295,
+            left: 310,
             child: _DecorativeImage(
-              imagePath: 'assets/images/perusio.jpg',
+              imagePath: 'assets/images/perusio2.jpg',
+              audioPath: 'assets/audio/percusion.wav',
               audioPlayer: _audioPlayer,
             ),
           ),
           Positioned(
             bottom: 180,
-            right: 330,
+            right: 310,
             child: _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
+              audioPath: 'assets/audio/performance.wav',
               audioPlayer: _audioPlayer,
             ),
           ),
@@ -251,10 +256,12 @@ class _HomePageState extends State<HomePage> {
 
 class _DecorativeImage extends StatefulWidget {
   final String imagePath;
+  final String audioPath; // Nuevo parámetro para el audio
   final AudioPlayer audioPlayer;
 
   const _DecorativeImage({
     required this.imagePath,
+    required this.audioPath, // Recibimos el audioPath
     required this.audioPlayer,
   });
 
@@ -265,10 +272,12 @@ class _DecorativeImage extends StatefulWidget {
 class _DecorativeImageState extends State<_DecorativeImage>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
+  late AudioPlayer _audioPlayer; // Crear un nuevo audioPlayer para cada imagen
 
   @override
   void initState() {
     super.initState();
+    _audioPlayer = AudioPlayer();
     _controller = AnimationController(
       duration: const Duration(milliseconds: 300),
       vsync: this,
@@ -277,26 +286,39 @@ class _DecorativeImageState extends State<_DecorativeImage>
     );
   }
 
+  // Función para cargar y reproducir el audio cuando se pase el mouse
+  Future<void> _playAudio() async {
+    try {
+      await _audioPlayer.setAsset(widget.audioPath);
+      await _audioPlayer.play();
+    } catch (e) {
+      debugPrint('Error al cargar el audio: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (_) {
         _controller.forward(); // Escalar la imagen
+        _playAudio(); // Reproducir el audio
       },
       onExit: (_) {
         _controller.reverse(); // Volver al tamaño original
       },
       child: GestureDetector(
         onTap: () async {
-          await widget.audioPlayer.seek(Duration.zero);
-          await widget.audioPlayer.play();
+          await _audioPlayer.seek(Duration.zero);
+          await _audioPlayer.play();
         },
         child: ScaleTransition(
           scale: _controller,
           child: Image.asset(
             widget.imagePath,
-            width: 80,
-            height: 80,
+            width:
+                MediaQuery.of(context).size.width * 0.12, // Ajuste responsivo
+            height:
+                MediaQuery.of(context).size.height * 0.12, // Ajuste responsivo
           ),
         ),
       ),
@@ -306,6 +328,7 @@ class _DecorativeImageState extends State<_DecorativeImage>
   @override
   void dispose() {
     _controller.dispose();
+    _audioPlayer.dispose(); // Limpiar el audioPlayer
     super.dispose();
   }
 }

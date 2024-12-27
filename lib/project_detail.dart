@@ -5,7 +5,6 @@ import 'package:url_launcher/url_launcher.dart';
 class ProjectDetail extends StatefulWidget {
   final String title;
   final String description;
-  final String instagramUrl;
   final String moreInfoUrl;
   final List<String> videoLinks;
 
@@ -13,12 +12,14 @@ class ProjectDetail extends StatefulWidget {
     super.key,
     required this.title,
     required this.description,
-    required this.instagramUrl,
     required this.moreInfoUrl,
     this.videoLinks = const [],
     required List<String> images,
     required String image,
+    required String instagramUrl,
   });
+
+  String? get instagramUrl => null; // Aquí no se muestra el enlace a Instagram
 
   @override
   _ProjectDetailState createState() => _ProjectDetailState();
@@ -182,17 +183,52 @@ class _ProjectDetailState extends State<ProjectDetail> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GestureDetector(
-              onTap: () => _openUrl(widget.instagramUrl),
-              child: const Icon(
-                FontAwesomeIcons.instagram,
-                size: 20,
-                color: Colors.black,
-              ),
-            ),
+            // No mostramos el icono de Instagram aquí
           ],
         ),
       ),
     );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Emiliana Arias'),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              // Abrir la URL de Instagram en la vista principal
+              _openInstagramUrl();
+            },
+            child: const Icon(
+              FontAwesomeIcons.instagram,
+              size: 30,
+              color: Colors.black,
+            ),
+          ),
+        ],
+      ),
+      body: Center(
+        child: Text(
+          'Contenido principal de la app',
+          style: TextStyle(fontSize: 24),
+        ),
+      ),
+    );
+  }
+
+  void _openInstagramUrl() async {
+    const String instagramUrl = 'https://www.instagram.com/emilianaarias';
+    final Uri uri = Uri.parse(instagramUrl);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      throw 'No se pudo abrir $instagramUrl';
+    }
   }
 }
