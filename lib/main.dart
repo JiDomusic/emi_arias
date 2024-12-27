@@ -210,7 +210,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          // Aquí se coloca una imagen fija en la sección "La Ruta de Las Campanas"
+
           Positioned(
             top: 115,
             left: 200,
@@ -220,7 +220,7 @@ class _HomePageState extends State<HomePage> {
               audioPlayer: _audioPlayer,
             ),
           ),
-          // Las imágenes decorativas flotantes
+          // Las imágenes decorativas
           Positioned(
             top: 215,
             right: 185,
@@ -256,12 +256,12 @@ class _HomePageState extends State<HomePage> {
 
 class _DecorativeImage extends StatefulWidget {
   final String imagePath;
-  final String audioPath; // Nuevo parámetro para el audio
+  final String audioPath; // audio
   final AudioPlayer audioPlayer;
 
   const _DecorativeImage({
     required this.imagePath,
-    required this.audioPath, // Recibimos el audioPath
+    required this.audioPath, // audioPath
     required this.audioPlayer,
   });
 
@@ -300,11 +300,11 @@ class _DecorativeImageState extends State<_DecorativeImage>
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (_) {
-        _controller.forward(); // Escalar la imagen
-        _playAudio(); // Reproducir el audio
+        _controller.forward();
+        _playAudio();
       },
       onExit: (_) {
-        _controller.reverse(); // Volver al tamaño original
+        _controller.reverse(); //tamaño original
       },
       child: GestureDetector(
         onTap: () async {
@@ -315,10 +315,8 @@ class _DecorativeImageState extends State<_DecorativeImage>
           scale: _controller,
           child: Image.asset(
             widget.imagePath,
-            width:
-                MediaQuery.of(context).size.width * 0.12, // Ajuste responsivo
-            height:
-                MediaQuery.of(context).size.height * 0.12, // Ajuste responsivo
+            width: MediaQuery.of(context).size.width * 0.12, //
+            height: MediaQuery.of(context).size.height * 0.12, // Ajuste
           ),
         ),
       ),
@@ -328,7 +326,7 @@ class _DecorativeImageState extends State<_DecorativeImage>
   @override
   void dispose() {
     _controller.dispose();
-    _audioPlayer.dispose(); // Limpiar el audioPlayer
+    _audioPlayer.dispose(); // Limpiar el
     super.dispose();
   }
 }

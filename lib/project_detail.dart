@@ -19,7 +19,7 @@ class ProjectDetail extends StatefulWidget {
     required String instagramUrl,
   });
 
-  String? get instagramUrl => null; // Aquí no se muestra el enlace a Instagram
+  String? get instagramUrl => null;
 
   @override
   _ProjectDetailState createState() => _ProjectDetailState();
@@ -38,7 +38,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
     }
   }
 
-  // Método para obtener la imagen según el título
+  //  el título
   String getImageForTitle() {
     switch (widget.title.toLowerCase()) {
       case 'la ruta de las campanas':
@@ -56,8 +56,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
 
   @override
   Widget build(BuildContext context) {
-    String imagePath =
-        getImageForTitle(); // Obtiene la imagen correspondiente al título
+    String imagePath = getImageForTitle();
 
     return Scaffold(
       appBar: AppBar(
@@ -87,8 +86,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
             const EdgeInsets.symmetric(horizontal: 20.0), // Padding general
         child: LayoutBuilder(
           builder: (context, constraints) {
-            final isSmallScreen =
-                constraints.maxWidth < 700; // Dispositivo móvil
+            final isSmallScreen = constraints.maxWidth < 700; // móvil
 
             return Center(
               child: ConstrainedBox(
@@ -100,14 +98,10 @@ class _ProjectDetailState extends State<ProjectDetail> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Imagen del proyecto
+                    // Imagen
                     Container(
-                      width: isSmallScreen
-                          ? 300
-                          : 600, // Imagen más pequeña en móvil
-                      height: isSmallScreen
-                          ? 150
-                          : 400, // Ajuste de tamaño en pantallas pequeñas
+                      width: isSmallScreen ? 300 : 600, //en móvil
+                      height: isSmallScreen ? 150 : 400, // pantallas pequeñas
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(imagePath),
@@ -116,9 +110,8 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    const SizedBox(
-                        width: 70), // Espaciado entre imagen y descripción
-                    // Descripción del proyecto
+                    const SizedBox(width: 70),
+                    // Descripción
                     Expanded(
                       child: SingleChildScrollView(
                         child: Column(
@@ -202,7 +195,6 @@ class HomePage extends StatelessWidget {
         actions: [
           GestureDetector(
             onTap: () {
-              // Abrir la URL de Instagram en la vista principal
               _openInstagramUrl();
             },
             child: const Icon(

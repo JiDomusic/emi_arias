@@ -20,13 +20,12 @@ class ProjectSection extends StatelessWidget {
     required this.image,
     required this.instagramUrl,
     required this.moreInfoUrl,
-    this.videoLinks = const [], // Valor predeterminado: lista vacía.
+    this.videoLinks = const [],
     this.textStyle,
   });
 
-  /// Método para navegar a la pantalla de detalles del proyecto.
-  /// Esta pantalla muestra información detallada sobre el proyecto, incluidas
-  /// imágenes, descripción, enlaces a redes sociales y más información.
+  /// Método para navegar
+
   void navigateToProjectDetail(BuildContext context) {
     Navigator.push(
       context,
@@ -37,7 +36,8 @@ class ProjectSection extends StatelessWidget {
           images: images,
           instagramUrl: instagramUrl,
           moreInfoUrl: moreInfoUrl,
-          videoLinks: videoLinks, image: '', // Pasamos los enlaces de video.
+          videoLinks: videoLinks,
+          image: '',
         ),
       ),
     );
@@ -45,8 +45,6 @@ class ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Determina el estilo de texto que se debe usar. Si no se proporciona un estilo,
-    // se usa el estilo predeterminado del tema con un peso de fuente en negrita.
     final TextStyle effectiveStyle = textStyle ??
         Theme.of(context)
             .textTheme
@@ -54,7 +52,8 @@ class ProjectSection extends StatelessWidget {
             ?.copyWith(fontWeight: FontWeight.bold) ??
         const TextStyle(fontSize: 26, fontWeight: FontWeight.w500);
 
-    // Construye el widget que representa la sección del proyecto.
+    // Construye el widget
+
     return GestureDetector(
       onTap: () => navigateToProjectDetail(
           context), // Navega al detalle al tocar el widget.
@@ -66,9 +65,9 @@ class ProjectSection extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            title, // Muestra el título del proyecto en el centro.
+            title,
             textAlign: TextAlign.center, // Alinea el texto al centro.
-            style: effectiveStyle, // Aplica el estilo de texto determinado.
+            style: effectiveStyle,
           ),
         ),
       ),

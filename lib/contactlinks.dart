@@ -6,7 +6,7 @@ class ContactLinks extends StatelessWidget {
   const ContactLinks({super.key});
 
   void _launchURL(String url) async {
-    final Uri uri = Uri.parse(url); // Convertimos la URL en un objeto Uri
+    final Uri uri = Uri.parse(url); // objeto Uri
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri);
     } else {
