@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                             'https://www.instagram.com/larutadelascampanas/?hl=es',
                         moreInfoUrl:
                             'https://emr-rosario.gob.ar/page/libros/id/41444',
-                        images: [],
+                        images: [], // Ahora una sola imagen
                       ),
                     ),
                   ),
@@ -143,7 +143,9 @@ class _HomePageState extends State<HomePage> {
                         instagramUrl:
                             'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
                         moreInfoUrl: '',
-                        images: ['assets/images/cuadriculaluteria.jpg'],
+                        images: [
+                          'assets/images/cuadriculaluteria.jpg'
+                        ], // Solo una imagen
                       ),
                     ),
                   ),
@@ -162,7 +164,7 @@ class _HomePageState extends State<HomePage> {
                         image: 'assets/images/rosario1.jpg',
                         instagramUrl: '',
                         moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
-                        images: [],
+                        images: [], // Solo una imagen
                       ),
                     ),
                   ),
@@ -185,7 +187,9 @@ class _HomePageState extends State<HomePage> {
                         ],
                         instagramUrl: '',
                         moreInfoUrl: '',
-                        images: [],
+                        images: [
+                          'assets/images/cuadriculaperformances.jpg',
+                        ], // Solo una imagen
                       ),
                     ),
                   ),
@@ -195,7 +199,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          // Imágenes decorativas
+          // Imágenes decorativas flotantes que permanecen en la misma posición
           Positioned(
             top: 115,
             left: 200,
