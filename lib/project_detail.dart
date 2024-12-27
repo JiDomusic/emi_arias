@@ -33,13 +33,13 @@ class ProjectDetail extends StatelessWidget {
   String getImageForTitle() {
     switch (title.toLowerCase()) {
       case 'la ruta de las campanas':
-        return 'assets/images/cuadriculacampanas.jpg';
+        return 'assets/images/nuevacampanas.jpg';
       case 'lutheria':
-        return 'assets/images/cuadriculaluteria.jpg';
+        return 'assets/images/cuadriculaluteria2.jpg';
       case 'percusion':
-        return 'assets/images/cuadriculapercusion.jpg';
+        return 'assets/images/cuadriculapercusion2.jpg';
       case 'performances':
-        return 'assets/images/cuadriculaperformances.jpg';
+        return 'assets/images/cuadriculaperformances2.jpg';
       default:
         return 'assets/images/default.png'; // Imagen por defecto
     }
@@ -80,7 +80,7 @@ class ProjectDetail extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Container(
-                height: 500,
+                height: 650,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
