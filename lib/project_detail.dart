@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ProjectDetail extends StatelessWidget {
+class ProjectDetail extends StatefulWidget {
   final String title;
   final String description;
   final String instagramUrl;
@@ -20,6 +20,14 @@ class ProjectDetail extends StatelessWidget {
     required String image,
   });
 
+  @override
+  _ProjectDetailState createState() => _ProjectDetailState();
+}
+
+class _ProjectDetailState extends State<ProjectDetail> {
+  // Variable para controlar el estado de los enlaces
+  final Map<String, bool> _hoveringLinks = {};
+
   void _openUrl(String url) async {
     final Uri uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
@@ -31,7 +39,7 @@ class ProjectDetail extends StatelessWidget {
 
   // Método para obtener la imagen según el título
   String getImageForTitle() {
-    switch (title.toLowerCase()) {
+    switch (widget.title.toLowerCase()) {
       case 'la ruta de las campanas':
         return 'assets/images/nuevacampanas.jpg';
       case 'lutheria':
@@ -41,7 +49,7 @@ class ProjectDetail extends StatelessWidget {
       case 'performances':
         return 'assets/images/cuadriculaperformances2.jpg';
       default:
-        return 'assets/images/default.png'; // Imagen por defecto
+        return 'assets/images/cuadriculapercusion2.jpg'; // Imagen por defecto
     }
   }
 
@@ -54,7 +62,7 @@ class ProjectDetail extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text(
-          title,
+          widget.title,
           style: const TextStyle(
             fontSize: 20,
             fontFamily: 'BigShouldersInlineText-ExtraBold',
@@ -63,7 +71,7 @@ class ProjectDetail extends StatelessWidget {
         ),
         backgroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.black),
-        elevation: 0,
+        elevation: 2,
         actions: [
           IconButton(
             icon: const Icon(Icons.home, color: Colors.black),
@@ -74,124 +82,108 @@ class ProjectDetail extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(50.0),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: 650,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                        imagePath), // Mostrar la imagen correspondiente
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: BorderRadius.circular(10),
+        padding:
+            const EdgeInsets.symmetric(horizontal: 20.0), // Padding general
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final isSmallScreen =
+                constraints.maxWidth < 700; // Dispositivo móvil
+
+            return Center(
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: isSmallScreen
+                      ? double.infinity
+                      : 1200, // Limitamos el ancho máximo
                 ),
-              ),
-            ),
-            const SizedBox(width: 100),
-            Expanded(
-              flex: 1,
-              child: Container(
-                padding: const EdgeInsets.all(
-                  20,
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(0),
-                ),
-                child: Column(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      description,
-                      style: const TextStyle(
-                        fontFamily: 'BigShouldersInlineText-ExtraBold',
-                        fontSize: 18,
-                        color: Colors.black87,
+                    // Imagen del proyecto
+                    Container(
+                      width: isSmallScreen
+                          ? 300
+                          : 600, // Imagen más pequeña en móvil
+                      height: isSmallScreen
+                          ? 150
+                          : 400, // Ajuste de tamaño en pantallas pequeñas
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(imagePath),
+                          fit: BoxFit.contain,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      textAlign: TextAlign.end,
                     ),
-                    const SizedBox(height: 50),
-                    // Enlaces para "La Ruta de Las Campanas"
-                    if (title.trim().toLowerCase() ==
-                        'la ruta de las campanas'.toLowerCase()) ...[
-                      GestureDetector(
-                        onTap: () => _openUrl(
-                            'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas'),
-                        child: const Text(
-                          'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 18,
-                            decoration: TextDecoration.underline,
-                          ),
+                    const SizedBox(
+                        width: 70), // Espaciado entre imagen y descripción
+                    // Descripción del proyecto
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.description,
+                              style: const TextStyle(
+                                fontFamily: 'BigShouldersInlineText-ExtraBold',
+                                fontSize: 18,
+                                color: Colors.black87,
+                              ),
+                              textAlign: TextAlign.justify,
+                            ),
+                            const SizedBox(height: 20),
+                            if (widget.videoLinks.isNotEmpty)
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: widget.videoLinks.map((url) {
+                                  return MouseRegion(
+                                    onEnter: (_) {
+                                      setState(() {
+                                        _hoveringLinks[url] = true;
+                                      });
+                                    },
+                                    onExit: (_) {
+                                      setState(() {
+                                        _hoveringLinks[url] = false;
+                                      });
+                                    },
+                                    child: GestureDetector(
+                                      onTap: () => _openUrl(url),
+                                      child: Text(
+                                        url,
+                                        style: TextStyle(
+                                          color: _hoveringLinks[url] ?? false
+                                              ? Colors.blueGrey
+                                              : Colors.blueAccent,
+                                          fontSize: 18,
+                                          decoration: TextDecoration.underline,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                }).toList(),
+                              ),
+                            const SizedBox(height: 40),
+                          ],
                         ),
                       ),
-                      const SizedBox(height: 30),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: videoLinks.map((url) {
-                          return GestureDetector(
-                            onTap: () => _openUrl(url),
-                            child: Text(
-                              url,
-                              style: const TextStyle(
-                                color: Colors.blue,
-                                fontSize: 18,
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                    ],
-                    const SizedBox(height: 30),
-                    // Enlaces para "Performances"
-                    if (title.trim().toLowerCase() == 'performances' &&
-                        videoLinks.isNotEmpty) ...[
-                      const Text(
-                        '',
-                        style: TextStyle(
-                          fontFamily: 'BigShouldersInlineText-ExtraBold',
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 25),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: videoLinks.map((url) {
-                          return GestureDetector(
-                            onTap: () => _openUrl(url),
-                            child: Text(
-                              url,
-                              style: const TextStyle(
-                                color: Colors.blue,
-                                fontSize: 18,
-                                decoration: TextDecoration.underline,
-                              ),
-                            ),
-                          );
-                        }).toList(),
-                      ),
-                    ],
+                    ),
                   ],
                 ),
               ),
-            ),
-          ],
+            );
+          },
         ),
       ),
       backgroundColor: Colors.white,
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
-              onTap: () => _openUrl(instagramUrl),
+              onTap: () => _openUrl(widget.instagramUrl),
               child: const Icon(
                 FontAwesomeIcons.instagram,
                 size: 20,

@@ -123,6 +123,10 @@ class _HomePageState extends State<HomePage> {
                             'https://www.instagram.com/larutadelascampanas/?hl=es',
                         moreInfoUrl:
                             'https://emr-rosario.gob.ar/page/libros/id/41444',
+                        videoLinks: [
+                          'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas',
+                          'https://www.elciudadanoweb.com/patrimonio-sonoro-inmaterial-de-rosario-proponen-la-ruta-de-las-campanas/'
+                        ],
                         images: [
                           'assets/images/cuadriculacampanas.webp'
                         ], // Ahora una sola imagen
@@ -166,6 +170,10 @@ class _HomePageState extends State<HomePage> {
                         image: 'assets/images/perusio',
                         instagramUrl: '',
                         moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
+                        videoLinks: [
+                          'https://www.youtube.com/watch?v=jZIoxw0ca9E',
+                          'https://emilianaarias.bandcamp.com/'
+                        ],
                         images: [], // Solo una imagen
                       ),
                     ),
