@@ -150,7 +150,7 @@ class _HomePageState extends State<HomePage> {
                         instagramUrl:
                             'https://www.instagram.com/yunque_instrumentos/?hl=es-la',
                         moreInfoUrl: '',
-                        images: ['assets/images/cuadriculaluteria.jpg'],
+                        images: ['assets/images/cuadriculaluteria2.jpg'],
                         videoLinks: [
                           'https://www.instagram.com/yunque_instrumentos/?hl=es-la'
                         ], // Solo una imagen
