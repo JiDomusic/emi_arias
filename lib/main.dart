@@ -1,7 +1,7 @@
 import 'package:emi_arias/contactlinks.dart';
 import 'package:emi_arias/project_section.dart';
 import 'package:flutter/material.dart';
-import 'package:just_audio/just_audio.dart'; // Importamos just_audio
+import 'package:just_audio/just_audio.dart';
 
 void main() {
   runApp(const EmilianaAriasApp());
@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                         instagramUrl: '',
                         moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
                         videoLinks: ['https://emilianaarias.bandcamp.com/'],
-                        images: [], // Solo una imagen
+                        images: [],
                       ),
                     ),
                   ),

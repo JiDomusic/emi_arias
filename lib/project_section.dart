@@ -2,7 +2,6 @@ import 'package:emi_arias/project_detail.dart';
 import 'package:flutter/material.dart';
 
 class ProjectSection extends StatelessWidget {
-  /// El título del proyecto que se mostrará en la sección.
   final String title;
   final String description;
   final List<String> images;

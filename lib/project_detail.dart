@@ -50,7 +50,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
       case 'performances':
         return 'assets/images/cuadriculaperformances2.jpg';
       default:
-        return 'assets/images/cuadriculaluteria2.jpg'; // Imagen por defecto
+        return 'assets/images/cuadriculaluteria2.jpg';
     }
   }
 
@@ -100,8 +100,8 @@ class _ProjectDetailState extends State<ProjectDetail> {
                   children: [
                     // Imagen
                     Container(
-                      width: isSmallScreen ? 300 : 600, //en móvil
-                      height: isSmallScreen ? 150 : 400, // pantallas pequeñas
+                      width: isSmallScreen ? 300 : 600,
+                      height: isSmallScreen ? 150 : 400,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(imagePath),
@@ -175,9 +175,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
         padding: const EdgeInsets.symmetric(vertical: 20),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // No mostramos el icono de Instagram aquí
-          ],
+          children: [],
         ),
       ),
     );
