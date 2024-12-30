@@ -205,7 +205,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Contenido principal de la app',
+          'EMILIANA',
           style: TextStyle(fontSize: 24),
         ),
       ),
