@@ -272,7 +272,7 @@ class _DecorativeImage extends StatefulWidget {
 class _DecorativeImageState extends State<_DecorativeImage>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late AudioPlayer _audioPlayer; // Crear un nuevo audioPlayer para cada imagen
+  late AudioPlayer _audioPlayer; // Crear un nuevo audioPlayer
 
   @override
   void initState() {
@@ -304,7 +304,7 @@ class _DecorativeImageState extends State<_DecorativeImage>
         _playAudio();
       },
       onExit: (_) {
-        _controller.reverse(); //tamaño original
+        _controller.reverse(); //original
       },
       child: GestureDetector(
         onTap: () async {
@@ -315,8 +315,8 @@ class _DecorativeImageState extends State<_DecorativeImage>
           scale: _controller,
           child: Image.asset(
             widget.imagePath,
-            width: MediaQuery.of(context).size.width * 0.12, //
-            height: MediaQuery.of(context).size.height * 0.12, // Ajuste
+            width: MediaQuery.of(context).size.width * 0.10, //
+            height: MediaQuery.of(context).size.height * 0.10, // Ajuste
           ),
         ),
       ),
