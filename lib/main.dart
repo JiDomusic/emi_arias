@@ -216,7 +216,7 @@ class _HomePageState extends State<HomePage> {
             left: 200,
             child: _DecorativeImage(
               imagePath: 'assets/images/campanas.jpg', // Imagen fija
-              audioPath: 'assets/audio/campana.mp3', // Ruta del audio
+              audioPath: 'assets/audio/campana2.mp3', // Ruta del audio
               audioPlayer: _audioPlayer,
             ),
           ),
@@ -226,7 +226,7 @@ class _HomePageState extends State<HomePage> {
             right: 185,
             child: _DecorativeImage(
               imagePath: 'assets/images/lutheria.jpg',
-              audioPath: 'assets/audio/lutheria.mp3',
+              audioPath: 'assets/audio/lutheria2.mp3',
               audioPlayer: _audioPlayer,
             ),
           ),
@@ -235,7 +235,7 @@ class _HomePageState extends State<HomePage> {
             left: 310,
             child: _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',
-              audioPath: 'assets/audio/percusion.mp3',
+              audioPath: 'assets/audio/percusion2.mp3',
               audioPlayer: _audioPlayer,
             ),
           ),
@@ -244,7 +244,7 @@ class _HomePageState extends State<HomePage> {
             right: 310,
             child: _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
-              audioPath: 'assets/audio/performance.mp3',
+              audioPath: 'assets/audio/performance2.mp3',
               audioPlayer: _audioPlayer,
             ),
           ),
