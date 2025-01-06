@@ -100,14 +100,14 @@ class _ProjectDetailState extends State<ProjectDetail> {
                   children: [
                     // Imagen
                     Container(
-                      width: isSmallScreen ? 300 : 600,
+                      width: isSmallScreen ? 300 : 700,
                       height: isSmallScreen ? 150 : 400,
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(imagePath),
-                          fit: BoxFit.contain,
+                          fit: BoxFit.fill,
                         ),
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(5),
                       ),
                     ),
                     const SizedBox(width: 70),
