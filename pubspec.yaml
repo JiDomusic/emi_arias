@@ -39,6 +39,7 @@ dependencies:
   firebase_storage: ^12.2.0
   video_player: ^2.4.5
   just_audio: ^0.9.32
+  permission_handler: ^10.2.0
 
 
 

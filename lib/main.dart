@@ -2,6 +2,7 @@ import 'package:emi_arias/contactlinks.dart';
 import 'package:emi_arias/project_section.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(const EmilianaAriasApp());
@@ -16,10 +17,10 @@ class EmilianaAriasApp extends StatelessWidget {
       title: 'Emiliana Arias',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.transparent,
-        scaffoldBackgroundColor: Colors.transparent,
+        primaryColor: Colors.black,
+        scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.white,
           elevation: 40,
           iconTheme: IconThemeData(color: Colors.black38),
         ),
@@ -59,30 +60,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late AudioPlayer _audioPlayer;
-
-  @override
-  void initState() {
-    super.initState();
-    _initializeAudio();
-  }
-
-  Future<void> _initializeAudio() async {
-    _audioPlayer = AudioPlayer();
-    try {
-      await _audioPlayer.setAsset('assets/audio/audiocampana.mp3');
-      await _audioPlayer.play();
-    } catch (e) {
-      debugPrint('Error reproduciendo audio: $e');
-    }
-  }
-
-  @override
-  void dispose() {
-    _audioPlayer.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -126,11 +103,8 @@ class _HomePageState extends State<HomePage> {
                         videoLinks: [
                           'https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas',
                           'https://docs.google.com/document/d/18hlsSTpLyC0vUf_ZH7hD4WTWk1FuJpto/edit?usp=sharing&ouid=105108450464616346072&rtpof=true&sd=true',
-                          'https://www.elciudadanoweb.com/patrimonio-sonoro-inmaterial-de-rosario-proponen-la-ruta-de-las-campanas/',
                         ],
-                        images: [
-                          'assets/images/cuadriculacampanas.webp'
-                        ], // Ahora una sola imagen
+                        images: ['assets/images/cuadriculacampanas.webp'],
                       ),
                     ),
                   ),
@@ -153,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                         images: ['assets/images/cuadriculaluteria2.jpg'],
                         videoLinks: [
                           'https://www.instagram.com/yunque_instrumentos/?hl=es-la'
-                        ], // Solo una imagen
+                        ],
                       ),
                     ),
                   ),
@@ -200,7 +174,7 @@ class _HomePageState extends State<HomePage> {
                         moreInfoUrl: '',
                         images: [
                           'assets/images/cuadriculaperformances.jpg',
-                        ], // Solo una imagen
+                        ],
                       ),
                     ),
                   ),
@@ -210,42 +184,36 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-
           Positioned(
-            top: 115,
+            top: 80,
             left: 200,
             child: _DecorativeImage(
-              imagePath: 'assets/images/campanas.jpg', // Imagen fija
-              audioPath: 'assets/audio/campana2.mp3', // Ruta del audio
-              audioPlayer: _audioPlayer,
+              imagePath: 'assets/images/campanas.jpg',
+              audioPath: 'assets/audio/campana2.mp3',
             ),
           ),
-          // Las imágenes decorativas
           Positioned(
-            top: 215,
-            right: 185,
+            top: 280,
+            right: 100,
             child: _DecorativeImage(
               imagePath: 'assets/images/lutheria.jpg',
               audioPath: 'assets/audio/lutheria2.mp3',
-              audioPlayer: _audioPlayer,
             ),
           ),
           Positioned(
-            bottom: 295,
-            left: 310,
+            bottom: 340,
+            left: 90,
             child: _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',
               audioPath: 'assets/audio/percusion2.mp3',
-              audioPlayer: _audioPlayer,
             ),
           ),
           Positioned(
-            bottom: 180,
-            right: 310,
+            bottom: 200,
+            right: 350,
             child: _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
               audioPath: 'assets/audio/performance2.mp3',
-              audioPlayer: _audioPlayer,
             ),
           ),
         ],
@@ -256,13 +224,11 @@ class _HomePageState extends State<HomePage> {
 
 class _DecorativeImage extends StatefulWidget {
   final String imagePath;
-  final String audioPath; // audio
-  final AudioPlayer audioPlayer;
+  final String audioPath;
 
   const _DecorativeImage({
     required this.imagePath,
-    required this.audioPath, // audioPath
-    required this.audioPlayer,
+    required this.audioPath,
   });
 
   @override
@@ -272,7 +238,7 @@ class _DecorativeImage extends StatefulWidget {
 class _DecorativeImageState extends State<_DecorativeImage>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late AudioPlayer _audioPlayer; // Crear un nuevo audioPlayer
+  late AudioPlayer _audioPlayer;
 
   @override
   void initState() {
@@ -284,9 +250,15 @@ class _DecorativeImageState extends State<_DecorativeImage>
       lowerBound: 1.0,
       upperBound: 1.5,
     );
+    _requestAudioPermission();
   }
 
-  // Función para cargar y reproducir el audio cuando se pase el mouse
+  Future<void> _requestAudioPermission() async {
+    if (await Permission.microphone.isDenied) {
+      await Permission.microphone.request();
+    }
+  }
+
   Future<void> _playAudio() async {
     try {
       await _audioPlayer.setAsset(widget.audioPath);
@@ -298,25 +270,25 @@ class _DecorativeImageState extends State<_DecorativeImage>
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) {
-        _controller.forward();
-        _playAudio();
+    return GestureDetector(
+      onTap: () async {
+        await _audioPlayer.seek(Duration.zero);
+        await _audioPlayer.play();
       },
-      onExit: (_) {
-        _controller.reverse(); //original
-      },
-      child: GestureDetector(
-        onTap: () async {
-          await _audioPlayer.seek(Duration.zero);
-          await _audioPlayer.play();
+      child: MouseRegion(
+        onEnter: (_) {
+          _controller.forward();
+          _playAudio();
+        },
+        onExit: (_) {
+          _controller.reverse();
         },
         child: ScaleTransition(
           scale: _controller,
           child: Image.asset(
             widget.imagePath,
-            width: MediaQuery.of(context).size.width * 0.10, //
-            height: MediaQuery.of(context).size.height * 0.10, // Ajuste
+            width: MediaQuery.of(context).size.width * 0.10,
+            height: MediaQuery.of(context).size.height * 0.10,
           ),
         ),
       ),
@@ -326,7 +298,7 @@ class _DecorativeImageState extends State<_DecorativeImage>
   @override
   void dispose() {
     _controller.dispose();
-    _audioPlayer.dispose(); // Limpiar el
+    _audioPlayer.dispose();
     super.dispose();
   }
 }
