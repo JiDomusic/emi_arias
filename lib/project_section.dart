@@ -65,7 +65,7 @@ class ProjectSection extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            textAlign: TextAlign.justify, // Alinea el texto al centro.
+            textAlign: TextAlign.center, // Alinea el texto al centro.
             style: effectiveStyle,
           ),
         ),

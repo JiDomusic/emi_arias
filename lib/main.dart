@@ -315,8 +315,8 @@ class _DecorativeImageState extends State<_DecorativeImage>
           scale: _controller,
           child: Image.asset(
             widget.imagePath,
-            width: MediaQuery.of(context).size.width * 0.13, //
-            height: MediaQuery.of(context).size.height * 0.13, // Ajuste
+            width: MediaQuery.of(context).size.width * 0.10, //
+            height: MediaQuery.of(context).size.height * 0.10, // Ajuste
           ),
         ),
       ),

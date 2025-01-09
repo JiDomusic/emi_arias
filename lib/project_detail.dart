@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectDetail extends StatefulWidget {
@@ -26,7 +25,6 @@ class ProjectDetail extends StatefulWidget {
 }
 
 class _ProjectDetailState extends State<ProjectDetail> {
-  // Variable para controlar el estado de los enlaces
   final Map<String, bool> _hoveringLinks = {};
 
   void _openUrl(String url) async {
@@ -38,7 +36,6 @@ class _ProjectDetailState extends State<ProjectDetail> {
     }
   }
 
-  //  el título
   String getImageForTitle() {
     switch (widget.title.toLowerCase()) {
       case 'la ruta de las campanas':
@@ -56,6 +53,9 @@ class _ProjectDetailState extends State<ProjectDetail> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isSmallScreen = screenWidth < 700;
+
     String imagePath = getImageForTitle();
 
     return Scaffold(
@@ -82,143 +82,101 @@ class _ProjectDetailState extends State<ProjectDetail> {
         ],
       ),
       body: Padding(
-        padding:
-            const EdgeInsets.symmetric(horizontal: 20.0), // Padding general
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: LayoutBuilder(
           builder: (context, constraints) {
-            final isSmallScreen = constraints.maxWidth < 700; // móvil
-
             return Center(
               child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxWidth: isSmallScreen
-                      ? double.infinity
-                      : 1200, // Limitamos el ancho máximo
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // Imagen
-                    Container(
-                      width: isSmallScreen ? 300 : 700,
-                      height: isSmallScreen ? 150 : 400,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(imagePath),
-                          fit: BoxFit.fill,
-                        ),
-                        borderRadius: BorderRadius.circular(5),
+                constraints: BoxConstraints(maxWidth: 1200),
+                child: isSmallScreen
+                    ? Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          _buildImage(imagePath, isSmallScreen),
+                          const SizedBox(height: 20),
+                          _buildDescription(),
+                        ],
+                      )
+                    : Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          _buildImage(imagePath, isSmallScreen),
+                          const SizedBox(width: 30),
+                          Expanded(child: _buildDescription()),
+                        ],
                       ),
-                    ),
-                    const SizedBox(width: 70),
-                    // Descripción
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              widget.description,
-                              style: const TextStyle(
-                                fontFamily: 'BigShouldersInlineText-ExtraBold',
-                                fontSize: 18,
-                                color: Colors.black87,
-                              ),
-                              textAlign: TextAlign.justify,
-                            ),
-                            const SizedBox(height: 20),
-                            if (widget.videoLinks.isNotEmpty)
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: widget.videoLinks.map((url) {
-                                  return MouseRegion(
-                                    onEnter: (_) {
-                                      setState(() {
-                                        _hoveringLinks[url] = true;
-                                      });
-                                    },
-                                    onExit: (_) {
-                                      setState(() {
-                                        _hoveringLinks[url] = false;
-                                      });
-                                    },
-                                    child: GestureDetector(
-                                      onTap: () => _openUrl(url),
-                                      child: Text(
-                                        url,
-                                        style: TextStyle(
-                                          color: _hoveringLinks[url] ?? false
-                                              ? Colors.blueGrey
-                                              : Colors.blueAccent,
-                                          fontSize: 18,
-                                          decoration: TextDecoration.underline,
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }).toList(),
-                              ),
-                            const SizedBox(height: 40),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
               ),
             );
           },
         ),
       ),
       backgroundColor: Colors.white,
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [],
+    );
+  }
+
+  Widget _buildImage(String imagePath, bool isSmallScreen) {
+    return Container(
+      width: isSmallScreen ? double.infinity : 600,
+      height: isSmallScreen ? 200 : 400,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
         ),
+        borderRadius: BorderRadius.circular(10),
       ),
     );
   }
-}
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Emiliana Arias'),
-        actions: [
-          GestureDetector(
-            onTap: () {
-              _openInstagramUrl();
-            },
-            child: const Icon(
-              FontAwesomeIcons.instagram,
-              size: 30,
-              color: Colors.black,
+  Widget _buildDescription() {
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            widget.description,
+            style: const TextStyle(
+              fontFamily: 'BigShouldersInlineText-ExtraBold',
+              fontSize: 18,
+              color: Colors.black87,
             ),
+            textAlign: TextAlign.justify,
           ),
+          const SizedBox(height: 20),
+          if (widget.videoLinks.isNotEmpty)
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: widget.videoLinks.map((url) {
+                return MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      _hoveringLinks[url] = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      _hoveringLinks[url] = false;
+                    });
+                  },
+                  child: GestureDetector(
+                    onTap: () => _openUrl(url),
+                    child: Text(
+                      url,
+                      style: TextStyle(
+                        color: _hoveringLinks[url] ?? false
+                            ? Colors.blueGrey
+                            : Colors.blueAccent,
+                        fontSize: 18,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
+          const SizedBox(height: 40),
         ],
       ),
-      body: Center(
-        child: Text(
-          'EMILIANA',
-          style: TextStyle(fontSize: 24),
-        ),
-      ),
     );
-  }
-
-  void _openInstagramUrl() async {
-    const String instagramUrl = 'https://www.instagram.com/emilianaarias';
-    final Uri uri = Uri.parse(instagramUrl);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } else {
-      throw 'No se pudo abrir $instagramUrl';
-    }
   }
 }
