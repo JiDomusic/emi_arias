@@ -146,7 +146,7 @@ class _HomePageState extends State<HomePage> {
                         instagramUrl: '',
                         moreInfoUrl: 'https://emilianaarias.bandcamp.com/',
                         videoLinks: ['https://emilianaarias.bandcamp.com/'],
-                        images: [],
+                        images: ['assets/images/cuadriculapercusion2.jpg'],
                       ),
                     ),
                   ),
