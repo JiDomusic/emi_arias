@@ -75,9 +75,9 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
       ),
-      body: Stack(
+      body: const Stack(
         children: [
-          const Center(
+          Center(
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 120, horizontal: 10.0),
               child: Column(
