@@ -41,7 +41,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
       case 'la ruta de las campanas':
         return 'assets/images/nuevacampanas.jpg';
       case 'lutheria':
-        return 'assets/images/cuadriculaluteria2.jpg';
+        return 'assets/images/cuadriculaluteria3.jpg';
       case 'percusion':
         return 'assets/images/cuadriculapercusion2.jpg';
       case 'performances':
