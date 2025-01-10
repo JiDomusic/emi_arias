@@ -47,7 +47,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
       case 'performances':
         return 'assets/images/cuadriculaperformances2.jpg';
       default:
-        return 'assets/images/cuadriculaluteria2.jpg';
+        return '';
     }
   }
 
