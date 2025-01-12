@@ -87,7 +87,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
           builder: (context, constraints) {
             return Center(
               child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 1200),
+                constraints: const BoxConstraints(maxWidth: 1200),
                 child: isSmallScreen
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
