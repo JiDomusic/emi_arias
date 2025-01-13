@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             top: 80,
-            left: 200,
+            left: 350,
             child: _DecorativeImage(
               imagePath: 'assets/images/campanas.jpg',
               audioPath: 'assets/audio/campana2.mp3',
@@ -194,15 +194,15 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             top: 220,
-            right: 90,
+            right: 400,
             child: _DecorativeImage(
               imagePath: 'assets/images/lutheria.jpg',
               audioPath: 'assets/audio/lutheria2.mp3',
             ),
           ),
           Positioned(
-            bottom: 350,
-            left: 90,
+            bottom: 300,
+            left: 450,
             child: _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',
               audioPath: 'assets/audio/percusion2.mp3',
@@ -210,7 +210,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             bottom: 150,
-            right: 150,
+            right: 410,
             child: _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
               audioPath: 'assets/audio/performance2.mp3',
@@ -287,7 +287,7 @@ class _DecorativeImageState extends State<_DecorativeImage>
           scale: _controller,
           child: Image.asset(
             opacity: AlwaysStoppedAnimation<double>(
-                (MediaQuery.of(context).size.width > 1100) ? 1.0 : 0.0),
+                (MediaQuery.of(context).size.width > 750) ? 1.0 : 0.0),
             widget.imagePath,
             width: MediaQuery.of(context).size.width * 0.10,
             height: MediaQuery.of(context).size.height * 0.10,
