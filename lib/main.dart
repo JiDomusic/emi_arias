@@ -185,8 +185,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            top: 80,
-            left: MediaQuery.of(context).size.width / 2 - 300,
+            top: 100,
+            left: MediaQuery.of(context).size.width / 2 - 340,
             child: _DecorativeImage(
               imagePath: 'assets/images/campanas.jpg',
               audioPath: 'assets/audio/campana2.mp3',
@@ -201,7 +201,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            bottom: 300,
+            bottom: 290,
             left: MediaQuery.of(context).size.width / 2 - 300,
             child: _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',
@@ -209,7 +209,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            bottom: 180,
+            bottom: 97,
             right: MediaQuery.of(context).size.width / 2 - 300,
             child: _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
