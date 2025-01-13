@@ -33435,7 +33435,7 @@ return A.t($async$o3,r)},
 N(a){var s,r,q,p,o=this,n=null,m=o.d
 m===$&&A.b()
 s=t.w
-r=A.cc(a,n,s).w.a.a>1100?1:0
+r=A.cc(a,n,s).w.a.a>750?1:0
 q=o.a.c
 p=A.cc(a,n,s).w
 s=A.cc(a,n,s).w
@@ -67468,13 +67468,13 @@ B.z4=new A.rj(B.b3,B.fW,B.cS,B.b6,null,B.hW,null,0,B.C2,null)
 B.FD=new A.hD(B.zM,B.z4,null)
 B.y2=new A.lc(B.T,null,null,B.FD,null)
 B.OI=new A.kr("assets/images/campanas.jpg","assets/audio/campana2.mp3",null)
-B.H6=new A.fO(200,80,null,null,null,null,B.OI,null)
+B.H6=new A.fO(350,80,null,null,null,null,B.OI,null)
 B.OG=new A.kr("assets/images/lutheria.jpg","assets/audio/lutheria2.mp3",null)
-B.H5=new A.fO(null,220,90,null,null,null,B.OG,null)
+B.H5=new A.fO(null,220,400,null,null,null,B.OG,null)
 B.OH=new A.kr("assets/images/perusio3.jpg","assets/audio/percusion2.mp3",null)
-B.H4=new A.fO(90,null,null,350,null,null,B.OH,null)
+B.H4=new A.fO(450,null,null,300,null,null,B.OH,null)
 B.OF=new A.kr("assets/images/zoomorfopreformance.jpg","assets/audio/performance2.mp3",null)
-B.H7=new A.fO(null,null,150,150,null,null,B.OF,null)
+B.H7=new A.fO(null,null,410,150,null,null,B.OF,null)
 B.C3=A.a(s([B.y2,B.H6,B.H5,B.H4,B.H7]),t.E)
 B.JF=new A.vN(B.eV,B.hM,B.C3,null)
 B.JI=new A.vP(3,"drawerButton")
