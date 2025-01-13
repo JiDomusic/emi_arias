@@ -40,7 +40,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
     switch (widget.title.toLowerCase()) {
       case 'la ruta de las campanas':
         return 'assets/images/nuevacampanas.jpg';
-      case 'lutheria':
+      case 'luthería':
         return 'assets/images/cuadriculalutheria.jpg';
       case 'percusión':
         return 'assets/images/cuadriculapercusion2.jpg';
