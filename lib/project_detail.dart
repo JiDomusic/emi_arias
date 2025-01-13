@@ -42,12 +42,12 @@ class _ProjectDetailState extends State<ProjectDetail> {
         return 'assets/images/nuevacampanas.jpg';
       case 'lutheria':
         return 'assets/images/cuadriculalutheria.jpg';
-      case 'percusion':
+      case 'percusión':
         return 'assets/images/cuadriculapercusion2.jpg';
       case 'performances':
         return 'assets/images/cuadriculaperformances2.jpg';
       default:
-        return 'assets/images/cuadriculapercusion2.jpg';
+        return 'assets/images/cuadriculalutheria.jpg';
     }
   }
 
