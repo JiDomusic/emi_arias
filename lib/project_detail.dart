@@ -82,18 +82,18 @@ class _ProjectDetailState extends State<ProjectDetail> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 15.0),
         child: LayoutBuilder(
           builder: (context, constraints) {
             return Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 1200),
+                constraints: const BoxConstraints(maxWidth: 1100),
                 child: isSmallScreen
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 25),
                           _buildDescription(),
                         ],
                       )
@@ -101,7 +101,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 30),
+                          const SizedBox(width: 25),
                           Expanded(child: _buildDescription()),
                         ],
                       ),
@@ -116,7 +116,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
 
   Widget _buildImage(String imagePath, bool isSmallScreen) {
     return Container(
-      width: isSmallScreen ? double.infinity : 600,
+      width: isSmallScreen ? double.infinity : 500,
       height: isSmallScreen ? 200 : 400,
       decoration: BoxDecoration(
         image: DecorationImage(

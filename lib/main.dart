@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 120, horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 80, horizontal: 10.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -193,15 +193,15 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            top: 280,
-            right: 100,
+            top: 220,
+            right: 90,
             child: _DecorativeImage(
               imagePath: 'assets/images/lutheria.jpg',
               audioPath: 'assets/audio/lutheria2.mp3',
             ),
           ),
           Positioned(
-            bottom: 340,
+            bottom: 350,
             left: 90,
             child: _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',
@@ -209,8 +209,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            bottom: 200,
-            right: 350,
+            bottom: 150,
+            right: 150,
             child: _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
               audioPath: 'assets/audio/performance2.mp3',
@@ -286,6 +286,8 @@ class _DecorativeImageState extends State<_DecorativeImage>
         child: ScaleTransition(
           scale: _controller,
           child: Image.asset(
+            opacity: AlwaysStoppedAnimation<double>(
+                (MediaQuery.of(context).size.width > 1100) ? 1.0 : 0.0),
             widget.imagePath,
             width: MediaQuery.of(context).size.width * 0.10,
             height: MediaQuery.of(context).size.height * 0.10,
