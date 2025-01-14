@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 80, horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 140, horizontal: 10.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -185,7 +185,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            top: 100,
+            top: 125,
             left: MediaQuery.of(context).size.width / 2 - 340,
             child: _DecorativeImage(
               imagePath: 'assets/images/campanas.jpg',
@@ -193,8 +193,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            top: 220,
-            right: MediaQuery.of(context).size.width / 2 - 300,
+            top: 230,
+            right: MediaQuery.of(context).size.width / 2.3 - 300,
             child: _DecorativeImage(
               imagePath: 'assets/images/lutheria.jpg',
               audioPath: 'assets/audio/lutheria2.mp3',
@@ -209,8 +209,8 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            bottom: 97,
-            right: MediaQuery.of(context).size.width / 2 - 300,
+            bottom: 120,
+            right: MediaQuery.of(context).size.width / 1.8 - 300,
             child: _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
               audioPath: 'assets/audio/performance2.mp3',
