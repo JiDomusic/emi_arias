@@ -82,18 +82,18 @@ class _ProjectDetailState extends State<ProjectDetail> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: LayoutBuilder(
           builder: (context, constraints) {
             return Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 1200),
+                constraints: const BoxConstraints(maxWidth: 1100),
                 child: isSmallScreen
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(height: 25),
+                          const SizedBox(height: 11),
                           _buildDescription(),
                         ],
                       )
@@ -101,7 +101,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 30),
+                          const SizedBox(width: 25),
                           Expanded(child: _buildDescription()),
                         ],
                       ),
@@ -117,7 +117,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
   Widget _buildImage(String imagePath, bool isSmallScreen) {
     return Container(
       width: isSmallScreen ? double.infinity : 500,
-      height: isSmallScreen ? 300 : 400,
+      height: isSmallScreen ? 345 : 400,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),
@@ -137,12 +137,12 @@ class _ProjectDetailState extends State<ProjectDetail> {
             widget.description,
             style: const TextStyle(
               fontFamily: 'BigShouldersInlineText-ExtraBold',
-              fontSize: 18,
+              fontSize: 16.2,
               color: Colors.black87,
             ),
             textAlign: TextAlign.justify,
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 1),
           if (widget.videoLinks.isNotEmpty)
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,7 +166,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         color: _hoveringLinks[url] ?? false
                             ? Colors.blueGrey
                             : Colors.blueAccent,
-                        fontSize: 18,
+                        fontSize: 17,
                         decoration: TextDecoration.underline,
                       ),
                     ),
