@@ -87,7 +87,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
           builder: (context, constraints) {
             return Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 1100),
+                constraints: const BoxConstraints(maxWidth: 1200),
                 child: isSmallScreen
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -101,7 +101,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 25),
+                          const SizedBox(width: 30),
                           Expanded(child: _buildDescription()),
                         ],
                       ),
@@ -117,7 +117,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
   Widget _buildImage(String imagePath, bool isSmallScreen) {
     return Container(
       width: isSmallScreen ? double.infinity : 500,
-      height: isSmallScreen ? 200 : 400,
+      height: isSmallScreen ? 300 : 400,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),
