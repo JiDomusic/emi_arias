@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             top: 125,
-            left: MediaQuery.of(context).size.width / 2 - 340,
+            left: MediaQuery.of(context).size.width / 2.1 - 340,
             child: _DecorativeImage(
               imagePath: 'assets/images/campanas.jpg',
               audioPath: 'assets/audio/campana2.mp3',
