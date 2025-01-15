@@ -117,7 +117,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
   Widget _buildImage(String imagePath, bool isSmallScreen) {
     return Container(
       width: isSmallScreen ? double.infinity : 400,
-      height: isSmallScreen ? 250 : 300,
+      height: isSmallScreen ? 50 : 310,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),

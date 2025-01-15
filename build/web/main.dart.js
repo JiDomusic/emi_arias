@@ -33404,7 +33404,7 @@ o=A.hN(k,k,B.k,k,k,k,k,k,k,k,k,28,k,k,B.L,k,k,!0,k,k,k,k,k,k,k,k)
 n=A.a(["https://www.youtube.com/watch?v=Xl0KKn8DRcY","https://ladistanciaanimal-blog.tumblr.com/post/126622302700/una-obra-de-danza-de-virginia-tuttolomondo-y-diego","https://www.facebook.com/profile.php?id=100065022993837","https://www.youtube.com/watch?v=WXxp-qm5RTE","https://perfoping.blogspot.com/","https://www.facebook.com/watch/?v=1041454055879071"],c)
 m=t.W
 l=t.w
-return A.ahf(e,k,A.a1G(B.eU,A.a([A.r5(new A.hB(new A.bg(9,90,9,90),A.PQ(A.a([new A.jr(1,B.dI,new A.kJ(b,k),k),d,new A.jr(1,B.dI,new A.kJ(s,k),k),r,new A.jr(1,B.dI,new A.kJ(p,k),k),q,new A.jr(1,B.dI,new A.kJ(A.ZG("Performances. Cine. Teatro.","assets/images/cuadriculaperformances.jpg",A.a([u.v],c),"","",o,"performances",n),k),k),A.Ft(k,1,k),new A.kJ(new A.AQ(k),k)],m),B.b5,B.fV),k),k,k),A.uG(k,new A.kr(j,"assets/audio/campana2.mp3",k),k,k,A.bT(a,k,l).w.a.a/2.1-340,k,90,k),A.uG(k,new A.kr(i,"assets/audio/lutheria2.mp3",k),k,k,k,A.bT(a,k,l).w.a.a/2.3-300,230,k),A.uG(230,new A.kr(g,"assets/audio/percusion2.mp3",k),k,k,A.bT(a,k,l).w.a.a/2-300,k,k,k),A.uG(120,new A.kr("assets/images/zoomorfopreformance.jpg","assets/audio/performance2.mp3",k),k,k,k,A.bT(a,k,l).w.a.a/1.8-300,k,k)],m),B.hL))}}
+return A.ahf(e,k,A.a1G(B.eU,A.a([A.r5(new A.hB(new A.bg(9,90,9,90),A.PQ(A.a([new A.jr(1,B.dI,new A.kJ(b,k),k),d,new A.jr(1,B.dI,new A.kJ(s,k),k),r,new A.jr(1,B.dI,new A.kJ(p,k),k),q,new A.jr(1,B.dI,new A.kJ(A.ZG("Performances. Cine. Teatro.","assets/images/cuadriculaperformances.jpg",A.a([u.v],c),"","",o,"performances",n),k),k),A.Ft(k,1,k),new A.kJ(new A.AQ(k),k)],m),B.b5,B.fV),k),k,k),A.uG(k,new A.kr(j,"assets/audio/campana2.mp3",k),k,k,A.bT(a,k,l).w.a.a/2.1-340,k,90,k),A.uG(k,new A.kr(i,"assets/audio/lutheria2.mp3",k),k,k,k,A.bT(a,k,l).w.a.a/2.3-300,230,k),A.uG(290,new A.kr(g,"assets/audio/percusion2.mp3",k),k,k,A.bT(a,k,l).w.a.a/2-300,k,k,k),A.uG(120,new A.kr("assets/images/zoomorfopreformance.jpg","assets/audio/performance2.mp3",k),k,k,k,A.bT(a,k,l).w.a.a/1.8-300,k,k)],m),B.hL))}}
 A.kr.prototype={
 ak(){return new A.HE(null,null)}}
 A.HE.prototype={
@@ -33523,7 +33523,7 @@ case"performances":return u.v
 default:return s}},
 N(a){var s=null,r=A.bT(a,s,t.w).w,q=this.Mt(),p=A.a2j(this.a.c,B.Ka,s)
 return A.ahf(A.aes(A.a([A.abX(s,B.Ag,s,s,new A.a7y(a),s,s)],t.W),!1,B.j,s,2,B.jC,p),B.j,new A.hB(B.zJ,new A.CY(new A.a7z(this,r.a.a<700,q),s),s))},
-Di(a,b){var s=null,r=b?1/0:400,q=b?250:300
+Di(a,b){var s=null,r=b?1/0:400,q=b?50:310
 return A.Q4(s,s,new A.eT(s,new A.nX(new A.nA(a,s,s),B.wI),s,A.OW(10),s,s,B.b3),q,s,s,r)},
 Df(){var s,r=A.a([A.a2j(this.a.d,B.KQ,B.d9),B.J0],t.W),q=this.a.f
 if(q.length!==0){s=A.U(q).h("aa<1,it>")
