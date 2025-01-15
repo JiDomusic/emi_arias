@@ -21,7 +21,7 @@ class EmilianaAriasApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
-          elevation: 20,
+          elevation: 40,
           iconTheme: IconThemeData(color: Colors.black38),
         ),
         fontFamily: 'BigShouldersInlineText-ExtraBold',
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text(
           'emiliana arias',
           style: TextStyle(
-            fontSize: 28,
+            fontSize: 32,
             fontWeight: FontWeight.w500,
             color: Colors.black,
             letterSpacing: 6,
@@ -77,9 +77,9 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Stack(
         children: [
-          const Center(
+          Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 1, horizontal: 1.0),
+              padding: EdgeInsets.symmetric(vertical: 90, horizontal: 9.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'la ruta de las campanas',
                         textStyle: TextStyle(
-                          fontSize: 22,
+                          fontSize: 24,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'luthería',
                         textStyle: TextStyle(
-                          fontSize: 22,
+                          fontSize: 24,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'percusión',
                         textStyle: TextStyle(
-                          fontSize: 22,
+                          fontSize: 24,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'performances',
                         textStyle: TextStyle(
-                          fontSize: 22,
+                          fontSize: 24,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -187,7 +187,7 @@ class _HomePageState extends State<HomePage> {
           Positioned(
             top: 90,
             left: MediaQuery.of(context).size.width / 2.1 - 340,
-            child: const _DecorativeImage(
+            child: _DecorativeImage(
               imagePath: 'assets/images/campanas.jpg',
               audioPath: 'assets/audio/campana2.mp3',
             ),
@@ -195,23 +195,23 @@ class _HomePageState extends State<HomePage> {
           Positioned(
             top: 180,
             right: MediaQuery.of(context).size.width / 2.3 - 300,
-            child: const _DecorativeImage(
+            child: _DecorativeImage(
               imagePath: 'assets/images/lutheria.jpg',
               audioPath: 'assets/audio/lutheria2.mp3',
             ),
           ),
           Positioned(
-            bottom: 220,
+            bottom: 280,
             left: MediaQuery.of(context).size.width / 2 - 300,
-            child: const _DecorativeImage(
+            child: _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',
               audioPath: 'assets/audio/percusion2.mp3',
             ),
           ),
           Positioned(
-            bottom: 80,
+            bottom: 120,
             right: MediaQuery.of(context).size.width / 1.8 - 300,
-            child: const _DecorativeImage(
+            child: _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
               audioPath: 'assets/audio/performance2.mp3',
             ),
