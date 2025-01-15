@@ -101,7 +101,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 25),
+                          const SizedBox(width: 40),
                           Expanded(child: _buildDescription()),
                         ],
                       ),
@@ -116,12 +116,12 @@ class _ProjectDetailState extends State<ProjectDetail> {
 
   Widget _buildImage(String imagePath, bool isSmallScreen) {
     return Container(
-      width: isSmallScreen ? double.infinity : 500,
-      height: isSmallScreen ? 300 : 360,
+      width: isSmallScreen ? double.infinity : 600,
+      height: isSmallScreen ? 240 : 500,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),
-          fit: BoxFit.cover,
+
         ),
         borderRadius: BorderRadius.circular(10),
       ),

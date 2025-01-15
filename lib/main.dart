@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'la ruta de las campanas',
                         textStyle: TextStyle(
-                          fontSize: 28,
+                          fontSize: 24,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'luthería',
                         textStyle: TextStyle(
-                          fontSize: 28,
+                          fontSize: 24,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'percusión',
                         textStyle: TextStyle(
-                          fontSize: 28,
+                          fontSize: 24,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'performances',
                         textStyle: TextStyle(
-                          fontSize: 28,
+                          fontSize: 24,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -193,7 +193,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            top: 230,
+            top: 180,
             right: MediaQuery.of(context).size.width / 2.3 - 300,
             child: _DecorativeImage(
               imagePath: 'assets/images/lutheria.jpg',
@@ -201,7 +201,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            bottom: 290,
+            bottom: 280,
             left: MediaQuery.of(context).size.width / 2 - 300,
             child: _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',
