@@ -201,7 +201,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            bottom: 280,
+            bottom: 210,
             left: MediaQuery.of(context).size.width / 2 - 300,
             child: _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',
