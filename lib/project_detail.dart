@@ -87,13 +87,13 @@ class _ProjectDetailState extends State<ProjectDetail> {
           builder: (context, constraints) {
             return Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 800),
+                constraints: const BoxConstraints(maxWidth: 950),
                 child: isSmallScreen
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(height: 2),
+                          const SizedBox(height: 5),
                           _buildDescription(),
                         ],
                       )
@@ -101,7 +101,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 10),
+                          const SizedBox(width: 15),
                           Expanded(child: _buildDescription()),
                         ],
                       ),
