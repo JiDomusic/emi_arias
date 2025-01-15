@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           const Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 7, horizontal: 8.0),
+              padding: EdgeInsets.symmetric(vertical: 7, horizontal: 10.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
