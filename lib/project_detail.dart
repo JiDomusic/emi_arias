@@ -82,7 +82,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 9.0),
         child: LayoutBuilder(
           builder: (context, constraints) {
             return Center(
@@ -93,7 +93,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(height: 18),
+                          const SizedBox(height: 10),
                           _buildDescription(),
                         ],
                       )
@@ -101,7 +101,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 40),
+                          const SizedBox(width: 20),
                           Expanded(child: _buildDescription()),
                         ],
                       ),
@@ -116,12 +116,11 @@ class _ProjectDetailState extends State<ProjectDetail> {
 
   Widget _buildImage(String imagePath, bool isSmallScreen) {
     return Container(
-      width: isSmallScreen ? double.infinity : 600,
-      height: isSmallScreen ? 240 : 500,
+      width: isSmallScreen ? double.infinity : 500,
+      height: isSmallScreen ? 300 : 300,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),
-
         ),
         borderRadius: BorderRadius.circular(10),
       ),
@@ -137,7 +136,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
             widget.description,
             style: const TextStyle(
               fontFamily: 'BigShouldersInlineText-ExtraBold',
-              fontSize: 14.2,
+              fontSize: 13,
               color: Colors.black87,
             ),
             textAlign: TextAlign.justify,
@@ -164,9 +163,9 @@ class _ProjectDetailState extends State<ProjectDetail> {
                       url,
                       style: TextStyle(
                         color: _hoveringLinks[url] ?? false
-                            ? Colors.blueGrey
+                            ? Colors.purple
                             : Colors.blueAccent,
-                        fontSize: 14,
+                        fontSize: 12.5,
                         decoration: TextDecoration.underline,
                       ),
                     ),

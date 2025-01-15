@@ -21,7 +21,7 @@ class EmilianaAriasApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
-          elevation: 40,
+          elevation: 20,
           iconTheme: IconThemeData(color: Colors.black38),
         ),
         fontFamily: 'BigShouldersInlineText-ExtraBold',
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text(
           'emiliana arias',
           style: TextStyle(
-            fontSize: 32,
+            fontSize: 28,
             fontWeight: FontWeight.w500,
             color: Colors.black,
             letterSpacing: 6,
@@ -77,9 +77,9 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Stack(
         children: [
-          Center(
+          const Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 90, horizontal: 9.0),
+              padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'la ruta de las campanas',
                         textStyle: TextStyle(
-                          fontSize: 24,
+                          fontSize: 22,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'luthería',
                         textStyle: TextStyle(
-                          fontSize: 24,
+                          fontSize: 22,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'percusión',
                         textStyle: TextStyle(
-                          fontSize: 24,
+                          fontSize: 22,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'performances',
                         textStyle: TextStyle(
-                          fontSize: 24,
+                          fontSize: 22,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -201,9 +201,9 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            bottom: 280,
+            bottom: 220,
             left: MediaQuery.of(context).size.width / 2 - 300,
-            child: _DecorativeImage(
+            child: const _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',
               audioPath: 'assets/audio/percusion2.mp3',
             ),
@@ -211,7 +211,7 @@ class _HomePageState extends State<HomePage> {
           Positioned(
             bottom: 120,
             right: MediaQuery.of(context).size.width / 1.8 - 300,
-            child: _DecorativeImage(
+            child: const _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
               audioPath: 'assets/audio/performance2.mp3',
             ),
