@@ -82,18 +82,18 @@ class _ProjectDetailState extends State<ProjectDetail> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 9.0),
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         child: LayoutBuilder(
           builder: (context, constraints) {
             return Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 1100),
+                constraints: const BoxConstraints(maxWidth: 800),
                 child: isSmallScreen
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(height: 10),
+                          const SizedBox(height: 2),
                           _buildDescription(),
                         ],
                       )
@@ -101,7 +101,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 20),
+                          const SizedBox(width: 10),
                           Expanded(child: _buildDescription()),
                         ],
                       ),
@@ -141,7 +141,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
             ),
             textAlign: TextAlign.justify,
           ),
-          const SizedBox(height: 3),
+          const SizedBox(height: 2),
           if (widget.videoLinks.isNotEmpty)
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -173,7 +173,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                 );
               }).toList(),
             ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 20),
         ],
       ),
     );

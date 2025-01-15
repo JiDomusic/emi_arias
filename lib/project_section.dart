@@ -49,18 +49,17 @@ class ProjectSection extends StatelessWidget {
             .textTheme
             .headlineSmall
             ?.copyWith(fontWeight: FontWeight.bold) ??
-        const TextStyle(fontSize: 26, fontWeight: FontWeight.w500);
+        const TextStyle(fontSize: 25, fontWeight: FontWeight.w500);
 
     // Construye el widget
 
     return GestureDetector(
-      onTap: () => navigateToProjectDetail(
-          context), // Navega a
+      onTap: () => navigateToProjectDetail(context), // Navega a
       child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 1.0, horizontal: 12.0),
+        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 1.0),
         decoration: BoxDecoration(
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(40.0),
+          borderRadius: BorderRadius.circular(1.0),
         ),
         child: Center(
           child: Text(
