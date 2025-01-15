@@ -101,7 +101,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 25),
+                          const SizedBox(width: 20),
                           Expanded(child: _buildDescription()),
                         ],
                       ),
@@ -116,8 +116,8 @@ class _ProjectDetailState extends State<ProjectDetail> {
 
   Widget _buildImage(String imagePath, bool isSmallScreen) {
     return Container(
-      width: isSmallScreen ? double.infinity : 500,
-      height: isSmallScreen ? 300 : 400,
+      width: isSmallScreen ? double.infinity : 400,
+      height: isSmallScreen ? 250 : 300,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),
@@ -137,12 +137,12 @@ class _ProjectDetailState extends State<ProjectDetail> {
             widget.description,
             style: const TextStyle(
               fontFamily: 'BigShouldersInlineText-ExtraBold',
-              fontSize: 16.2,
+              fontSize: 14.2,
               color: Colors.black87,
             ),
             textAlign: TextAlign.justify,
           ),
-          const SizedBox(height: 1),
+          const SizedBox(height: 3),
           if (widget.videoLinks.isNotEmpty)
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,7 +166,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         color: _hoveringLinks[url] ?? false
                             ? Colors.blueGrey
                             : Colors.blueAccent,
-                        fontSize: 17,
+                        fontSize: 14,
                         decoration: TextDecoration.underline,
                       ),
                     ),
@@ -174,7 +174,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                 );
               }).toList(),
             ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 30),
         ],
       ),
     );
