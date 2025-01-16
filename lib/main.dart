@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         title: const Text(
           'emiliana arias',
           style: TextStyle(
-            fontSize: 32,
+            fontSize: 27,
             fontWeight: FontWeight.w500,
             color: Colors.black,
             letterSpacing: 6,
@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           const Center(
             child: Padding(
-              padding: EdgeInsets.symmetric(vertical: 7, horizontal: 10.0),
+              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'la ruta de las campanas',
                         textStyle: TextStyle(
-                          fontSize: 22,
+                          fontSize: 23,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'luthería',
                         textStyle: TextStyle(
-                          fontSize: 22,
+                          fontSize: 23,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'percusión',
                         textStyle: TextStyle(
-                          fontSize: 22,
+                          fontSize: 23,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -156,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                       child: ProjectSection(
                         title: 'performances',
                         textStyle: TextStyle(
-                          fontSize: 22,
+                          fontSize: 23,
                           fontWeight: FontWeight.w500,
                           color: Colors.black,
                         ),
@@ -201,7 +201,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           Positioned(
-            bottom: 260,
+            bottom: 220,
             left: MediaQuery.of(context).size.width / 2 - 250,
             child: const _DecorativeImage(
               imagePath: 'assets/images/perusio3.jpg',

@@ -82,18 +82,18 @@ class _ProjectDetailState extends State<ProjectDetail> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: LayoutBuilder(
           builder: (context, constraints) {
             return Center(
               child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 950),
+                constraints: const BoxConstraints(maxWidth: 1200),
                 child: isSmallScreen
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(height: 5),
+                          const SizedBox(height: 0.0),
                           _buildDescription(),
                         ],
                       )
@@ -101,7 +101,7 @@ class _ProjectDetailState extends State<ProjectDetail> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 15),
+                          const SizedBox(width: 14),
                           Expanded(child: _buildDescription()),
                         ],
                       ),
@@ -116,11 +116,12 @@ class _ProjectDetailState extends State<ProjectDetail> {
 
   Widget _buildImage(String imagePath, bool isSmallScreen) {
     return Container(
-      width: isSmallScreen ? double.infinity : 500,
-      height: isSmallScreen ? 300 : 300,
+      width: isSmallScreen ? double.maxFinite : 600,
+      height: isSmallScreen ? 310 : 400,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage(imagePath),
+          // Ajuste de la imagen para cubrir todo el contenedor
         ),
         borderRadius: BorderRadius.circular(10),
       ),
