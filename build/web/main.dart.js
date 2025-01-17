@@ -33387,7 +33387,7 @@ A.tu.prototype={
 ak(){return new A.Is()}}
 A.Is.prototype={
 N(a){var s=null,r=t.w
-return A.ahd(A.aeq(s,!0,s,!0,s,s,B.Nv),s,A.a1D(B.eV,A.a([B.y1,A.uH(s,B.OB,s,s,A.bT(a,s,r).w.a.a/2.1-270,s,45,s),A.uH(s,B.Oz,s,s,s,A.bT(a,s,r).w.a.a/2.3-190,150,s),A.uH(260,B.OA,s,s,A.bT(a,s,r).w.a.a/2-250,s,s,s),A.uH(80,B.Oy,s,s,s,A.bT(a,s,r).w.a.a/1.8-280,s,s)],t.E),B.hM))}}
+return A.ahd(A.aeq(s,!0,s,!0,s,s,B.Nv),s,A.a1D(B.eV,A.a([B.y1,A.uH(s,B.OB,s,s,A.bT(a,s,r).w.a.a/2.1-270,s,45,s),A.uH(s,B.Oz,s,s,s,A.bT(a,s,r).w.a.a/2.3-190,150,s),A.uH(220,B.OA,s,s,A.bT(a,s,r).w.a.a/2-250,s,s,s),A.uH(80,B.Oy,s,s,s,A.bT(a,s,r).w.a.a/1.8-280,s,s)],t.E),B.hM))}}
 A.kq.prototype={
 ak(){return new A.HC(null,null)}}
 A.HC.prototype={
@@ -33505,12 +33505,12 @@ case"percusi\xf3n":return"assets/images/cuadriculapercusion2.jpg"
 case"performances":return u.v
 default:return s}},
 N(a){var s=null,r=A.bT(a,s,t.w).w,q=this.Mt(),p=A.a2g(this.a.c,B.Kx,s)
-return A.ahd(A.aeq(A.a([A.abV(s,B.An,s,s,new A.a7v(a),s,s)],t.E),!1,B.j,s,2,B.jD,p),B.j,new A.hC(B.zO,new A.CY(new A.a7w(this,r.a.a<700,q),s),s))},
-Di(a,b){var s=null,r=b?1/0:500
-return A.Q2(s,s,new A.eT(s,new A.nX(new A.nB(a,s,s)),s,A.OU(10),s,s,B.b4),300,s,s,r)},
-Df(){var s,r=A.a([A.a2g(this.a.d,B.Mr,B.da),B.Jm],t.E),q=this.a.f
+return A.ahd(A.aeq(A.a([A.abV(s,B.An,s,s,new A.a7v(a),s,s)],t.E),!1,B.j,s,2,B.jD,p),B.j,new A.hC(B.zL,new A.CY(new A.a7w(this,r.a.a<700,q),s),s))},
+Di(a,b){var s=null,r=b?17976931348623157e292:600,q=b?310:400
+return A.Q2(s,s,new A.eT(s,new A.nX(new A.nB(a,s,s)),s,A.OU(10),s,s,B.b4),q,s,s,r)},
+Df(){var s,r=A.a([A.a2g(this.a.d,B.Mr,B.da),B.Jn],t.E),q=this.a.f
 if(q.length!==0){s=A.U(q).h("aa<1,is>")
-r.push(A.abh(A.V(new A.aa(q,new A.a7t(this),s),!0,s.h("an.E")),B.aM,B.aS))}r.push(B.Jl)
+r.push(A.abh(A.V(new A.aa(q,new A.a7t(this),s),!0,s.h("an.E")),B.aM,B.aS))}r.push(B.Jm)
 return new A.Fq(A.abh(r,B.aM,B.aS),null)}}
 A.a7v.prototype={
 $0(){A.Dt(this.a).a50(new A.a7u())},
@@ -33520,7 +33520,7 @@ $1(a){return a.gtw()},
 $S:290}
 A.a7w.prototype={
 $2(a,b){var s=null,r=this.a,q=this.c,p=t.E
-return A.Aq(new A.fz(B.wG,this.b?A.abh(A.a([r.Di(q,!0),B.Jn,r.Df()],p),B.b6,B.aS):A.acp(A.a([r.Di(q,!1),B.Ji,new A.BQ(1,B.jx,r.Df(),s)],p),B.aM,B.aS,B.cS),s),s,s)},
+return A.Aq(new A.fz(B.wG,this.b?A.abh(A.a([r.Di(q,!0),B.Jl,r.Df()],p),B.b6,B.aS):A.acp(A.a([r.Di(q,!1),B.Ji,new A.BQ(1,B.jx,r.Df(),s)],p),B.aM,B.aS,B.cS),s),s,s)},
 $S:291}
 A.a7t.prototype={
 $1(a){var s=null,r=this.a,q=r.d.i(0,a)
@@ -33547,7 +33547,7 @@ A.mv.prototype={
 a4v(a){var s=A.agp(new A.ZF(this),null,t.z)
 A.Dt(a).ud(s)},
 N(a){var s=null,r=B.Lh,q=A.OU(1)
-return A.Cf(s,A.Q2(A.Aq(A.a2g(this.c,r,B.ez),s,s),s,new A.eT(B.G,s,s,q,s,s,B.b4),s,s,B.zN,s),B.aw,!1,s,s,s,s,s,s,s,s,s,s,s,s,new A.ZE(this,a),s,s,s)}}
+return A.Cf(s,A.Q2(A.Aq(A.a2g(this.c,r,B.ez),s,s),s,new A.eT(B.G,s,s,q,s,s,B.b4),s,s,B.zP,s),B.aw,!1,s,s,s,s,s,s,s,s,s,s,s,s,new A.ZE(this,a),s,s,s)}}
 A.ZF.prototype={
 $1(a){var s=this.a
 return new A.mu(s.c,s.d,s.x,null)},
@@ -37320,7 +37320,7 @@ s.aJ()}}
 A.P9.prototype={
 D(){return"ButtonTextTheme."+this.b}}
 A.An.prototype={
-gbY(){switch(0){case 0:break}var s=B.zL
+gbY(){switch(0){case 0:break}var s=B.zN
 return s},
 gcb(){$label0$0:{break $label0$0}return B.u1},
 j(a,b){var s=this
@@ -40490,8 +40490,8 @@ break $label0$0}r=null}return r},
 TV(){var s,r=this.c
 r.toString
 s=A.aJ(r).w
-$label0$0:{if(B.aH===s||B.aY===s||B.aZ===s){r=B.zP
-break $label0$0}if(B.aa===s||B.aX===s||B.a2===s){r=B.zM
+$label0$0:{if(B.aH===s||B.aY===s||B.aZ===s){r=B.zQ
+break $label0$0}if(B.aa===s||B.aX===s||B.a2===s){r=B.zO
 break $label0$0}r=null}return r},
 S1(a5){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3=this,a4=null
 a3.a.toString
@@ -65369,7 +65369,7 @@ B.hf=new A.ZJ(null)
 B.wE=new A.Ag(B.Hr,B.hf)
 B.u7=new A.F4(1,"fast")
 B.wF=new A.Ag(B.u7,B.hf)
-B.wG=new A.au(0,950,0,1/0)
+B.wG=new A.au(0,1200,0,1/0)
 B.it=new A.au(1/0,1/0,1/0,1/0)
 B.wH=new A.OX(6,"scaleDown")
 B.iu=new A.r_(0,"tight")
@@ -65677,7 +65677,7 @@ B.xW=new A.a86()
 B.cq=new A.Lo()
 B.xX=new A.Me()
 B.y0=new A.r4(null,null,null,null,null,null,null)
-B.zQ=new A.bg(8,7,8,7)
+B.zM=new A.bg(10,20,10,20)
 B.fW=new A.jR(2,"center")
 B.cS=new A.D8(1,"max")
 B.b6=new A.li(2,"center")
@@ -65687,7 +65687,7 @@ B.dJ=new A.C1(1,"loose")
 B.Bm=A.a(s(["assets/images/cuadriculacampanas.webp"]),t.s)
 B.CD=A.a(s(["https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas","https://docs.google.com/document/d/18hlsSTpLyC0vUf_ZH7hD4WTWk1FuJpto/edit?usp=sharing&ouid=105108450464616346072&rtpof=true&sd=true"]),t.s)
 B.X=new A.f_(4)
-B.Lh=new A.n(!0,B.l,null,null,null,null,22,B.X,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Lh=new A.n(!0,B.l,null,null,null,null,23,B.X,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.H7=new A.mv("la ruta de las campanas",'La Ruta de Las Campanas naci\xf3 en el a\xf1o 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 present\xe9 el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al a\xf1o siguente publiqu\xe9 el libro "La Ruta de Las Campanas".',B.Bm,"https://www.instagram.com/larutadelascampanas/?hl=es","https://emr-rosario.gob.ar/page/libros/id/41444",B.CD,null)
 B.Pw=new A.kI(B.H7,null)
 B.A1=new A.jq(1,B.dJ,B.Pw,null)
@@ -65711,7 +65711,7 @@ B.z4=new A.AQ(null)
 B.Pt=new A.kI(B.z4,null)
 B.C1=A.a(s([B.A1,B.ey,B.A2,B.ey,B.A0,B.ey,B.A3,B.ey,B.Pt]),t.E)
 B.z3=new A.rj(B.b3,B.fW,B.cS,B.b6,null,B.hW,null,0,B.C1,null)
-B.FB=new A.hC(B.zQ,B.z3,null)
+B.FB=new A.hC(B.zM,B.z3,null)
 B.y1=new A.lb(B.T,null,null,B.FB,null)
 B.y2=new A.r6(null,null,null,null,null,null,null,null,null)
 B.y3=new A.r7(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
@@ -65896,11 +65896,11 @@ B.zI=new A.ak(-38e3)
 B.zJ=new A.R0(0,"tonalSpot")
 B.bS=new A.bg(0,0,0,0)
 B.zK=new A.bg(0,20,0,20)
-B.zL=new A.bg(16,0,16,0)
-B.zM=new A.bg(16,4,16,4)
-B.zN=new A.bg(1,0,1,0)
-B.zO=new A.bg(5,0,5,0)
-B.zP=new A.bg(8,4,8,4)
+B.zL=new A.bg(10,0,10,0)
+B.zN=new A.bg(16,0,16,0)
+B.zO=new A.bg(16,4,16,4)
+B.zP=new A.bg(1,0,1,0)
+B.zQ=new A.bg(8,4,8,4)
 B.zS=new A.rY(null)
 B.zT=new A.BB(null)
 B.zU=new A.t_(0,"noOpinion")
@@ -67444,12 +67444,12 @@ B.Ja=new A.T(B.bz,!0,!0,!1,!1,B.af)
 B.J9=new A.T(B.bA,!0,!0,!1,!1,B.af)
 B.Jg=new A.S(1e5,1e5)
 B.hL=new A.fg(0,0,null,null)
-B.Ji=new A.fg(15,null,null,null)
+B.Ji=new A.fg(14,null,null,null)
 B.Jj=new A.fg(20,null,null,null)
 B.Jk=new A.fg(30,null,null,null)
-B.Jl=new A.fg(null,20,null,null)
-B.Jm=new A.fg(null,2,null,null)
-B.Jn=new A.fg(null,5,null,null)
+B.Jl=new A.fg(null,0,null,null)
+B.Jm=new A.fg(null,20,null,null)
+B.Jn=new A.fg(null,2,null,null)
 B.Jo=new A.vH(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.PQ=new A.vI(3,"hide")
 B.Jp=new A.vI(5,"timeout")
@@ -67729,7 +67729,7 @@ B.Kh=new A.n(!0,B.j,null,"Roboto",null,null,null,null,null,null,null,null,null,n
 B.Na=new A.n(!0,B.j,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView labelMedium",null,null,null,null)
 B.Ml=new A.n(!0,B.j,null,"Roboto",null,null,null,null,null,null,null,null,null,null,null,null,null,B.e,null,null,null,"whiteMountainView labelSmall",null,null,null,null)
 B.Nu=new A.cV(B.Mz,B.KI,B.Ls,B.MP,B.Kt,B.Ks,B.K5,B.Mj,B.N_,B.Ku,B.KT,B.Mf,B.Kh,B.Na,B.Ml)
-B.Li=new A.n(!0,B.l,null,null,null,null,32,B.X,null,6,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
+B.Li=new A.n(!0,B.l,null,null,null,null,27,B.X,null,6,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.Nv=new A.p6("emiliana arias",null,B.Li,null,null)
 B.PT=new A.a2N(0,"system")
 B.Nw=new A.w9(null)
