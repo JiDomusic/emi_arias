@@ -210,7 +210,7 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             bottom: 80,
-            right: MediaQuery.of(context).size.width / 1.8 - 299,
+            right: MediaQuery.of(context).size.width / 1.8 - 352,
             child: const _DecorativeImage(
               imagePath: 'assets/images/zoomorfopreformance.jpg',
               audioPath: 'assets/audio/performance2.mp3',
