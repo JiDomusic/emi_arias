@@ -1,31 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProjectDetail extends StatefulWidget {
   final String title;
   final String description;
   final String moreInfoUrl;
   final List<String> videoLinks;
+  final List<String> images;
+  final String image;
+  final String? instagramUrl;
 
   const ProjectDetail({
     super.key,
     required this.title,
     required this.description,
     required this.moreInfoUrl,
-    this.videoLinks = const [],
-    required List<String> images,
-    required String image,
-    required String instagramUrl,
+    required this.videoLinks,
+    required this.images,
+    required this.image,
+    this.instagramUrl,
   });
 
-  String? get instagramUrl => null;
-
   @override
-  _ProjectDetailState createState() => _ProjectDetailState();
+  State<ProjectDetail> createState() => _ProjectDetailState();
 }
 
 class _ProjectDetailState extends State<ProjectDetail> {
   final Map<String, bool> _hoveringLinks = {};
+  late Stream<QuerySnapshot> _projectStream;
+
+  @override
+  void initState() {
+    super.initState();
+    _projectStream = FirebaseFirestore.instance
+        .collection('projects')
+        .where('title', isEqualTo: widget.title)
+        .snapshots();
+  }
 
   void _openUrl(String url) async {
     final Uri uri = Uri.parse(url);
@@ -46,32 +58,44 @@ class _ProjectDetailState extends State<ProjectDetail> {
         return 'assets/images/cuadriculapercusion2.jpg';
       case 'performances':
         return 'assets/images/cuadriculaperformances2.jpg';
+      case 'textos':
+        return 'assets/images/textos.jpg';
       default:
-        return 'assets/images/cuadriculalutheria.jpg';
+        return widget.images.isNotEmpty
+            ? widget.images.first
+            : 'assets/images/cuadriculalutheria.jpg';
     }
   }
 
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final isSmallScreen = screenWidth < 700;
-
-    String imagePath = getImageForTitle();
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: Text(
-          widget.title,
-          style: const TextStyle(
-            fontSize: 20,
-            fontFamily: 'BigShouldersInlineText-ExtraBold',
-            color: Colors.black,
-          ),
-        ),
         backgroundColor: Colors.white,
-        iconTheme: const IconThemeData(color: Colors.black),
         elevation: 2,
+        iconTheme: const IconThemeData(color: Colors.black),
+        automaticallyImplyLeading: false,
+        title: StreamBuilder<QuerySnapshot>(
+          stream: _projectStream,
+          builder: (context, snapshot) {
+            String title = widget.title;
+            if (snapshot.hasData && snapshot.data!.docs.isNotEmpty) {
+              var data = snapshot.data!.docs.first.data() as Map<String, dynamic>;
+              title = data['title'] ?? widget.title;
+            }
+            return Text(
+              title,
+              style: const TextStyle(
+                fontSize: 36,
+                fontFamily: 'BigShouldersInlineText-ExtraBold',
+                color: Colors.black,
+              ),
+            );
+          },
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.home, color: Colors.black),
@@ -81,102 +105,109 @@ class _ProjectDetailState extends State<ProjectDetail> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            return Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 1200),
-                child: isSmallScreen
-                    ? Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(height: 0.0),
-                          _buildDescription(),
-                        ],
-                      )
-                    : Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          _buildImage(imagePath, isSmallScreen),
-                          const SizedBox(width: 14),
-                          Expanded(child: _buildDescription()),
-                        ],
-                      ),
-              ),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: _projectStream,
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return _buildContent(
+              context,
+              widget.description,
+              widget.videoLinks,
+              getImageForTitle(),
             );
-          },
-        ),
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
+
+          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+            return _buildContent(
+              context,
+              widget.description,
+              widget.videoLinks,
+              getImageForTitle(),
+            );
+          }
+
+          var data = snapshot.data!.docs.first.data() as Map<String, dynamic>;
+          final String title = data['title'] ?? widget.title;
+          final String description = data['description'] ?? widget.description;
+          final List<String> videoLinks = List<String>.from(data['videoLinks'] ?? widget.videoLinks);
+          final List<String> images = List<String>.from(data['images'] ?? widget.images);
+          final String imagePath = images.isNotEmpty ? images.first : getImageForTitle();
+
+          return _buildContent(context, description, videoLinks, imagePath);
+        },
       ),
-      backgroundColor: Colors.white,
     );
   }
 
-  Widget _buildImage(String imagePath, bool isSmallScreen) {
-    return Container(
-      width: isSmallScreen ? double.maxFinite : 600,
-      height: isSmallScreen ? 310 : 400,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage(imagePath),
-          // Ajuste de la imagen para cubrir todo el contenedor
-        ),
-        borderRadius: BorderRadius.circular(10),
-      ),
-    );
-  }
+  Widget _buildContent(BuildContext context, String description, List<String> videoLinks, String imagePath) {
+    final isSmallScreen = MediaQuery.of(context).size.width < 800;
 
-  Widget _buildDescription() {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            widget.description,
-            style: const TextStyle(
-              fontFamily: 'BigShouldersInlineText-ExtraBold',
-              fontSize: 13,
-              color: Colors.black87,
-            ),
-            textAlign: TextAlign.justify,
-          ),
-          const SizedBox(height: 2),
-          if (widget.videoLinks.isNotEmpty)
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: widget.videoLinks.map((url) {
-                return MouseRegion(
-                  onEnter: (_) {
-                    setState(() {
-                      _hoveringLinks[url] = true;
-                    });
-                  },
-                  onExit: (_) {
-                    setState(() {
-                      _hoveringLinks[url] = false;
-                    });
-                  },
-                  child: GestureDetector(
-                    onTap: () => _openUrl(url),
-                    child: Text(
-                      url,
-                      style: TextStyle(
-                        color: _hoveringLinks[url] ?? false
-                            ? Colors.purple
-                            : Colors.blueAccent,
-                        fontSize: 12.5,
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
+      padding: const EdgeInsets.all(24),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 1200),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              AspectRatio(
+                aspectRatio: 19 / 15,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.cover,
+                    width: double.infinity,
                   ),
-                );
-              }).toList(),
-            ),
-          const SizedBox(height: 20),
-        ],
+                ),
+              ),
+              const SizedBox(height: 35),
+              Text(
+                description,
+                textAlign: TextAlign.justify,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontFamily: 'BigShouldersInlineText-ExtraBold',
+                  color: Colors.black87,
+                  height: 1.6,
+                ),
+              ),
+              const SizedBox(height: 20),
+              if (videoLinks.isNotEmpty)
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: videoLinks.map((url) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: MouseRegion(
+                        onEnter: (_) => setState(() => _hoveringLinks[url] = true),
+                        onExit: (_) => setState(() => _hoveringLinks[url] = false),
+                        child: GestureDetector(
+                          onTap: () => _openUrl(url),
+                          child: Text(
+                            url,
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: _hoveringLinks[url] == true
+                                  ? Colors.deepPurple
+                                  : Colors.blueAccent,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                ),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+

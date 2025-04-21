@@ -10,6 +10,7 @@ class ProjectSection extends StatelessWidget {
   final String moreInfoUrl;
   final List<String> videoLinks;
   final TextStyle? textStyle;
+  final VoidCallback? onTap; // <-- parámetro onTap agregado
 
   const ProjectSection({
     super.key,
@@ -21,11 +22,30 @@ class ProjectSection extends StatelessWidget {
     required this.moreInfoUrl,
     this.videoLinks = const [],
     this.textStyle,
+    this.onTap, required String projectId, // <-- lo incluimos en el constructor
   });
 
-  /// Método para navegar
+  @override
+  Widget build(BuildContext context) {
+    final effectiveStyle = textStyle ??
+        const TextStyle(fontSize: 35, fontWeight: FontWeight.w500);
 
-  void navigateToProjectDetail(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap ?? () => _navigateToDetail(context), // <-- usa onTap si está definido, si no, navega por defecto
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 1.0),
+        child: Center(
+          child: Text(
+            title,
+            style: effectiveStyle,
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _navigateToDetail(BuildContext context) {
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -36,37 +56,7 @@ class ProjectSection extends StatelessWidget {
           instagramUrl: instagramUrl,
           moreInfoUrl: moreInfoUrl,
           videoLinks: videoLinks,
-          image: '',
-        ),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final TextStyle effectiveStyle = textStyle ??
-        Theme.of(context)
-            .textTheme
-            .headlineSmall
-            ?.copyWith(fontWeight: FontWeight.bold) ??
-        const TextStyle(fontSize: 25, fontWeight: FontWeight.w500);
-
-    // Construye el widget
-
-    return GestureDetector(
-      onTap: () => navigateToProjectDetail(context), // Navega a
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 1.0),
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(1.0),
-        ),
-        child: Center(
-          child: Text(
-            title,
-            textAlign: TextAlign.center, // Alinea el texto al centro.
-            style: effectiveStyle,
-          ),
+          image: image,
         ),
       ),
     );
