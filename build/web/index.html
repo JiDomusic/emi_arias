@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="web">
+
+  <!-- Configuración PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="emi_arias">
+  <link rel="apple-touch-icon" href="icons/icono.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icons/icono.png"/>
+
+  <title>Emiliana Arias</title>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <!-- Agrega otros servicios de Firebase que necesites -->
+
+  <!-- Configuración inicial de Firebase (opcional) -->
+  <script>
+    // Tus credenciales de Firebase (también están en firebase_options.dart)
+    const firebaseConfig = {
+      apiKey: "AIzaSyA1QLPTaWr-sAntW54EbCy3RquT_dwL8cg",
+      authDomain: "emiarias-8d598.firebaseapp.com",
+      projectId: "emiarias-8d598",
+      storageBucket: "emiarias-8d598.appspot.com",
+      messagingSenderId: "764447049123",
+      appId: "1:764447049123:web:3aba0216dacca892340616"
+    };
+
+    // Inicialización condicional
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+  </script>
+</head>
+<body>
+<script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

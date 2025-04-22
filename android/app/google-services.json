@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "764447049123",
+    "project_id": "emiarias-8d598",
+    "storage_bucket": "emiarias-8d598.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764447049123:android:26a8ebf234d3e32c340616",
+        "android_client_info": {
+          "package_name": "com.example.emi_arias"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgyf3HZWmxu56-yaQxb9om8qfi9p3ZiIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

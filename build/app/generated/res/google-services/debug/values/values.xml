@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gcm_defaultSenderId" translatable="false">764447049123</string>
+    <string name="google_api_key" translatable="false">AIzaSyBgyf3HZWmxu56-yaQxb9om8qfi9p3ZiIk</string>
+    <string name="google_app_id" translatable="false">1:764447049123:android:26a8ebf234d3e32c340616</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBgyf3HZWmxu56-yaQxb9om8qfi9p3ZiIk</string>
+    <string name="google_storage_bucket" translatable="false">emiarias-8d598.firebasestorage.app</string>
+    <string name="project_id" translatable="false">emiarias-8d598</string>
+</resources>

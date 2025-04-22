@@ -1,0 +1,30 @@
+ rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Lista de UIDs de administradores permitidos
+    function isAdmin() {
+      return request.auth != null && 
+             (request.auth.uid == 'rZybZr06BIhcXrU7dSM6eQQNelF2' ||
+              request.auth.uid == 'H4Tw3i8jHzWfQzuhejYTJhSzbr43');
+    }
+
+    // Reglas para la colección projects
+    match /projects/{project} {
+      allow read: if true; // Todos pueden leer
+      allow create, update, delete: if isAdmin(); // Solo admins pueden modificar
+    }
+
+    // Reglas para la colección blogPosts (si existe)
+    match /blogPosts/{post} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // Reglas para la colección admins (solo lectura)
+    match /admins/{email} {
+      allow read: if true;
+      allow write: if false; // Nadie puede modificar esto desde la app
+    }
+  }
+}
