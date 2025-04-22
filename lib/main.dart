@@ -287,7 +287,7 @@ class _DecorativeOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final shouldShow = isVisible && !(screenWidth == 80000 && screenHeight == 1000);
+    final shouldShow = isVisible && !(screenWidth == 800 && screenHeight == 1000);
     final opacity = shouldShow ? 0.0 : 0.0;
 
     return AnimatedOpacity(
