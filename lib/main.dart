@@ -47,7 +47,7 @@ class EmilianaAriasApp extends StatelessWidget {
             letterSpacing: 2,
           ),
           bodyLarge: TextStyle(
-            fontSize: 28,
+            fontSize: 38,
             color: Colors.black,
             letterSpacing: 1.5,
           ),
@@ -68,7 +68,6 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -99,7 +98,7 @@ class HomePage extends StatelessWidget {
           return Stack(
             children: [
               const _MainContent(),
-              if (isWide) const _DecorativeOverlay(),
+              _DecorativeOverlay(isVisible: isWide),
             ],
           );
         },
@@ -114,7 +113,7 @@ class _MainContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 4),
       child: Column(
         children: [
           _buildSection(const ProjectSection(
@@ -183,7 +182,7 @@ class _MainContent extends StatelessWidget {
             projectId: '',
           )),
           _buildSection(const ContactLinks()),
-          const SizedBox(height: 20),
+          const SizedBox(height: 30),
         ],
       ),
     );
@@ -205,7 +204,7 @@ class _WhiteBackgroundSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.all(25),
       child: child,
     );
   }
@@ -251,14 +250,18 @@ class _DecorativeImageState extends State<_DecorativeImage> {
         _playSound();
       },
       onExit: (_) => setState(() => _hovering = false),
-      child: AnimatedScale(
-        scale: _hovering ? 1.1 : 1.0,
+      child: AnimatedOpacity(
+        opacity: _hovering ? 1.0 : 0.7,
         duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-        child: SizedBox(
-          width: 90,
-          height: 90,
-          child: Image.asset(widget.imagePath, fit: BoxFit.cover),
+        child: AnimatedScale(
+          scale: _hovering ? 1.4 : 1.7,
+          duration: const Duration(milliseconds: 100),
+          curve: Curves.linear,
+          child: SizedBox(
+            width: 95,
+            height: 95,
+            child: Image.asset(widget.imagePath, fit: BoxFit.fill),
+          ),
         ),
       ),
     );
@@ -266,46 +269,53 @@ class _DecorativeImageState extends State<_DecorativeImage> {
 }
 
 class _DecorativeOverlay extends StatelessWidget {
-  const _DecorativeOverlay();
+  final bool isVisible;
+  const _DecorativeOverlay({required this.isVisible});
 
   @override
   Widget build(BuildContext context) {
-    return IgnorePointer(
-      child: Stack(
-        children: const [
-          Positioned(
-            top: 50,
-            left: 600,
-            child: _DecorativeImage(
-              imagePath: 'assets/images/campanas.jpg',
-              audioPath: 'assets/audio/campana2.mp3',
+    if (!isVisible) return const SizedBox.shrink(); // Mejor performance
+    return AnimatedOpacity(
+      opacity: isVisible ? 1.0 : 0.0,
+      duration: const Duration(milliseconds: 800),
+      child: IgnorePointer(
+        ignoring: !isVisible,
+        child: Stack(
+          children: [
+            Positioned(
+              top: 40,
+              left: 520,
+              child: _DecorativeImage(
+                imagePath: 'assets/images/campanas.jpg',
+                audioPath: 'assets/audio/campana2.mp3',
+              ),
             ),
-          ),
-          Positioned(
-            top: 200,
-            right: 600,
-            child: _DecorativeImage(
-              imagePath: 'assets/images/lutheria.jpg',
-              audioPath: 'assets/audio/lutheria2.mp3',
+            Positioned(
+              top: 150,
+              right: 500,
+              child: _DecorativeImage(
+                imagePath: 'assets/images/lutheria.jpg',
+                audioPath: 'assets/audio/lutheria2.mp3',
+              ),
             ),
-          ),
-          Positioned(
-            bottom: 500,
-            left: 600,
-            child: _DecorativeImage(
-              imagePath: 'assets/images/perusio3.jpg',
-              audioPath: 'assets/audio/percusion2.mp3',
+            Positioned(
+              bottom: 500,
+              left: 600,
+              child: _DecorativeImage(
+                imagePath: 'assets/images/perusio3.jpg',
+                audioPath: 'assets/audio/percusion2.mp3',
+              ),
             ),
-          ),
-          Positioned(
-            bottom: 400,
-            right: 600,
-            child: _DecorativeImage(
-              imagePath: 'assets/images/zoomorfopreformance.jpg',
-              audioPath: 'assets/audio/performance2.mp3',
+            Positioned(
+              bottom: 350,
+              right: 500,
+              child: _DecorativeImage(
+                imagePath: 'assets/images/zoomorfopreformance.jpg',
+                audioPath: 'assets/audio/performance2.mp3',
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

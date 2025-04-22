@@ -69,8 +69,6 @@ class _ProjectDetailState extends State<ProjectDetail> {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -154,8 +152,54 @@ class _ProjectDetailState extends State<ProjectDetail> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              // Contenido de texto y links arriba
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    description,
+                    textAlign: TextAlign.justify,
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'BigShouldersInlineText-ExtraBold',
+                      color: Colors.black87,
+                      height: 1.6,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  if (videoLinks.isNotEmpty)
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: videoLinks.map((url) {
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 12),
+                          child: MouseRegion(
+                            onEnter: (_) => setState(() => _hoveringLinks[url] = true),
+                            onExit: (_) => setState(() => _hoveringLinks[url] = false),
+                            child: GestureDetector(
+                              onTap: () => _openUrl(url),
+                              child: Text(
+                                url,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: _hoveringLinks[url] == true
+                                      ? Colors.deepPurple
+                                      : Colors.blueAccent,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  const SizedBox(height: 35),
+                ],
+              ),
+
+              // Imagen abajo
               AspectRatio(
-                aspectRatio: 19 / 15,
+                aspectRatio: isSmallScreen ? 1 : 19 / 15,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
@@ -165,44 +209,6 @@ class _ProjectDetailState extends State<ProjectDetail> {
                   ),
                 ),
               ),
-              const SizedBox(height: 35),
-              Text(
-                description,
-                textAlign: TextAlign.justify,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'BigShouldersInlineText-ExtraBold',
-                  color: Colors.black87,
-                  height: 1.6,
-                ),
-              ),
-              const SizedBox(height: 20),
-              if (videoLinks.isNotEmpty)
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: videoLinks.map((url) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 12),
-                      child: MouseRegion(
-                        onEnter: (_) => setState(() => _hoveringLinks[url] = true),
-                        onExit: (_) => setState(() => _hoveringLinks[url] = false),
-                        child: GestureDetector(
-                          onTap: () => _openUrl(url),
-                          child: Text(
-                            url,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: _hoveringLinks[url] == true
-                                  ? Colors.deepPurple
-                                  : Colors.blueAccent,
-                              decoration: TextDecoration.underline,
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                ),
             ],
           ),
         ),
@@ -210,4 +216,3 @@ class _ProjectDetailState extends State<ProjectDetail> {
     );
   }
 }
-
