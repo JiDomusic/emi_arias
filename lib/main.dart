@@ -68,6 +68,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -98,7 +100,11 @@ class HomePage extends StatelessWidget {
           return Stack(
             children: [
               const _MainContent(),
-              _DecorativeOverlay(isVisible: isWide),
+              _DecorativeOverlay(
+                isVisible: isWide,
+                screenWidth: screenWidth,
+                screenHeight: screenHeight,
+              ),
             ],
           );
         },
@@ -258,8 +264,8 @@ class _DecorativeImageState extends State<_DecorativeImage> {
           duration: const Duration(milliseconds: 100),
           curve: Curves.linear,
           child: SizedBox(
-            width: 95,
-            height: 95,
+            width: 90,
+            height: 90,
             child: Image.asset(widget.imagePath, fit: BoxFit.fill),
           ),
         ),
@@ -270,16 +276,25 @@ class _DecorativeImageState extends State<_DecorativeImage> {
 
 class _DecorativeOverlay extends StatelessWidget {
   final bool isVisible;
-  const _DecorativeOverlay({required this.isVisible});
+  final double screenWidth;
+  final double screenHeight;
+
+  const _DecorativeOverlay({
+    required this.isVisible,
+    required this.screenWidth,
+    required this.screenHeight,
+  });
 
   @override
   Widget build(BuildContext context) {
-    if (!isVisible) return const SizedBox.shrink(); // Mejor performance
+    final shouldShow = isVisible && !(screenWidth == 80000 && screenHeight == 1000);
+    final opacity = shouldShow ? 0.0 : 0.0;
+
     return AnimatedOpacity(
-      opacity: isVisible ? 1.0 : 0.0,
-      duration: const Duration(milliseconds: 800),
+      opacity: opacity,
+      duration: const Duration(milliseconds: 20000),
       child: IgnorePointer(
-        ignoring: !isVisible,
+        ignoring: !shouldShow,
         child: const Stack(
           children: [
             Positioned(
@@ -299,16 +314,16 @@ class _DecorativeOverlay extends StatelessWidget {
               ),
             ),
             Positioned(
-              bottom: 500,
-              left: 650,
+              bottom: 525,
+              left: 670,
               child: _DecorativeImage(
                 imagePath: 'assets/images/perusio3.jpg',
                 audioPath: 'assets/audio/percusion2.mp3',
               ),
             ),
             Positioned(
-              bottom: 350,
-              right: 660,
+              bottom: 380,
+              right: 680,
               child: _DecorativeImage(
                 imagePath: 'assets/images/zoomorfopreformance.jpg',
                 audioPath: 'assets/audio/performance2.mp3',
