@@ -280,7 +280,7 @@ class _DecorativeOverlay extends StatelessWidget {
       duration: const Duration(milliseconds: 800),
       child: IgnorePointer(
         ignoring: !isVisible,
-        child: Stack(
+        child: const Stack(
           children: [
             Positioned(
               top: 40,
