@@ -930,7 +930,7 @@ n.l()
 a.l()
 return m},
 aSa(a){var s,r,q,p,o,n,m
-$label0$0:for(s=a.length,r=0;r<6;++r){q=B.Gw[r]
+$label0$0:for(s=a.length,r=0;r<6;++r){q=B.Gv[r]
 p=q.c
 o=p.length
 if(s<o)continue $label0$0
@@ -7170,8 +7170,8 @@ axh(a){var s,r,q,p,o,n,m,l,k="avAudioSessionCategory",j=null,i="avAudioSessionCa
 if(a.h(0,k)==null)s=j
 else{s=B.JH.h(0,A.au(a.h(0,k)))
 s.toString}r=a.h(0,i)==null?j:new A.HI(A.aS(a.h(0,i)))
-q=a.h(0,h)==null?j:B.H2[A.aS(a.h(0,h))]
-p=a.h(0,g)==null?j:B.GV[A.aS(a.h(0,g))]
+q=a.h(0,h)==null?j:B.H1[A.aS(a.h(0,h))]
+p=a.h(0,g)==null?j:B.GU[A.aS(a.h(0,g))]
 o=a.h(0,f)==null?j:new A.HJ(A.aS(a.h(0,f)))
 if(a.h(0,e)==null)n=j
 else{n=t.f.a(a.h(0,e)).dw(0,t.N,t.z)
@@ -22430,7 +22430,7 @@ t.W.a(a)
 s=J.ag(a)
 r=s.h(a,0)
 r.toString
-switch(B.GF[A.aS(r)].a){case 0:s=s.hk(a,1)
+switch(B.GE[A.aS(r)].a){case 0:s=s.hk(a,1)
 r=s[0]
 r.toString
 A.aS(r)
@@ -26757,7 +26757,7 @@ return!1},
 k(a){return"ColorFilter.mode("+A.k(this.a)+", "+this.b.k(0)+")"}}
 A.xw.prototype={
 gaaw(){var s,r,q=new Float32Array(20)
-for(s=this.a,r=0;r<20;++r)if(B.b.n(B.Gt,r))q[r]=s[r]/255
+for(s=this.a,r=0;r<20;++r)if(B.b.n(B.Gs,r))q[r]=s[r]/255
 else q[r]=s[r]
 return q},
 wr(){return $.ba.bc().ColorFilter.MakeMatrix(this.gaaw())},
@@ -30039,7 +30039,7 @@ if(g.b){q=t.f
 f=q.a(q.a(B.bV.h3(a0)).h(0,"data"))
 e=A.a4(f.h(0,"message"))
 if(e!=null&&e.length!==0){d=A.L_(f,"assertiveness")
-g.a.RC(e,B.GS[d==null?0:d])}}c.eU(a1,B.bV.c0(!0))
+g.a.RC(e,B.GR[d==null?0:d])}}c.eU(a1,B.bV.c0(!0))
 return
 case"flutter/navigation":q=t.e8
 if(q.a(c.gcI().b.h(0,0))!=null)q.a(c.gcI().b.h(0,0)).GW(a0).bF(new A.a2D(c,a1),t.P)
@@ -33183,7 +33183,7 @@ m=A.bS(s.h(0,"fontWeightIndex"))
 l=m!=null?A.aSr(m):"normal"
 r=A.aCE(s.h(0,"fontSize"))
 if(r==null)r=null
-p=new A.ahi(new A.a28(r,l,A.a4(s.h(0,"fontFamily")),B.GQ[o],B.j0[n]))
+p=new A.ahi(new A.a28(r,l,A.a4(s.h(0,"fontFamily")),B.GP[o],B.j0[n]))
 break
 case"TextInput.clearClient":p=B.Bs
 break
@@ -33764,7 +33764,7 @@ if(B.b.i_(B.nd,s)!==-1)return r.c}else{s=B.d.a1(p,n,m)
 o.b=s
 o.a=m+1
 if(B.b.i_(B.nd,s)!==-1)return r.d
-if(B.b.i_(B.GT,o.b)!==-1)return r.e}throw A.e(A.oY(q+p,null))},
+if(B.b.i_(B.GS,o.b)!==-1)return r.e}throw A.e(A.oY(q+p,null))},
 $S:69}
 A.a5s.prototype={
 $1(a){var s,r,q="Invalid HTTP date ",p=this.b,o=this.a,n=o.a,m=B.d.i0(p,a,n)
@@ -33772,7 +33772,7 @@ if(m-n!==3)throw A.e(A.oY(q+p,null))
 s=B.d.a1(p,n,m)
 o.b=s
 o.a=m+1
-r=B.b.i_(B.G7,s)
+r=B.b.i_(B.G6,s)
 if(r!==-1)return r
 throw A.e(A.oY(q+p,null))},
 $S:159}
@@ -40966,7 +40966,7 @@ $2(a,b){return A.uv(B.ce,A.b([B.WS,new A.QZ(b.b>700,null)],t.D),B.Q,B.cG)},
 $S:370}
 A.Sn.prototype={
 N(a){var s=null
-return A.afZ(A.jc(A.b([new A.by(B.d0,new A.lB(B.Mh,s),s),new A.by(B.d0,new A.lB(B.Me,s),s),new A.by(B.d0,new A.lB(B.Mf,s),s),new A.by(B.d0,new A.lB(B.Mg,s),s),new A.by(B.d0,new A.lB(new A.mR("\xdaltimas novedades Blog Noticias","Art\xedculos, reflexiones y enlaces a obras escritas.",B.Gu,"","","",B.bZ,new A.anj(a),s),s),s),new A.by(B.d0,new A.lB(B.D1,s),s),B.OK],t.D),B.aB,B.ar,B.b1),B.Eo)}}
+return A.afZ(A.jc(A.b([new A.by(B.d0,new A.lB(B.Mh,s),s),new A.by(B.d0,new A.lB(B.Me,s),s),new A.by(B.d0,new A.lB(B.Mf,s),s),new A.by(B.d0,new A.lB(B.Mg,s),s),new A.by(B.d0,new A.lB(new A.mR("\xdaltimas novedades Blog Noticias","Art\xedculos, reflexiones y enlaces a obras escritas.",B.Gt,"","","",B.bZ,new A.anj(a),s),s),s),new A.by(B.d0,new A.lB(B.D1,s),s),B.OK],t.D),B.aB,B.ar,B.b1),B.Eo)}}
 A.anj.prototype={
 $0(){A.mH(this.a).VC("/textos",null,t.X)},
 $S:0}
@@ -43156,7 +43156,7 @@ r=A.tA(B.KE,B.i,r==null?1:r)
 r.toString
 p=o.aj(p.gC())
 if(p==null)p=1
-p=A.aAo(q,B.F,new A.tp(p,B.Ha,new A.cQ(B.Ar,this.e)),s,1,B.OC)
+p=A.aAo(q,B.F,new A.tp(p,B.H9,new A.cQ(B.Ar,this.e)),s,1,B.OC)
 return new A.uQ(A.mE(r.a,r.b,0),q,!0,q,p,q)}}
 A.GJ.prototype={
 l(){var s=this,r=s.c7$
@@ -49469,7 +49469,7 @@ A.aoG.prototype={
 $2(a,b){return this.a.cc(a,b)},
 $S:15}
 A.R_.prototype={
-gJI(){return B.H0},
+gJI(){return B.H_},
 Sa(a){var s,r=this
 switch(a.a){case 0:s=r.d.z
 break
@@ -67833,7 +67833,7 @@ q.cg$.B(0,s.gaaz())
 s.e=q}return q},
 gNR(){var s=this.f
 if(s===$){s!==$&&A.ai()
-s=this.f=new A.ali(1,B.GP,B.bz)}return s},
+s=this.f=new A.ali(1,B.GO,B.bz)}return s},
 ghp(){var s=this.z
 s=s==null?null:$.bM().d===s
 return s===!0},
@@ -82552,7 +82552,7 @@ k=J.fE(s,j).d}else{s=s.e.b!==B.O?s.gC():l
 s.toString
 J.fE(s,j).d=k}}s=m.a
 r=s.aS
-r=(r&&a.a!==B.cC?s.aS=!1:r)?B.h4:B.GW[a.a.a]
+r=(r&&a.a!==B.cC?s.aS=!1:r)?B.h4:B.GV[a.a.a]
 q=a.f
 if(q==null)q=l
 else{p=q.a
@@ -83242,7 +83242,7 @@ r=A.Xx(a.h(0,"volume"))
 q=A.Xx(a.h(0,"speed"))
 p=A.Xx(a.h(0,"pitch"))
 o=a.h(0,n)!=null?B.ne[A.aS(a.h(0,n))]:null
-return new A.jG(s,r,q,p,o,a.h(0,m)!=null?B.H1[A.aS(a.h(0,m))]:null)},
+return new A.jG(s,r,q,p,o,a.h(0,m)!=null?B.H0[A.aS(a.h(0,m))]:null)},
 $S:549}
 A.a6n.prototype={
 nX(a){return this.akG(a)},
@@ -88658,9 +88658,9 @@ B.n7=new A.pd(3,"center")
 B.G0=new A.pd(4,"bottom")
 B.G2=A.b(s([0,6,12,18]),t.t)
 B.n8=A.b(s(["text","multiline","number","phone","datetime","emailAddress","url","visiblePassword","name","address","none","webSearch","twitter"]),t.s)
-B.G7=A.b(s(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]),t.ee)
-B.Gt=A.b(s([4,9,14,19]),t.t)
-B.Gu=A.b(s([""]),t.s)
+B.G6=A.b(s(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]),t.ee)
+B.Gs=A.b(s([4,9,14,19]),t.t)
+B.Gt=A.b(s([""]),t.s)
 B.HX=A.b(s([137,80,78,71,13,10,26,10]),t.Z)
 B.Ff=new A.mh(0,"png")
 B.Fn=new A.jr(B.Ff,!1,0,"png")
@@ -88669,20 +88669,20 @@ B.HY=A.b(s([71,73,70,56,55,97]),t.Z)
 B.Fc=new A.kD(B.HY,B.fF,1,"gif87a")
 B.Hl=A.b(s([71,73,70,56,57,97]),t.Z)
 B.Fb=new A.kD(B.Hl,B.fF,2,"gif89a")
-B.G5=A.b(s([255,216,255]),t.Z)
+B.G4=A.b(s([255,216,255]),t.Z)
 B.Fg=new A.mh(2,"jpeg")
 B.Fr=new A.jr(B.Fg,!1,3,"jpeg")
-B.Fe=new A.kD(B.G5,B.Fr,3,"jpeg")
-B.GO=A.b(s([82,73,70,70,null,null,null,null,87,69,66,80]),t.Z)
-B.Fa=new A.kD(B.GO,B.n_,4,"webp")
-B.GI=A.b(s([66,77]),t.Z)
+B.Fe=new A.kD(B.G4,B.Fr,3,"jpeg")
+B.GN=A.b(s([82,73,70,70,null,null,null,null,87,69,66,80]),t.Z)
+B.Fa=new A.kD(B.GN,B.n_,4,"webp")
+B.GH=A.b(s([66,77]),t.Z)
 B.Fh=new A.mh(4,"bmp")
 B.Fp=new A.jr(B.Fh,!1,6,"bmp")
-B.F9=new A.kD(B.GI,B.Fp,5,"bmp")
-B.Gw=A.b(s([B.Fd,B.Fc,B.Fb,B.Fe,B.Fa,B.F9]),A.a3("D<kD>"))
+B.F9=new A.kD(B.GH,B.Fp,5,"bmp")
+B.Gv=A.b(s([B.Fd,B.Fc,B.Fb,B.Fe,B.Fa,B.F9]),A.a3("D<kD>"))
 B.kM=new A.Fm(0,"named")
 B.zb=new A.Fm(1,"anonymous")
-B.GF=A.b(s([B.kM,B.zb]),A.a3("D<Fm>"))
+B.GE=A.b(s([B.kM,B.zb]),A.a3("D<Fm>"))
 B.n9=A.b(s([0,4,12,1,5,13,3,7,15]),t.t)
 B.WH=new A.fx(0,1)
 B.WM=new A.fx(0.5,1)
@@ -88695,27 +88695,27 @@ B.WQ=new A.fx(0.8875,0.25)
 B.WO=new A.fx(0.925,0.5)
 B.WI=new A.fx(0.9625,0.75)
 B.WJ=new A.fx(1,1)
-B.GP=A.b(s([B.WH,B.WM,B.WP,B.WR,B.WN,B.WL,B.WK,B.WQ,B.WO,B.WI,B.WJ]),A.a3("D<fx>"))
+B.GO=A.b(s([B.WH,B.WM,B.WP,B.WR,B.WN,B.WL,B.WK,B.WQ,B.WO,B.WI,B.WJ]),A.a3("D<fx>"))
 B.eG=new A.la(0,"left")
 B.k7=new A.la(1,"right")
 B.hr=new A.la(2,"center")
 B.eH=new A.la(3,"justify")
 B.aD=new A.la(4,"start")
 B.k8=new A.la(5,"end")
-B.GQ=A.b(s([B.eG,B.k7,B.hr,B.eH,B.aD,B.k8]),A.a3("D<la>"))
-B.GS=A.b(s([B.hX,B.hY]),A.a3("D<x2>"))
-B.GT=A.b(s(["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]),t.ee)
+B.GP=A.b(s([B.eG,B.k7,B.hr,B.eH,B.aD,B.k8]),A.a3("D<la>"))
+B.GR=A.b(s([B.hX,B.hY]),A.a3("D<x2>"))
+B.GS=A.b(s(["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]),t.ee)
 B.zs=new A.nY(0,"defaultPolicy")
 B.zt=new A.nY(1,"longFormAudio")
 B.zu=new A.nY(2,"longFormVideo")
 B.zv=new A.nY(3,"independent")
-B.GV=A.b(s([B.zs,B.zt,B.zu,B.zv]),A.a3("D<nY>"))
+B.GU=A.b(s([B.zs,B.zt,B.zu,B.zv]),A.a3("D<nY>"))
 B.h3=new A.fp(0,"idle")
 B.h4=new A.fp(1,"loading")
 B.Mb=new A.fp(2,"buffering")
 B.xk=new A.fp(3,"ready")
 B.Mc=new A.fp(4,"completed")
-B.GW=A.b(s([B.h3,B.h4,B.Mb,B.xk,B.Mc]),A.a3("D<fp>"))
+B.GV=A.b(s([B.h3,B.h4,B.Mb,B.xk,B.Mc]),A.a3("D<fp>"))
 B.am=new A.ec(0,"icon")
 B.ay=new A.ec(1,"input")
 B.Z=new A.ec(2,"label")
@@ -88727,12 +88727,12 @@ B.at=new A.ec(7,"suffixIcon")
 B.bp=new A.ec(8,"helperError")
 B.bA=new A.ec(9,"counter")
 B.bP=new A.ec(10,"container")
-B.H0=A.b(s([B.am,B.ay,B.Z,B.aF,B.aG,B.aH,B.a0,B.at,B.bp,B.bA,B.bP]),A.a3("D<ec>"))
+B.H_=A.b(s([B.am,B.ay,B.Z,B.aF,B.aG,B.aH,B.a0,B.at,B.bp,B.bA,B.bP]),A.a3("D<ec>"))
 B.I5=new A.mz("en","US")
 B.na=A.b(s([B.I5]),t.ss)
 B.jR=new A.BP(0,"none")
 B.jS=new A.BP(1,"all")
-B.H1=A.b(s([B.jR,B.jS]),A.a3("D<BP>"))
+B.H0=A.b(s([B.jR,B.jS]),A.a3("D<BP>"))
 B.Ww=new A.lo(0,0)
 B.WB=new A.lo(1,0.05)
 B.Wz=new A.lo(3,0.08)
@@ -88748,16 +88748,16 @@ B.zo=new A.hk(5,"videoChat")
 B.zp=new A.hk(6,"videoRecording")
 B.zq=new A.hk(7,"voiceChat")
 B.zr=new A.hk(8,"voicePrompt")
-B.H2=A.b(s([B.kX,B.zk,B.zl,B.zm,B.zn,B.zo,B.zp,B.zq,B.zr]),A.a3("D<hk>"))
+B.H1=A.b(s([B.kX,B.zk,B.zl,B.zm,B.zn,B.zo,B.zp,B.zq,B.zr]),A.a3("D<hk>"))
 B.yu=new A.ut(0,"serverAndCache")
 B.P1=new A.ut(1,"server")
 B.P2=new A.ut(2,"cache")
 B.nc=A.b(s([B.yu,B.P1,B.P2]),A.a3("D<ut>"))
-B.H9=A.b(s([-1,0,0,1,0,0,-1,0,1,0,0,0,-1,1,0,1,1,1,1,0]),t.n)
+B.H8=A.b(s([-1,0,0,1,0,0,-1,0,1,0,0,0,-1,1,0,1,1,1,1,0]),t.n)
 B.Ap=new A.Ii(2,"outer")
 B.lN=new A.G(0.09803921568627451,0,0,0,B.f)
 B.AJ=new A.dx(0.2,B.Ap,B.lN,B.i,11)
-B.Ha=A.b(s([B.AJ]),t.sq)
+B.H9=A.b(s([B.AJ]),t.sq)
 B.Pl=new A.Cd(0,"left")
 B.Pm=new A.Cd(1,"right")
 B.Hb=A.b(s([B.Pl,B.Pm]),A.a3("D<Cd>"))
@@ -89431,72 +89431,72 @@ B.jk=new A.bA(B.bl,[],A.a3("bA<y,@>"))
 B.to=new A.bA(B.bl,[],A.a3("bA<Cf,@>"))
 B.JR=new A.bA(B.bl,[],A.a3("bA<ha,cC>"))
 B.tm=new A.bA(B.bl,[],A.a3("bA<ha,oS<cC>>"))
-B.Gm=A.b(s([42,null,null,8589935146]),t.Z)
-B.Gn=A.b(s([43,null,null,8589935147]),t.Z)
-B.Go=A.b(s([45,null,null,8589935149]),t.Z)
-B.Gp=A.b(s([46,null,null,8589935150]),t.Z)
-B.Gq=A.b(s([47,null,null,8589935151]),t.Z)
-B.Gr=A.b(s([48,null,null,8589935152]),t.Z)
-B.Gs=A.b(s([49,null,null,8589935153]),t.Z)
-B.Gv=A.b(s([50,null,null,8589935154]),t.Z)
-B.Gx=A.b(s([51,null,null,8589935155]),t.Z)
-B.Gy=A.b(s([52,null,null,8589935156]),t.Z)
-B.Gz=A.b(s([53,null,null,8589935157]),t.Z)
-B.GA=A.b(s([54,null,null,8589935158]),t.Z)
-B.GB=A.b(s([55,null,null,8589935159]),t.Z)
-B.GC=A.b(s([56,null,null,8589935160]),t.Z)
-B.GE=A.b(s([57,null,null,8589935161]),t.Z)
+B.Gl=A.b(s([42,null,null,8589935146]),t.Z)
+B.Gm=A.b(s([43,null,null,8589935147]),t.Z)
+B.Gn=A.b(s([45,null,null,8589935149]),t.Z)
+B.Go=A.b(s([46,null,null,8589935150]),t.Z)
+B.Gp=A.b(s([47,null,null,8589935151]),t.Z)
+B.Gq=A.b(s([48,null,null,8589935152]),t.Z)
+B.Gr=A.b(s([49,null,null,8589935153]),t.Z)
+B.Gu=A.b(s([50,null,null,8589935154]),t.Z)
+B.Gw=A.b(s([51,null,null,8589935155]),t.Z)
+B.Gx=A.b(s([52,null,null,8589935156]),t.Z)
+B.Gy=A.b(s([53,null,null,8589935157]),t.Z)
+B.Gz=A.b(s([54,null,null,8589935158]),t.Z)
+B.GA=A.b(s([55,null,null,8589935159]),t.Z)
+B.GB=A.b(s([56,null,null,8589935160]),t.Z)
+B.GD=A.b(s([57,null,null,8589935161]),t.Z)
 B.Hd=A.b(s([8589934852,8589934852,8589934853,null]),t.Z)
-B.Gb=A.b(s([4294967555,null,4294967555,null]),t.Z)
-B.Gc=A.b(s([4294968065,null,null,8589935154]),t.Z)
-B.Gd=A.b(s([4294968066,null,null,8589935156]),t.Z)
-B.Ge=A.b(s([4294968067,null,null,8589935158]),t.Z)
-B.Gf=A.b(s([4294968068,null,null,8589935160]),t.Z)
-B.Gk=A.b(s([4294968321,null,null,8589935157]),t.Z)
+B.Ga=A.b(s([4294967555,null,4294967555,null]),t.Z)
+B.Gb=A.b(s([4294968065,null,null,8589935154]),t.Z)
+B.Gc=A.b(s([4294968066,null,null,8589935156]),t.Z)
+B.Gd=A.b(s([4294968067,null,null,8589935158]),t.Z)
+B.Ge=A.b(s([4294968068,null,null,8589935160]),t.Z)
+B.Gj=A.b(s([4294968321,null,null,8589935157]),t.Z)
 B.He=A.b(s([8589934848,8589934848,8589934849,null]),t.Z)
-B.Ga=A.b(s([4294967423,null,null,8589935150]),t.Z)
-B.Gg=A.b(s([4294968069,null,null,8589935153]),t.Z)
-B.G9=A.b(s([4294967309,null,null,8589935117]),t.Z)
-B.Gh=A.b(s([4294968070,null,null,8589935159]),t.Z)
-B.Gl=A.b(s([4294968327,null,null,8589935152]),t.Z)
+B.G9=A.b(s([4294967423,null,null,8589935150]),t.Z)
+B.Gf=A.b(s([4294968069,null,null,8589935153]),t.Z)
+B.G8=A.b(s([4294967309,null,null,8589935117]),t.Z)
+B.Gg=A.b(s([4294968070,null,null,8589935159]),t.Z)
+B.Gk=A.b(s([4294968327,null,null,8589935152]),t.Z)
 B.Hf=A.b(s([8589934854,8589934854,8589934855,null]),t.Z)
-B.Gi=A.b(s([4294968071,null,null,8589935155]),t.Z)
-B.Gj=A.b(s([4294968072,null,null,8589935161]),t.Z)
+B.Gh=A.b(s([4294968071,null,null,8589935155]),t.Z)
+B.Gi=A.b(s([4294968072,null,null,8589935161]),t.Z)
 B.Hg=A.b(s([8589934850,8589934850,8589934851,null]),t.Z)
-B.tp=new A.c8(["*",B.Gm,"+",B.Gn,"-",B.Go,".",B.Gp,"/",B.Gq,"0",B.Gr,"1",B.Gs,"2",B.Gv,"3",B.Gx,"4",B.Gy,"5",B.Gz,"6",B.GA,"7",B.GB,"8",B.GC,"9",B.GE,"Alt",B.Hd,"AltGraph",B.Gb,"ArrowDown",B.Gc,"ArrowLeft",B.Gd,"ArrowRight",B.Ge,"ArrowUp",B.Gf,"Clear",B.Gk,"Control",B.He,"Delete",B.Ga,"End",B.Gg,"Enter",B.G9,"Home",B.Gh,"Insert",B.Gl,"Meta",B.Hf,"PageDown",B.Gi,"PageUp",B.Gj,"Shift",B.Hg],A.a3("c8<y,R<n?>>"))
-B.GD=A.b(s([B.nr,null,null,B.t7]),t.L)
+B.tp=new A.c8(["*",B.Gl,"+",B.Gm,"-",B.Gn,".",B.Go,"/",B.Gp,"0",B.Gq,"1",B.Gr,"2",B.Gu,"3",B.Gw,"4",B.Gx,"5",B.Gy,"6",B.Gz,"7",B.GA,"8",B.GB,"9",B.GD,"Alt",B.Hd,"AltGraph",B.Ga,"ArrowDown",B.Gb,"ArrowLeft",B.Gc,"ArrowRight",B.Gd,"ArrowUp",B.Ge,"Clear",B.Gj,"Control",B.He,"Delete",B.G9,"End",B.Gf,"Enter",B.G8,"Home",B.Gg,"Insert",B.Gk,"Meta",B.Hf,"PageDown",B.Gh,"PageUp",B.Gi,"Shift",B.Hg],A.a3("c8<y,R<n?>>"))
+B.GC=A.b(s([B.nr,null,null,B.t7]),t.L)
 B.HL=A.b(s([B.rU,null,null,B.t8]),t.L)
-B.GZ=A.b(s([B.rV,null,null,B.t9]),t.L)
+B.GY=A.b(s([B.rV,null,null,B.t9]),t.L)
 B.Hi=A.b(s([B.rW,null,null,B.ct]),t.L)
 B.G1=A.b(s([B.rX,null,null,B.ta]),t.L)
 B.I_=A.b(s([B.rY,null,null,B.je]),t.L)
 B.HU=A.b(s([B.rZ,null,null,B.ej]),t.L)
-B.GJ=A.b(s([B.t_,null,null,B.cu]),t.L)
+B.GI=A.b(s([B.t_,null,null,B.cu]),t.L)
 B.I2=A.b(s([B.t0,null,null,B.ek]),t.L)
 B.HT=A.b(s([B.t1,null,null,B.cv]),t.L)
-B.GH=A.b(s([B.t2,null,null,B.jf]),t.L)
-B.G6=A.b(s([B.t3,null,null,B.cw]),t.L)
-B.GR=A.b(s([B.t4,null,null,B.el]),t.L)
+B.GG=A.b(s([B.t2,null,null,B.jf]),t.L)
+B.G5=A.b(s([B.t3,null,null,B.cw]),t.L)
+B.GQ=A.b(s([B.t4,null,null,B.el]),t.L)
 B.HM=A.b(s([B.t5,null,null,B.cx]),t.L)
 B.HO=A.b(s([B.t6,null,null,B.em]),t.L)
-B.GK=A.b(s([B.eh,B.eh,B.fS,null]),t.L)
+B.GJ=A.b(s([B.eh,B.eh,B.fS,null]),t.L)
 B.I0=A.b(s([B.fO,null,B.fO,null]),t.L)
-B.H3=A.b(s([B.bu,null,null,B.cu]),t.L)
-B.H4=A.b(s([B.bi,null,null,B.cv]),t.L)
-B.H5=A.b(s([B.bj,null,null,B.cw]),t.L)
+B.H2=A.b(s([B.bu,null,null,B.cu]),t.L)
+B.H3=A.b(s([B.bi,null,null,B.cv]),t.L)
+B.H4=A.b(s([B.bj,null,null,B.cw]),t.L)
 B.I1=A.b(s([B.bv,null,null,B.cx]),t.L)
 B.HR=A.b(s([B.j7,null,null,B.jf]),t.L)
-B.GL=A.b(s([B.eg,B.eg,B.fR,null]),t.L)
+B.GK=A.b(s([B.eg,B.eg,B.fR,null]),t.L)
 B.Hp=A.b(s([B.au,null,null,B.ct]),t.L)
-B.H6=A.b(s([B.cq,null,null,B.ej]),t.L)
-B.GG=A.b(s([B.fN,null,null,B.jd]),t.L)
-B.H7=A.b(s([B.cr,null,null,B.el]),t.L)
+B.H5=A.b(s([B.cq,null,null,B.ej]),t.L)
+B.GF=A.b(s([B.fN,null,null,B.jd]),t.L)
+B.H6=A.b(s([B.cr,null,null,B.el]),t.L)
 B.HS=A.b(s([B.j8,null,null,B.je]),t.L)
-B.GM=A.b(s([B.ei,B.ei,B.fT,null]),t.L)
-B.H8=A.b(s([B.ee,null,null,B.ek]),t.L)
+B.GL=A.b(s([B.ei,B.ei,B.fT,null]),t.L)
+B.H7=A.b(s([B.ee,null,null,B.ek]),t.L)
 B.Hv=A.b(s([B.ef,null,null,B.em]),t.L)
-B.GN=A.b(s([B.c_,B.c_,B.cs,null]),t.L)
-B.JS=new A.c8(["*",B.GD,"+",B.HL,"-",B.GZ,".",B.Hi,"/",B.G1,"0",B.I_,"1",B.HU,"2",B.GJ,"3",B.I2,"4",B.HT,"5",B.GH,"6",B.G6,"7",B.GR,"8",B.HM,"9",B.HO,"Alt",B.GK,"AltGraph",B.I0,"ArrowDown",B.H3,"ArrowLeft",B.H4,"ArrowRight",B.H5,"ArrowUp",B.I1,"Clear",B.HR,"Control",B.GL,"Delete",B.Hp,"End",B.H6,"Enter",B.GG,"Home",B.H7,"Insert",B.HS,"Meta",B.GM,"PageDown",B.H8,"PageUp",B.Hv,"Shift",B.GN],A.a3("c8<y,R<f?>>"))
+B.GM=A.b(s([B.c_,B.c_,B.cs,null]),t.L)
+B.JS=new A.c8(["*",B.GC,"+",B.HL,"-",B.GY,".",B.Hi,"/",B.G1,"0",B.I_,"1",B.HU,"2",B.GI,"3",B.I2,"4",B.HT,"5",B.GG,"6",B.G5,"7",B.GQ,"8",B.HM,"9",B.HO,"Alt",B.GJ,"AltGraph",B.I0,"ArrowDown",B.H2,"ArrowLeft",B.H3,"ArrowRight",B.H4,"ArrowUp",B.I1,"Clear",B.HR,"Control",B.GK,"Delete",B.Hp,"End",B.H5,"Enter",B.GF,"Home",B.H6,"Insert",B.HS,"Meta",B.GL,"PageDown",B.H7,"PageUp",B.Hv,"Shift",B.GM],A.a3("c8<y,R<f?>>"))
 B.Kp={".aac":0,".mp3":1,".ogg":2,".opus":3,".wav":4,".weba":5,".mp4":6,".m4a":7,".aif":8,".aifc":9,".aiff":10,".m3u":11}
 B.JT=new A.bA(B.Kp,["audio/aac","audio/mpeg","audio/ogg","audio/opus","audio/wav","audio/webm","audio/mp4","audio/mp4","audio/x-aiff","audio/x-aiff","audio/x-aiff","audio/x-mpegurl"],t.li)
 B.Ku={KeyA:0,KeyB:1,KeyC:2,KeyD:3,KeyE:4,KeyF:5,KeyG:6,KeyH:7,KeyI:8,KeyJ:9,KeyK:10,KeyL:11,KeyM:12,KeyN:13,KeyO:14,KeyP:15,KeyQ:16,KeyR:17,KeyS:18,KeyT:19,KeyU:20,KeyV:21,KeyW:22,KeyX:23,KeyY:24,KeyZ:25,Digit1:26,Digit2:27,Digit3:28,Digit4:29,Digit5:30,Digit6:31,Digit7:32,Digit8:33,Digit9:34,Digit0:35,Minus:36,Equal:37,BracketLeft:38,BracketRight:39,Backslash:40,Semicolon:41,Quote:42,Backquote:43,Comma:44,Period:45,Slash:46}
@@ -89914,17 +89914,17 @@ B.Ma=new A.pK(3,"externalApplication")
 B.xh=new A.pK(4,"externalNonBrowserApplication")
 B.Md=new A.tQ(null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.HP=A.b(s(["assets/images/cuadriculalutheria.jpg"]),t.s)
-B.GX=A.b(s([u.Y]),t.s)
-B.Me=new A.mR("luther\xeda","Yunque es un proyecto de luther\xeda experimental, un laboratorio de objetos sonoros donde errores y aciertos marcan el ritmo.",B.HP,"assets/images/lutheria.jpg",u.Y,"",B.GX,null,null)
+B.GW=A.b(s([u.Y]),t.s)
+B.Me=new A.mR("luther\xeda","Yunque es un proyecto de luther\xeda experimental, un laboratorio de objetos sonoros donde errores y aciertos marcan el ritmo.",B.HP,"assets/images/lutheria.jpg",u.Y,"",B.GW,null,null)
 B.Hn=A.b(s(["assets/images/cuadriculapercusion2.jpg"]),t.s)
 B.I3=A.b(s(["https://emilianaarias.bandcamp.com/"]),t.s)
 B.Mf=new A.mR("percusi\xf3n","\xc1lbumes de estudio en colaboraci\xf3n",B.Hn,"assets/images/perusio3.jpg","","https://emilianaarias.bandcamp.com/",B.I3,null,null)
-B.H_=A.b(s([u.v]),t.s)
-B.GU=A.b(s(["https://www.youtube.com/watch?v=Xl0KKn8DRcY","https://ladistanciaanimal-blog.tumblr.com/","https://www.facebook.com/profile.php?id=100065022993837","https://www.youtube.com/watch?v=WXxp-qm5RTE","https://perfoping.blogspot.com/","https://www.facebook.com/watch/?v=1041454055879071"]),t.s)
-B.Mg=new A.mR("performances","Performances. Cine. Teatro.",B.H_,"assets/images/cuadriculaperformances.jpg","","",B.GU,null,null)
-B.GY=A.b(s(["assets/images/cuadriculacampanas.webp"]),t.s)
-B.G8=A.b(s(["https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas","https://docs.google.com/document/d/18hlsSTpLyC0vUf_ZH7hD4WTWk1FuJpto/"]),t.s)
-B.Mh=new A.mR("la ruta de las campanas",'La Ruta de Las Campanas naci\xf3 en el a\xf1o 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 present\xe9 el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al a\xf1o siguente publiqu\xe9 el libro "La Ruta de Las Campanas',B.GY,"assets/images/campanas.jpg","https://www.instagram.com/larutadelascampanas/","https://emr-rosario.gob.ar/page/libros/id/41444",B.G8,null,null)
+B.GZ=A.b(s([u.v]),t.s)
+B.GT=A.b(s(["https://www.youtube.com/watch?v=Xl0KKn8DRcY","https://ladistanciaanimal-blog.tumblr.com/","https://www.facebook.com/profile.php?id=100065022993837","https://www.youtube.com/watch?v=WXxp-qm5RTE","https://perfoping.blogspot.com/","https://www.facebook.com/watch/?v=1041454055879071"]),t.s)
+B.Mg=new A.mR("performances","Performances. Cine. Teatro.",B.GZ,"assets/images/cuadriculaperformances.jpg","","",B.GT,null,null)
+B.GX=A.b(s(["assets/images/cuadriculacampanas.webp"]),t.s)
+B.G7=A.b(s(["https://emr-rosario.gob.ar/page/libros/id/41444/title/La-ruta-de-las-campanas","https://docs.google.com/document/d/18hlsSTpLyC0vUf_ZH7hD4WTWk1FuJpto/"]),t.s)
+B.Mh=new A.mR("la ruta de las campanas",'La Ruta de Las Campanas naci\xf3 en el a\xf1o 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 present\xe9 el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al a\xf1o siguente publiqu\xe9 el libro "La Ruta de Las Campanas"',B.GX,"assets/images/campanas.jpg","https://www.instagram.com/larutadelascampanas/","https://emr-rosario.gob.ar/page/libros/id/41444",B.G7,null,null)
 B.Mi=new A.AG(null,null,null,null,null,null)
 B.xl=new A.aP(1,1)
 B.dp=new A.aP(2,2)
@@ -90231,9 +90231,9 @@ B.M6=new A.iC(null,150,500,null,null,null,B.Wp,null)
 B.Wo=new A.no("assets/images/perusio3.jpg","assets/audio/percusion2.mp3",null)
 B.M8=new A.iC(600,null,null,500,null,null,B.Wo,null)
 B.Wq=new A.no("assets/images/zoomorfopreformance.jpg","assets/audio/performance2.mp3",null)
-B.M7=new A.iC(null,null,500,350,null,null,B.Wq,null)
-B.G4=A.b(s([B.M9,B.M6,B.M8,B.M7]),t.D)
-B.P9=new A.q9(B.ce,B.cG,B.Q,B.G4,null)
+B.M7=new A.iC(null,null,660,350,null,null,B.Wq,null)
+B.Ha=A.b(s([B.M9,B.M6,B.M8,B.M7]),t.D)
+B.P9=new A.q9(B.ce,B.cG,B.Q,B.Ha,null)
 B.Pb=new A.uw(2,"moreButton")
 B.Pc=new A.uw(3,"drawerButton")
 B.B_=new A.yF()
@@ -91089,7 +91089,7 @@ r($,"aQk","aGv",()=>A.aPL())
 r($,"aYe","aGU",()=>A.ee().gGN()+"roboto/v32/KFOmCnqEu92Fr1Me4GZLCzYlKw.woff2")
 r($,"aXE","aGt",()=>A.aPw(A.aCS(A.aCS(A.aE9(),"window"),"FinalizationRegistry"),A.b0(new A.arB())))
 r($,"aYW","aHk",()=>new A.aaS())
-s($,"aXL","aGx",()=>A.aLc(B.H9))
+s($,"aXL","aGx",()=>A.aLc(B.H8))
 s($,"aXK","atk",()=>A.a75(A.aIh($.aGx())))
 s($,"aXy","aGr",()=>A.aAO(A.I(A.ae(),"ParagraphBuilder")))
 s($,"aZ2","aHn",()=>{var q=t.N,p=A.a3("+breaks,graphemes,words(uU,uU,uU)"),o=A.auB(1e5,q,p),n=A.auB(1e4,q,p)

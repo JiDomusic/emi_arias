@@ -300,7 +300,7 @@ class _DecorativeOverlay extends StatelessWidget {
             ),
             Positioned(
               bottom: 500,
-              left: 600,
+              left: 650,
               child: _DecorativeImage(
                 imagePath: 'assets/images/perusio3.jpg',
                 audioPath: 'assets/audio/percusion2.mp3',
