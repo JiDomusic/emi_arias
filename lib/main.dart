@@ -119,7 +119,7 @@ class _MainContent extends StatelessWidget {
           _buildSection(const ProjectSection(
             title: 'la ruta de las campanas',
             description:
-            'La Ruta de Las Campanas nació en el año 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 presenté el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al año siguente publiqué el libro "La Ruta de Las Campanas',
+            'La Ruta de Las Campanas nació en el año 2018 como proyecto de relevamiento de campanarios de la ciudad de Rosario. Con el tiempo fue adquiriendo otras dimendiones. En 2023 presenté el proyecto de ordenanza "La Ruta de Las Campanas" al Honorable Consejo de la Ciudad y al año siguente publiqué el libro "La Ruta de Las Campanas"',
             image: 'assets/images/campanas.jpg',
             instagramUrl: 'https://www.instagram.com/larutadelascampanas/',
             moreInfoUrl: 'https://emr-rosario.gob.ar/page/libros/id/41444',
@@ -308,7 +308,7 @@ class _DecorativeOverlay extends StatelessWidget {
             ),
             Positioned(
               bottom: 350,
-              right: 500,
+              right: 660,
               child: _DecorativeImage(
                 imagePath: 'assets/images/zoomorfopreformance.jpg',
                 audioPath: 'assets/audio/performance2.mp3',
