@@ -40968,7 +40968,7 @@ $2(a,b){return A.qa(B.ce,A.b([B.WM,new A.R_(b.b>700,null)],t.D),B.Q,B.cG)},
 $S:123}
 A.So.prototype={
 N(a){var s=null
-return A.ag_(A.jb(A.b([new A.by(B.d0,new A.lA(B.Mc,s),s),new A.by(B.d0,new A.lA(B.M9,s),s),new A.by(B.d0,new A.lA(B.Ma,s),s),new A.by(B.d0,new A.lA(B.Mb,s),s),new A.by(B.d0,new A.lA(new A.mQ("\xdaltimas novedades Blog Noticias","Art\xedculos, reflexiones y enlaces a obras escritas.",B.Gt,"","","",B.bZ,new A.anl(a),s),s),s),new A.by(B.d0,new A.lA(B.D1,s),s),B.OF],t.D),B.aA,B.ar,B.b0),B.Eo)}}
+return A.ag_(A.jb(A.b([new A.by(B.d0,new A.lA(B.Mc,s),s),new A.by(B.d0,new A.lA(B.M9,s),s),new A.by(B.d0,new A.lA(B.Ma,s),s),new A.by(B.d0,new A.lA(B.Mb,s),s),new A.by(B.d0,new A.lA(new A.mQ("novedades","Art\xedculos, reflexiones y enlaces a obras escritas.",B.Gt,"","","",B.bZ,new A.anl(a),s),s),s),new A.by(B.d0,new A.lA(B.D1,s),s),B.OF],t.D),B.aA,B.ar,B.b0),B.Eo)}}
 A.anl.prototype={
 $0(){A.mG(this.a).VC("/textos",null,t.X)},
 $S:0}

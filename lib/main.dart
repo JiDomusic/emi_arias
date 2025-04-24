@@ -175,7 +175,7 @@ class _MainContent extends StatelessWidget {
             projectId: '',
           )),
           _buildSection(ProjectSection(
-            title: 'Últimas novedades Blog Noticias',
+            title: 'novedades',
             description: 'Artículos, reflexiones y enlaces a obras escritas.',
             image: '',
             videoLinks: const [],
