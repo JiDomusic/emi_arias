@@ -41025,7 +41025,7 @@ $0(){return this.a.e=!1},
 $S:0}
 A.QZ.prototype={
 N(a){var s
-if(this.c)s=!(this.d===8e4&&this.e===1000)
+if(this.c)s=!(this.d===800&&this.e===1000)
 else s=!1
 return A.atz(A.mg(B.P9,!s,null),B.a1,B.DQ,0)}}
 A.pM.prototype={

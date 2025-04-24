@@ -257,11 +257,11 @@ class _DecorativeImageState extends State<_DecorativeImage> {
       },
       onExit: (_) => setState(() => _hovering = false),
       child: AnimatedOpacity(
-        opacity: _hovering ? 1.0 : 0.7,
-        duration: const Duration(milliseconds: 300),
+        opacity: _hovering ?1.0 : 0.9,
+        duration: const Duration(milliseconds: 200),
         child: AnimatedScale(
           scale: _hovering ? 1.4 : 1.7,
-          duration: const Duration(milliseconds: 100),
+          duration: const Duration(milliseconds: 30),
           curve: Curves.linear,
           child: SizedBox(
             width: 90,
@@ -276,62 +276,65 @@ class _DecorativeImageState extends State<_DecorativeImage> {
 
 class _DecorativeOverlay extends StatelessWidget {
   final bool isVisible;
-  final double screenWidth;
-  final double screenHeight;
 
   const _DecorativeOverlay({
-    required this.isVisible,
-    required this.screenWidth,
-    required this.screenHeight,
+    required this.isVisible, required double screenWidth, required double screenHeight,
   });
 
   @override
   Widget build(BuildContext context) {
-    final shouldShow = isVisible && !(screenWidth == 800 && screenHeight == 1000);
-    final opacity = shouldShow ? 0.0 : 0.0;
+    final opacity = isVisible ? 1.0 : 0.0;
 
     return AnimatedOpacity(
       opacity: opacity,
-      duration: const Duration(milliseconds: 20000),
+      duration: const Duration(milliseconds: 2000),
       child: IgnorePointer(
-        ignoring: !shouldShow,
-        child: const Stack(
-          children: [
-            Positioned(
-              top: 40,
-              left: 520,
-              child: _DecorativeImage(
-                imagePath: 'assets/images/campanas.jpg',
-                audioPath: 'assets/audio/campana2.mp3',
-              ),
-            ),
-            Positioned(
-              top: 150,
-              right: 500,
-              child: _DecorativeImage(
-                imagePath: 'assets/images/lutheria.jpg',
-                audioPath: 'assets/audio/lutheria2.mp3',
-              ),
-            ),
-            Positioned(
-              bottom: 525,
-              left: 670,
-              child: _DecorativeImage(
-                imagePath: 'assets/images/perusio3.jpg',
-                audioPath: 'assets/audio/percusion2.mp3',
-              ),
-            ),
-            Positioned(
-              bottom: 380,
-              right: 680,
-              child: _DecorativeImage(
-                imagePath: 'assets/images/zoomorfopreformance.jpg',
-                audioPath: 'assets/audio/performance2.mp3',
-              ),
-            ),
-          ],
+        ignoring: !isVisible,
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final width = constraints.maxWidth;
+            final height = constraints.maxHeight;
+
+            return Stack(
+              children: [
+                Positioned(
+                  top: height * 0.03,
+                  left: width *0.25,
+                  child: const _DecorativeImage(
+                    imagePath: 'assets/images/campanas.jpg',
+                    audioPath: 'assets/audio/campana2.mp3',
+                  ),
+                ),
+                Positioned(
+                  top: height * 0.2,
+                  right: width * 0.25,
+                  child: const _DecorativeImage(
+                    imagePath: 'assets/images/lutheria.jpg',
+                    audioPath: 'assets/audio/lutheria2.mp3',
+                  ),
+                ),
+                Positioned(
+                  bottom: height * 0.55,
+                  left: width * 0.28,
+                  child: const _DecorativeImage(
+                    imagePath: 'assets/images/perusio3.jpg',
+                    audioPath: 'assets/audio/percusion2.mp3',
+                  ),
+                ),
+                Positioned(
+                  bottom: height * 0.38,
+                  right: width * 0.30,
+                  child: const _DecorativeImage(
+                    imagePath: 'assets/images/zoomorfopreformance.jpg',
+                    audioPath: 'assets/audio/performance2.mp3',
+                  ),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
   }
 }
+
