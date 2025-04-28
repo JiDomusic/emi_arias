@@ -10,7 +10,7 @@ class TextsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Ultimas novedades blog y videos'),
+        title: const Text('novedades'),
         centerTitle: true,
         toolbarHeight: 90,
       ),

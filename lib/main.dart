@@ -36,20 +36,20 @@ class EmilianaAriasApp extends StatelessWidget {
         fontFamily: 'BigShouldersInlineText-ExtraBold',
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
-          elevation: 20,
+          elevation: 40,
           iconTheme: IconThemeData(color: Colors.black38),
         ),
         textTheme: const TextTheme(
           titleLarge: TextStyle(
-            fontSize: 80,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
             color: Colors.black,
             letterSpacing: 2,
           ),
           bodyLarge: TextStyle(
-            fontSize: 38,
+            fontSize: 15,
             color: Colors.black,
-            letterSpacing: 1.5,
+            letterSpacing: 1.7,
           ),
         ),
       ),
@@ -176,7 +176,7 @@ class _MainContent extends StatelessWidget {
           )),
           _buildSection(ProjectSection(
             title: 'novedades',
-            description: 'Artículos, reflexiones y enlaces a obras escritas.',
+            description: 'Artículos.',
             image: '',
             videoLinks: const [],
             images: const [''],
@@ -210,20 +210,26 @@ class _WhiteBackgroundSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      padding: const EdgeInsets.all(25),
+      padding: const EdgeInsets.all(16),
       child: child,
     );
   }
 }
 
+
 class _DecorativeImage extends StatefulWidget {
   final String imagePath;
   final String audioPath;
+  final Offset initialPosition;
+  final bool editMode;
 
   const _DecorativeImage({
     required this.imagePath,
     required this.audioPath,
-  });
+    required this.initialPosition,
+    this.editMode = false,
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<_DecorativeImage> createState() => _DecorativeImageState();
@@ -232,6 +238,13 @@ class _DecorativeImage extends StatefulWidget {
 class _DecorativeImageState extends State<_DecorativeImage> {
   final _player = AudioPlayer();
   bool _hovering = false;
+  late Offset position;
+
+  @override
+  void initState() {
+    super.initState();
+    position = widget.initialPosition;
+  }
 
   Future<void> _playSound() async {
     try {
@@ -250,23 +263,36 @@ class _DecorativeImageState extends State<_DecorativeImage> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) {
-        setState(() => _hovering = true);
-        _playSound();
-      },
-      onExit: (_) => setState(() => _hovering = false),
-      child: AnimatedOpacity(
-        opacity: _hovering ?1.0 : 0.9,
-        duration: const Duration(milliseconds: 200),
-        child: AnimatedScale(
-          scale: _hovering ? 1.4 : 1.7,
-          duration: const Duration(milliseconds: 30),
-          curve: Curves.linear,
-          child: SizedBox(
-            width: 90,
-            height: 90,
-            child: Image.asset(widget.imagePath, fit: BoxFit.fill),
+    return Positioned(
+      left: position.dx,
+      top: position.dy,
+      child: MouseRegion(
+        onEnter: (_) {
+          setState(() => _hovering = true);
+          _playSound();
+        },
+        onExit: (_) => setState(() => _hovering = false),
+        child: GestureDetector(
+          onPanUpdate: widget.editMode
+              ? (details) {
+            setState(() {
+              position += details.delta;
+            });
+          }
+              : null,
+          child: AnimatedOpacity(
+            opacity: _hovering ? 1.0 : 0.9,
+            duration: const Duration(milliseconds: 200),
+            child: AnimatedScale(
+              scale: _hovering ? 1.4 : 1.7,
+              duration: const Duration(milliseconds: 30),
+              curve: Curves.linear,
+              child: SizedBox(
+                width: 70,
+                height: 70,
+                child: Image.asset(widget.imagePath, fit: BoxFit.fill),
+              ),
+            ),
           ),
         ),
       ),
@@ -276,65 +302,66 @@ class _DecorativeImageState extends State<_DecorativeImage> {
 
 class _DecorativeOverlay extends StatelessWidget {
   final bool isVisible;
+  final bool editMode; // <- nuevo parámetro
 
   const _DecorativeOverlay({
-    required this.isVisible, required double screenWidth, required double screenHeight,
-  });
+    required this.isVisible,
+    this.editMode = false,
+    Key? key, required double screenWidth, required double screenHeight,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final opacity = isVisible ? 1.0 : 0.0;
+    final screenWidth = MediaQuery.of(context).size.width;
+
+    if (screenWidth < 1500) {
+
+      return const SizedBox.shrink();
+      final screenWidth = MediaQuery.of(context).size.width;
+      final screenHeight = MediaQuery.of(context).size.height;
+
+      if (screenWidth < 1500 || screenHeight < 900) {
+
+        return const SizedBox.shrink();
+      }
+
+    }
 
     return AnimatedOpacity(
       opacity: opacity,
       duration: const Duration(milliseconds: 2000),
       child: IgnorePointer(
         ignoring: !isVisible,
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final width = constraints.maxWidth;
-            final height = constraints.maxHeight;
-
-            return Stack(
-              children: [
-                Positioned(
-                  top: height * 0.03,
-                  left: width *0.25,
-                  child: const _DecorativeImage(
-                    imagePath: 'assets/images/campanas.jpg',
-                    audioPath: 'assets/audio/campana2.mp3',
-                  ),
-                ),
-                Positioned(
-                  top: height * 0.2,
-                  right: width * 0.25,
-                  child: const _DecorativeImage(
-                    imagePath: 'assets/images/lutheria.jpg',
-                    audioPath: 'assets/audio/lutheria2.mp3',
-                  ),
-                ),
-                Positioned(
-                  bottom: height * 0.55,
-                  left: width * 0.28,
-                  child: const _DecorativeImage(
-                    imagePath: 'assets/images/perusio3.jpg',
-                    audioPath: 'assets/audio/percusion2.mp3',
-                  ),
-                ),
-                Positioned(
-                  bottom: height * 0.38,
-                  right: width * 0.30,
-                  child: const _DecorativeImage(
-                    imagePath: 'assets/images/zoomorfopreformance.jpg',
-                    audioPath: 'assets/audio/performance2.mp3',
-                  ),
-                ),
-              ],
-            );
-          },
+        child: Stack(
+          children: [
+            _DecorativeImage(
+              imagePath: 'assets/images/campanas.jpg',
+              audioPath: 'assets/audio/campana2.mp3',
+              initialPosition: const Offset(515, 50),
+              editMode: editMode,
+            ),
+            _DecorativeImage(
+              imagePath: 'assets/images/lutheria.jpg',
+              audioPath: 'assets/audio/lutheria2.mp3',
+              initialPosition: const Offset(1200, 200),
+              editMode: editMode,
+            ),
+            _DecorativeImage(
+              imagePath: 'assets/images/perusio3.jpg',
+              audioPath: 'assets/audio/percusion2.mp3',
+              initialPosition: const Offset(600, 300),
+              editMode: editMode,
+            ),
+            _DecorativeImage(
+              imagePath: 'assets/images/zoomorfopreformance.jpg',
+              audioPath: 'assets/audio/performance2.mp3',
+              initialPosition: const Offset(1200, 480),
+              editMode: editMode,
+            ),
+          ],
         ),
       ),
     );
   }
 }
-
