@@ -41,7 +41,7 @@ class _AdminLoginPageState extends State<AdminLoginPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Login Admin'),
-        toolbarHeight: 100,
+        toolbarHeight: 60,
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),

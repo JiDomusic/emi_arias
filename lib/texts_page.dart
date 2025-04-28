@@ -12,7 +12,7 @@ class TextsPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('novedades'),
         centerTitle: true,
-        toolbarHeight: 90,
+        toolbarHeight: 80,
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance
